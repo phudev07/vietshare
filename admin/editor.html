@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Viết bài - VietShare Admin</title>
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="admin.css">
+  <style>
+    .admin-layout{display:none;}
+    .editor-toolbar { display: flex; flex-wrap: wrap; gap: 0.25rem; padding: 0.75rem; background: var(--bg-secondary); border-bottom: 1px solid var(--border-color); border-radius: var(--radius-lg) var(--radius-lg) 0 0; }
+    .toolbar-group { display: flex; gap: 0.25rem; padding-right: 0.5rem; border-right: 1px solid var(--border-color); margin-right: 0.25rem; }
+    .toolbar-group:last-child { border-right: none; }
+    .editor-btn { padding: 0.5rem; border: none; background: transparent; cursor: pointer; border-radius: var(--radius-sm); transition: all 0.2s; display: flex; align-items: center; justify-content: center; color: var(--text-primary); }
+    .editor-btn:hover { background: var(--primary); color: white; }
+    .editor-btn.active { background: var(--primary); color: white; }
+    .editor-btn svg { width: 18px; height: 18px; }
+    .editor-select { padding: 0.4rem 0.5rem; border: 1px solid var(--border-color); border-radius: var(--radius-sm); background: var(--card-bg); font-size: 0.875rem; cursor: pointer; min-width: 100px; }
+    .color-picker-wrapper { position: relative; display: inline-flex; }
+    .color-picker-btn { padding: 0.5rem; border: none; background: transparent; cursor: pointer; border-radius: var(--radius-sm); display: flex; align-items: center; gap: 0.25rem; }
+    .color-picker-btn:hover { background: rgba(139, 92, 246, 0.1); }
+    .color-indicator { width: 16px; height: 16px; border-radius: 2px; border: 1px solid var(--border-color); }
+    .color-picker-input { position: absolute; opacity: 0; width: 0; height: 0; }
+    .editor-content { min-height: 500px; padding: 1.5rem; outline: none; font-size: 1rem; line-height: 1.8; border-radius: 0 0 var(--radius-lg) var(--radius-lg); border: 1px solid var(--border-color); border-top: none; background: var(--card-bg); }
+    .editor-content:focus { box-shadow: inset 0 0 0 2px rgba(139, 92, 246, 0.2); }
+    .editor-content h1 { font-size: 2rem; margin: 1rem 0; }
+    .editor-content h2 { font-size: 1.5rem; margin: 1rem 0; }
+    .editor-content h3 { font-size: 1.25rem; margin: 1rem 0; }
+    .editor-content blockquote { border-left: 4px solid var(--primary); padding-left: 1rem; margin: 1rem 0; color: var(--text-muted); font-style: italic; background: var(--bg-secondary); padding: 1rem 1rem 1rem 1.5rem; border-radius: 0 var(--radius-md) var(--radius-md) 0; }
+    .editor-content pre { background: #1e1e1e; color: #d4d4d4; padding: 1rem; border-radius: var(--radius-md); overflow-x: auto; font-family: 'Fira Code', monospace; }
+    .editor-content code { background: var(--bg-secondary); padding: 0.2rem 0.4rem; border-radius: var(--radius-sm); font-family: 'Fira Code', monospace; font-size: 0.9em; }
+    .editor-content table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+    .editor-content table td, .editor-content table th { border: 1px solid var(--border-color); padding: 0.75rem; }
+    .editor-content table th { background: var(--bg-secondary); font-weight: 600; }
+    .editor-content hr { border: none; border-top: 2px solid var(--border-color); margin: 2rem 0; }
+    .editor-content img { max-width: 100%; border-radius: var(--radius-md); }
+    .editor-content a { color: var(--primary); text-decoration: underline; }
+    .editor-content ul, .editor-content ol { padding-left: 1.5rem; margin: 1rem 0; }
+    .editor-content li { margin: 0.25rem 0; }
+    .word-count { font-size: 0.75rem; color: var(--text-muted); padding: 0.5rem 1rem; background: var(--bg-secondary); text-align: right; border-radius: 0 0 var(--radius-lg) var(--radius-lg); }
+  </style>
+</head>
+<body>
+  <div class="admin-layout">
+    <aside class="admin-sidebar">
+      <div class="sidebar-header">
+        <a href="../index.html" class="logo">
+          <img src="/favicon.png" alt="VietShare" style="width:40px;height:40px;">
+          <span class="logo-text">VietShare</span>
+        </a>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="index.html" class="nav-item"><i data-lucide="layout-dashboard"></i> Dashboard</a>
+        <a href="editor.html" class="nav-item active"><i data-lucide="edit-3"></i> Viết bài mới</a>
+        <a href="articles.html" class="nav-item"><i data-lucide="file-text"></i> Quản lý bài viết</a>
+        <a href="categories.html" class="nav-item"><i data-lucide="folder"></i> Danh mục</a>
+      </nav>
+      <div class="sidebar-footer">
+        <button class="nav-item" id="logoutBtn"><i data-lucide="log-out"></i> Đăng xuất</button>
+      </div>
+    </aside>
+    <main class="admin-main">
+      <header class="admin-header">
+        <h1 id="pageTitle">Viết bài mới</h1>
+        <div style="display:flex;gap:0.75rem;">
+          <button class="btn btn-secondary" id="previewBtn"><i data-lucide="eye"></i> Xem trước</button>
+          <button class="btn" id="saveDraftBtn" style="background:var(--bg-secondary);border:1px solid var(--border-color);"><i data-lucide="save"></i> Lưu nháp</button>
+          <button class="btn btn-primary" id="publishBtn"><i data-lucide="send"></i> Đăng bài</button>
+        </div>
+      </header>
+      <form id="articleForm">
+        <div class="editor-container">
+          <div class="editor-main">
+            <input type="text" class="form-input title-input" id="title" placeholder="Tiêu đề bài viết..." required style="font-size:1.5rem;font-weight:600;margin-bottom:1rem;">
+            <div class="admin-section">
+              <div class="editor-wrapper" style="border:1px solid var(--border-color);border-radius:var(--radius-lg);overflow:hidden;">
+                <div class="editor-toolbar">
+                  <!-- Undo/Redo -->
+                  <div class="toolbar-group">
+                    <button type="button" class="editor-btn" data-cmd="undo" title="Hoàn tác (Ctrl+Z)"><i data-lucide="undo-2"></i></button>
+                    <button type="button" class="editor-btn" data-cmd="redo" title="Làm lại (Ctrl+Y)"><i data-lucide="redo-2"></i></button>
+                  </div>
+                  <!-- Headings & Paragraph -->
+                  <div class="toolbar-group">
+                    <select class="editor-select" id="formatBlock" title="Kiểu đoạn văn">
+                      <option value="p">Đoạn văn</option>
+                      <option value="h1">Tiêu đề 1</option>
+                      <option value="h2">Tiêu đề 2</option>
+                      <option value="h3">Tiêu đề 3</option>
+                      <option value="h4">Tiêu đề 4</option>
+                      <option value="blockquote">Trích dẫn</option>
+                      <option value="pre">Code block</option>
+                    </select>
+                  </div>
+                  <!-- Font Size -->
+                  <div class="toolbar-group">
+                    <select class="editor-select" id="fontSize" title="Cỡ chữ" style="min-width:70px;">
+                      <option value="1">10px</option>
+                      <option value="2">12px</option>
+                      <option value="3" selected>14px</option>
+                      <option value="4">16px</option>
+                      <option value="5">20px</option>
+                      <option value="6">24px</option>
+                      <option value="7">32px</option>
+                    </select>
+                  </div>
+                  <!-- Text Formatting -->
+                  <div class="toolbar-group">
+                    <button type="button" class="editor-btn" data-cmd="bold" title="In đậm (Ctrl+B)"><i data-lucide="bold"></i></button>
+                    <button type="button" class="editor-btn" data-cmd="italic" title="In nghiêng (Ctrl+I)"><i data-lucide="italic"></i></button>
+                    <button type="button" class="editor-btn" data-cmd="underline" title="Gạch chân (Ctrl+U)"><i data-lucide="underline"></i></button>
+                    <button type="button" class="editor-btn" data-cmd="strikeThrough" title="Gạch ngang"><i data-lucide="strikethrough"></i></button>
+                  </div>
+                  <!-- Colors -->
+                  <div class="toolbar-group">
+                    <div class="color-picker-wrapper">
+                      <button type="button" class="color-picker-btn" title="Màu chữ">
+                        <i data-lucide="type" style="width:16px;height:16px;"></i>
+                        <span class="color-indicator" id="textColorIndicator" style="background:#000;"></span>
+                      </button>
+                      <input type="color" class="color-picker-input" id="textColor" value="#000000">
+                    </div>
+                    <div class="color-picker-wrapper">
+                      <button type="button" class="color-picker-btn" title="Màu nền chữ">
+                        <i data-lucide="highlighter" style="width:16px;height:16px;"></i>
+                        <span class="color-indicator" id="bgColorIndicator" style="background:#ffff00;"></span>
+                      </button>
+                      <input type="color" class="color-picker-input" id="bgColor" value="#ffff00">
+                    </div>
+                  </div>
+                  <!-- Alignment -->
+                  <div class="toolbar-group">
+                    <button type="button" class="editor-btn" data-cmd="justifyLeft" title="Căn trái"><i data-lucide="align-left"></i></button>
+                    <button type="button" class="editor-btn" data-cmd="justifyCenter" title="Căn giữa"><i data-lucide="align-center"></i></button>
+                    <button type="button" class="editor-btn" data-cmd="justifyRight" title="Căn phải"><i data-lucide="align-right"></i></button>
+                    <button type="button" class="editor-btn" data-cmd="justifyFull" title="Căn đều"><i data-lucide="align-justify"></i></button>
+                  </div>
+                  <!-- Lists -->
+                  <div class="toolbar-group">
+                    <button type="button" class="editor-btn" data-cmd="insertUnorderedList" title="Danh sách gạch đầu dòng"><i data-lucide="list"></i></button>
+                    <button type="button" class="editor-btn" data-cmd="insertOrderedList" title="Danh sách số"><i data-lucide="list-ordered"></i></button>
+                    <button type="button" class="editor-btn" data-cmd="indent" title="Thụt lề phải"><i data-lucide="indent"></i></button>
+                    <button type="button" class="editor-btn" data-cmd="outdent" title="Thụt lề trái"><i data-lucide="outdent"></i></button>
+                  </div>
+                  <!-- Insert -->
+                  <div class="toolbar-group">
+                    <button type="button" class="editor-btn" id="insertLink" title="Chèn liên kết"><i data-lucide="link"></i></button>
+                    <button type="button" class="editor-btn" id="insertImage" title="Chèn hình ảnh"><i data-lucide="image"></i></button>
+                    <button type="button" class="editor-btn" id="insertTable" title="Chèn bảng"><i data-lucide="table"></i></button>
+                    <button type="button" class="editor-btn" id="insertHr" title="Chèn đường kẻ"><i data-lucide="minus"></i></button>
+                    <button type="button" class="editor-btn" id="insertCode" title="Chèn code"><i data-lucide="code"></i></button>
+                  </div>
+                  <!-- Clear -->
+                  <div class="toolbar-group">
+                    <button type="button" class="editor-btn" data-cmd="removeFormat" title="Xóa định dạng"><i data-lucide="eraser"></i></button>
+                  </div>
+                </div>
+                <div class="editor-content" id="editorContent" contenteditable="true"></div>
+                <div class="word-count" id="wordCount">0 từ | 0 ký tự</div>
+              </div>
+            </div>
+            <div class="admin-section">
+              <label class="form-label">Mô tả ngắn (SEO)</label>
+              <textarea class="form-textarea" id="excerpt" rows="3" placeholder="Mô tả ngắn gọn về bài viết để hiển thị trên kết quả tìm kiếm..."></textarea>
+            </div>
+          </div>
+          <div class="editor-sidebar">
+            <div class="admin-section">
+              <label class="form-label">Ảnh đại diện</label>
+              <div class="thumbnail-upload" id="thumbnailUpload">
+                <div class="thumbnail-upload-icon">📷</div>
+                <p>Click để upload ảnh</p>
+              </div>
+              <input type="hidden" id="thumbnailUrl">
+              <input type="file" id="thumbnailInput" accept="image/*" style="display:none;">
+            </div>
+            <div class="admin-section">
+              <label class="form-label">Danh mục</label>
+              <select class="form-select" id="category" required>
+                <option value="">Đang tải danh mục...</option>
+              </select>
+            </div>
+            <div class="admin-section" id="statusSection" style="display:none;">
+              <label class="form-label">Trạng thái</label>
+              <span id="statusBadge" class="badge" style="padding:0.5rem 1rem;">Bản nháp</span>
+            </div>
+            <div class="admin-section">
+              <label class="form-label">Tags (phân cách bằng dấu phẩy)</label>
+              <input type="text" class="form-input" id="tags" placeholder="AI, Windows, Mẹo...">
+            </div>
+            <div class="admin-section">
+              <label style="display:flex;align-items:center;gap:0.5rem;cursor:pointer;">
+                <input type="checkbox" id="featured">
+                <span>⭐ Bài viết nổi bật</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </form>
+    </main>
+  </div>
+  <div class="toast" id="toast"></div>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+  <script src="../js/firebase-config.js"></script>
+  <script>
+  (function(){
+    lucide.createIcons();
+    if(!window.VietShare){document.body.innerHTML='<p>Lỗi tải Firebase</p>';return;}
+    var db=window.VietShare.db,auth=window.VietShare.auth,cfg=window.VietShare.cloudinaryConfig;
+    var slug=window.VietShare.createSlug,toast=window.VietShare.showToast;
+    var loadCategories=window.VietShare.loadCategories;
+    var layout=document.querySelector('.admin-layout'),editId=null;
+    var editor=document.getElementById('editorContent');
+    var currentStatus='draft';
+
+    auth.onAuthStateChanged(function(u){
+      if(!u){location.href='login.html';}
+      else{layout.style.display='grid';initEditor();}
+    });
+
+    document.getElementById('logoutBtn').onclick=function(){auth.signOut().then(function(){location.href='login.html';});};
+
+    async function initEditor(){
+      // Load categories dynamically
+      await loadCategories();
+      var cats=window.VietShare.CATEGORIES;
+      var catSelect=document.getElementById('category');
+      catSelect.innerHTML='<option value="">Chọn danh mục...</option>';
+      Object.keys(cats).forEach(function(key){
+        var c=cats[key];
+        catSelect.innerHTML+='<option value="'+key+'">'+(c.icon||'📁')+' '+c.name+'</option>';
+      });
+      
+      // Load article if editing
+      loadEdit();
+    }
+
+    function loadEdit(){
+      var p=new URLSearchParams(location.search);editId=p.get('id');
+      if(editId){
+        document.getElementById('pageTitle').textContent='Chỉnh sửa bài viết';
+        db.collection('articles').doc(editId).get().then(function(d){
+          if(d.exists){var x=d.data();
+            document.getElementById('title').value=x.title||'';
+            editor.innerHTML=x.content||'';
+            document.getElementById('excerpt').value=x.excerpt||'';
+            document.getElementById('category').value=x.category||'';
+            document.getElementById('tags').value=(x.tags||[]).join(', ');
+            document.getElementById('featured').checked=x.featured||false;
+            if(x.thumbnail){document.getElementById('thumbnailUrl').value=x.thumbnail;
+              document.getElementById('thumbnailUpload').innerHTML='<img src="'+x.thumbnail+'" style="width:100%;border-radius:8px;">';
+            }
+            // Show status
+            currentStatus=x.status||'published';
+            document.getElementById('statusSection').style.display='block';
+            var badge=document.getElementById('statusBadge');
+            if(currentStatus==='draft'){
+              badge.textContent='Bản nháp';
+              badge.style.background='#fef3c7';badge.style.color='#d97706';
+            }else{
+              badge.textContent='Đã đăng';
+              badge.style.background='#dcfce7';badge.style.color='#16a34a';
+            }
+            updateWordCount();
+          }
+        });
+      }
+    }
+
+    // Toolbar commands
+    document.querySelectorAll('.editor-btn[data-cmd]').forEach(function(btn){
+      btn.onclick=function(){
+        document.execCommand(btn.dataset.cmd,false,null);
+        editor.focus();
+      };
+    });
+
+    // Format block dropdown
+    document.getElementById('formatBlock').onchange=function(){
+      document.execCommand('formatBlock',false,'<'+this.value+'>');
+      editor.focus();
+    };
+
+    // Font size dropdown
+    document.getElementById('fontSize').onchange=function(){
+      document.execCommand('fontSize',false,this.value);
+      editor.focus();
+    };
+
+    // Text color
+    document.querySelector('.color-picker-wrapper:nth-child(1) .color-picker-btn').onclick=function(){
+      document.getElementById('textColor').click();
+    };
+    document.getElementById('textColor').oninput=function(){
+      document.getElementById('textColorIndicator').style.background=this.value;
+      document.execCommand('foreColor',false,this.value);
+    };
+
+    // Background color
+    document.querySelector('.color-picker-wrapper:nth-child(2) .color-picker-btn').onclick=function(){
+      document.getElementById('bgColor').click();
+    };
+    document.getElementById('bgColor').oninput=function(){
+      document.getElementById('bgColorIndicator').style.background=this.value;
+      document.execCommand('hiliteColor',false,this.value);
+    };
+
+    // Insert link
+    document.getElementById('insertLink').onclick=function(){
+      var url=prompt('Nhập URL liên kết:','https://');
+      if(url){
+        var text=prompt('Nhập văn bản hiển thị:',url);
+        document.execCommand('insertHTML',false,'<a href="'+url+'" target="_blank">'+text+'</a>');
+      }
+    };
+
+    // Insert horizontal line
+    document.getElementById('insertHr').onclick=function(){
+      document.execCommand('insertHorizontalRule');
+    };
+
+    // Insert table
+    document.getElementById('insertTable').onclick=function(){
+      var rows=prompt('Số hàng:','3');
+      var cols=prompt('Số cột:','3');
+      if(rows&&cols){
+        var html='<table>';
+        for(var i=0;i<parseInt(rows);i++){
+          html+='<tr>';
+          for(var j=0;j<parseInt(cols);j++){
+            html+=(i===0?'<th>Tiêu đề</th>':'<td>Nội dung</td>');
+          }
+          html+='</tr>';
+        }
+        html+='</table><p></p>';
+        document.execCommand('insertHTML',false,html);
+      }
+    };
+
+    // Insert code
+    document.getElementById('insertCode').onclick=function(){
+      var code=prompt('Nhập code:');
+      if(code){
+        document.execCommand('insertHTML',false,'<pre><code>'+code.replace(/</g,'&lt;').replace(/>/g,'&gt;')+'</code></pre><p></p>');
+      }
+    };
+
+    // Word count
+    function updateWordCount(){
+      var text=editor.innerText||'';
+      var words=text.trim().split(/\s+/).filter(Boolean).length;
+      var chars=text.length;
+      document.getElementById('wordCount').textContent=words+' từ | '+chars+' ký tự';
+    }
+    editor.oninput=updateWordCount;
+
+    // Thumbnail upload
+    var thu=document.getElementById('thumbnailUpload'),thi=document.getElementById('thumbnailInput');
+    thu.onclick=function(){thi.click();};
+    thi.onchange=function(e){
+      var f=e.target.files[0];if(!f)return;var fd=new FormData();fd.append('file',f);fd.append('upload_preset',cfg.uploadPreset);
+      thu.innerHTML='<div class="loading-spinner"></div>';
+      fetch('https://api.cloudinary.com/v1_1/'+cfg.cloudName+'/image/upload',{method:'POST',body:fd})
+        .then(function(r){return r.json();}).then(function(d){
+          if(d.secure_url){document.getElementById('thumbnailUrl').value=d.secure_url;
+            thu.innerHTML='<img src="'+d.secure_url+'" style="width:100%;border-radius:8px;">';toast('Upload thành công!');}
+        }).catch(function(){toast('Lỗi upload ảnh');thu.innerHTML='<p>Click để upload ảnh</p>';});
+    };
+
+    // Insert image
+    document.getElementById('insertImage').onclick=function(){
+      var choice=confirm('Bạn muốn upload ảnh từ máy tính?\n\nOK = Upload từ máy\nCancel = Nhập URL ảnh');
+      if(choice){
+        var i=document.createElement('input');i.type='file';i.accept='image/*';
+        i.onchange=function(e){
+          var f=e.target.files[0];if(!f)return;var fd=new FormData();fd.append('file',f);fd.append('upload_preset',cfg.uploadPreset);
+          toast('Đang upload ảnh...');
+          fetch('https://api.cloudinary.com/v1_1/'+cfg.cloudName+'/image/upload',{method:'POST',body:fd})
+            .then(function(r){return r.json();}).then(function(d){if(d.secure_url){document.execCommand('insertImage',false,d.secure_url);toast('Đã chèn ảnh!');}})
+            .catch(function(){toast('Lỗi upload ảnh');});
+        };i.click();
+      }else{
+        var url=prompt('Nhập URL hình ảnh:','https://');
+        if(url){document.execCommand('insertImage',false,url);}
+      }
+    };
+
+    // Save article helper
+    function saveArticle(status){
+      var t=document.getElementById('title').value.trim(),c=editor.innerHTML.trim(),cat=document.getElementById('category').value;
+      if(!t){toast('Vui lòng nhập tiêu đề');return;}
+      if(status==='published' && (!c||!cat)){toast('Vui lòng điền đầy đủ thông tin');return;}
+      
+      var data={
+        title:t,
+        slug:slug(t),
+        content:c,
+        excerpt:document.getElementById('excerpt').value.trim()||t,
+        category:cat,
+        tags:document.getElementById('tags').value.split(',').map(function(x){return x.trim();}).filter(Boolean),
+        thumbnail:document.getElementById('thumbnailUrl').value||'',
+        author:auth.currentUser.email,
+        featured:document.getElementById('featured').checked,
+        status:status,
+        updatedAt:firebase.firestore.FieldValue.serverTimestamp()
+      };
+      
+      if(!editId){
+        data.createdAt=firebase.firestore.FieldValue.serverTimestamp();
+        data.views=0;
+      }
+      if(status==='published' && !editId){
+        data.publishedAt=firebase.firestore.FieldValue.serverTimestamp();
+      }
+      
+      return {data:data, promise: editId ? db.collection('articles').doc(editId).update(data) : db.collection('articles').add(data)};
+    }
+
+    // Publish button
+    document.getElementById('publishBtn').onclick=function(){
+      var result=saveArticle('published');
+      if(!result)return;
+      document.getElementById('publishBtn').disabled=true;
+      document.getElementById('publishBtn').innerHTML='Đang lưu...';
+      result.promise
+        .then(function(){toast('Đã đăng bài viết!');setTimeout(function(){location.href='articles.html';},1500);})
+        .catch(function(e){toast('Lỗi: '+e.message);document.getElementById('publishBtn').disabled=false;document.getElementById('publishBtn').innerHTML='<i data-lucide="send"></i> Đăng bài';lucide.createIcons();});
+    };
+
+    // Save Draft button
+    document.getElementById('saveDraftBtn').onclick=function(){
+      var result=saveArticle('draft');
+      if(!result)return;
+      document.getElementById('saveDraftBtn').disabled=true;
+      document.getElementById('saveDraftBtn').innerHTML='Đang lưu...';
+      result.promise
+        .then(function(){toast('Đã lưu bản nháp!');setTimeout(function(){location.href='articles.html';},1500);})
+        .catch(function(e){toast('Lỗi: '+e.message);document.getElementById('saveDraftBtn').disabled=false;document.getElementById('saveDraftBtn').innerHTML='<i data-lucide="save"></i> Lưu nháp';lucide.createIcons();});
+    };
+
+    // Preview
+    document.getElementById('previewBtn').onclick=function(){
+      var t=document.getElementById('title').value||'Chưa có tiêu đề',c=editor.innerHTML||'<p>Chưa có nội dung</p>';
+      var w=window.open('','_blank');
+      w.document.write('<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Xem trước - '+t+'</title>'+
+        '<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">'+
+        '<style>body{font-family:Inter,sans-serif;max-width:800px;margin:2rem auto;padding:1rem;line-height:1.8;color:#333;}'+
+        'h1{font-size:2.5rem;margin-bottom:1.5rem;}h2{font-size:1.75rem;margin:1.5rem 0 1rem;}h3{font-size:1.5rem;margin:1.25rem 0 0.75rem;}'+
+        'blockquote{border-left:4px solid #8b5cf6;padding:1rem 1rem 1rem 1.5rem;margin:1rem 0;background:#f3f0ff;border-radius:0 8px 8px 0;font-style:italic;}'+
+        'pre{background:#1e1e1e;color:#d4d4d4;padding:1rem;border-radius:8px;overflow-x:auto;}code{background:#f1f5f9;padding:0.2rem 0.4rem;border-radius:4px;font-size:0.9em;}'+
+        'table{width:100%;border-collapse:collapse;margin:1rem 0;}td,th{border:1px solid #e2e8f0;padding:0.75rem;}th{background:#f1f5f9;}'+
+        'img{max-width:100%;border-radius:8px;margin:1rem 0;}a{color:#8b5cf6;}hr{border:none;border-top:2px solid #e2e8f0;margin:2rem 0;}</style></head>'+
+        '<body><h1>'+t+'</h1><article>'+c+'</article></body></html>');
+    };
+  })();
+  </script>
+</body>
+</html>

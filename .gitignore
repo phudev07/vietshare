@@ -1,0 +1,35 @@
+# Dependencies
+node_modules/
+
+# Tools folder sensitive files only
+tools/firebase-credentials.json
+tools/selenium_chrome_data/
+tools/articles_to_import.json
+tools/processed.json
+
+# IDE
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+npm-debug.log*
+
+# Build output
+dist/
+build/
+
+# Temp files
+*.tmp
+*.temp
+*.bak
+
+# Environment files
+.env
+.env.local
+.env.*.local

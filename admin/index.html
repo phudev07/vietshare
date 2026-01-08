@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard - VietShare</title>
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="admin.css">
+  <style>
+    .admin-layout { display: none; }
+    .dashboard-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 1.5rem; margin-top: 1.5rem; }
+    @media (max-width: 1024px) { .dashboard-grid { grid-template-columns: 1fr; } }
+    .top-articles { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.5rem; }
+    .top-articles h3 { margin-bottom: 1rem; font-size: 1rem; display: flex; align-items: center; gap: 0.5rem; }
+    .top-article-item { display: flex; justify-content: space-between; align-items: center; padding: 0.75rem 0; border-bottom: 1px solid var(--border-color); }
+    .top-article-item:last-child { border-bottom: none; }
+    .top-article-title { font-size: 0.875rem; color: var(--text-primary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; }
+    .top-article-views { font-size: 0.75rem; color: var(--text-muted); display: flex; align-items: center; gap: 0.25rem; }
+    .category-stats { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.5rem; margin-top: 1rem; }
+    .category-stats h3 { margin-bottom: 1rem; font-size: 1rem; }
+    .category-bar { margin-bottom: 0.75rem; }
+    .category-bar-header { display: flex; justify-content: space-between; font-size: 0.8125rem; margin-bottom: 0.25rem; }
+    .category-bar-track { height: 8px; background: var(--bg-secondary); border-radius: 4px; overflow: hidden; }
+    .category-bar-fill { height: 100%; border-radius: 4px; transition: width 0.5s ease; }
+    .quick-stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+    .quick-stat { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1rem; text-align: center; }
+    .quick-stat-value { font-size: 1.5rem; font-weight: 700; color: var(--text-primary); }
+    .quick-stat-label { font-size: 0.75rem; color: var(--text-muted); }
+  </style>
+</head>
+<body>
+  <div class="admin-layout">
+    <aside class="admin-sidebar">
+      <div class="sidebar-header">
+        <a href="../index.html" class="logo">
+          <img src="/favicon.png" alt="VietShare" style="width:40px;height:40px;">
+          <span class="logo-text">VietShare</span>
+        </a>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="index.html" class="nav-item active"><i data-lucide="layout-dashboard"></i> Dashboard</a>
+        <a href="editor.html" class="nav-item"><i data-lucide="edit-3"></i> Viết bài mới</a>
+        <a href="articles.html" class="nav-item"><i data-lucide="file-text"></i> Quản lý bài viết</a>
+        <a href="categories.html" class="nav-item"><i data-lucide="folder"></i> Danh mục</a>
+      </nav>
+      <div class="sidebar-footer">
+        <button class="nav-item" id="logoutBtn"><i data-lucide="log-out"></i> Đăng xuất</button>
+      </div>
+    </aside>
+
+    <main class="admin-main">
+      <header class="admin-header">
+        <h1>Dashboard</h1>
+        <div class="admin-user" id="adminUser">
+          <img src="https://ui-avatars.com/api/?name=Admin&background=6366f1&color=fff" alt="Admin" class="user-avatar">
+          <span>Admin</span>
+        </div>
+      </header>
+
+      <!-- Stats Cards -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon" style="background: #dbeafe; color: #2563eb;"><i data-lucide="file-text"></i></div>
+          <div class="stat-content">
+            <h3 id="totalArticles">0</h3>
+            <p>Tổng bài viết</p>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon" style="background: #dcfce7; color: #16a34a;"><i data-lucide="check-circle"></i></div>
+          <div class="stat-content">
+            <h3 id="publishedCount">0</h3>
+            <p>Đã đăng</p>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon" style="background: #fef3c7; color: #d97706;"><i data-lucide="edit"></i></div>
+          <div class="stat-content">
+            <h3 id="draftCount">0</h3>
+            <p>Bản nháp</p>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon" style="background: #fce7f3; color: #db2777;"><i data-lucide="eye"></i></div>
+          <div class="stat-content">
+            <h3 id="totalViews">0</h3>
+            <p>Tổng lượt xem</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dashboard Grid -->
+      <div class="dashboard-grid">
+        <!-- Left Column - Recent Articles -->
+        <div>
+          <section class="admin-section">
+            <div class="section-header">
+              <h2>Bài viết gần đây</h2>
+              <a href="editor.html" class="btn btn-primary"><i data-lucide="plus"></i> Viết bài mới</a>
+            </div>
+            <div class="articles-table" id="articlesTable">
+              <div class="loading"><div class="loading-spinner"></div><span>Đang tải...</span></div>
+            </div>
+          </section>
+        </div>
+
+        <!-- Right Column - Stats -->
+        <div>
+          <!-- Top Articles -->
+          <div class="top-articles">
+            <h3><i data-lucide="trophy" style="width:18px;height:18px;color:#d97706;"></i> Bài viết xem nhiều nhất</h3>
+            <div id="topArticles">
+              <div class="loading"><div class="loading-spinner"></div></div>
+            </div>
+          </div>
+
+          <!-- Category Stats -->
+          <div class="category-stats">
+            <h3>Phân bố theo danh mục</h3>
+            <div id="categoryStats">
+              <div class="loading"><div class="loading-spinner"></div></div>
+            </div>
+          </div>
+
+          <!-- Quick Stats -->
+          <div class="quick-stats" style="margin-top:1rem;">
+            <div class="quick-stat">
+              <div class="quick-stat-value" id="avgViews">0</div>
+              <div class="quick-stat-label">TB lượt xem/bài</div>
+            </div>
+            <div class="quick-stat">
+              <div class="quick-stat-value" id="featuredCount">0</div>
+              <div class="quick-stat-label">Bài nổi bật</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+  <script src="../js/firebase-config.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    lucide.createIcons();
+    
+    if (!window.VietShare || !window.VietShare.auth || !window.VietShare.db) {
+      document.body.innerHTML = '<div style="padding:2rem;text-align:center;"><h2>Lỗi tải Firebase</h2><p><a href="login.html">Quay lại đăng nhập</a></p></div>';
+      return;
+    }
+
+    const db = window.VietShare.db;
+    const auth = window.VietShare.auth;
+    const formatDate = window.VietShare.formatDate;
+    const getCategoryInfo = window.VietShare.getCategoryInfo;
+    const showToast = window.VietShare.showToast;
+    const loadCategories = window.VietShare.loadCategories;
+    
+    const adminLayout = document.querySelector('.admin-layout');
+
+    auth.onAuthStateChanged(function(user) {
+      if (!user) {
+        window.location.href = 'login.html';
+      } else {
+        adminLayout.style.display = 'grid';
+        document.getElementById('adminUser').querySelector('span').textContent = user.email;
+        loadDashboard();
+      }
+    });
+
+    document.getElementById('logoutBtn').addEventListener('click', function() {
+      auth.signOut().then(function() {
+        window.location.href = 'login.html';
+      });
+    });
+
+    async function loadDashboard() {
+      try {
+        // Load categories first
+        await loadCategories();
+        
+        const snapshot = await db.collection('articles').orderBy('updatedAt', 'desc').get();
+        const articles = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+        
+        // Basic stats
+        const published = articles.filter(a => a.status !== 'draft');
+        const drafts = articles.filter(a => a.status === 'draft');
+        const totalViews = articles.reduce((sum, a) => sum + (a.views || 0), 0);
+        const featured = articles.filter(a => a.featured);
+        
+        document.getElementById('totalArticles').textContent = articles.length;
+        document.getElementById('publishedCount').textContent = published.length;
+        document.getElementById('draftCount').textContent = drafts.length;
+        document.getElementById('totalViews').textContent = totalViews.toLocaleString();
+        document.getElementById('avgViews').textContent = articles.length > 0 ? Math.round(totalViews / articles.length) : 0;
+        document.getElementById('featuredCount').textContent = featured.length;
+        
+        // Top articles by views
+        renderTopArticles(articles);
+        
+        // Category distribution
+        renderCategoryStats(articles);
+        
+        // Recent articles table
+        renderArticlesTable(articles.slice(0, 8));
+        
+      } catch (error) {
+        console.error('Dashboard error:', error);
+        renderArticlesTable([]);
+      }
+    }
+
+    function renderTopArticles(articles) {
+      const container = document.getElementById('topArticles');
+      const top5 = [...articles].sort((a, b) => (b.views || 0) - (a.views || 0)).slice(0, 5);
+      
+      if (top5.length === 0) {
+        container.innerHTML = '<p style="color:var(--text-muted);font-size:0.875rem;">Chưa có dữ liệu</p>';
+        return;
+      }
+      
+      container.innerHTML = top5.map((a, i) => `
+        <div class="top-article-item">
+          <span class="top-article-title" title="${a.title}">${i + 1}. ${a.title}</span>
+          <span class="top-article-views"><i data-lucide="eye" style="width:12px;height:12px;"></i> ${(a.views || 0).toLocaleString()}</span>
+        </div>
+      `).join('');
+      lucide.createIcons();
+    }
+
+    function renderCategoryStats(articles) {
+      const container = document.getElementById('categoryStats');
+      const cats = window.VietShare.CATEGORIES;
+      const counts = {};
+      
+      articles.forEach(a => {
+        if (a.category) {
+          counts[a.category] = (counts[a.category] || 0) + 1;
+        }
+      });
+      
+      const total = articles.length || 1;
+      const colors = ['#3b82f6', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6', '#ec4899'];
+      let colorIndex = 0;
+      
+      const sorted = Object.keys(counts).sort((a, b) => counts[b] - counts[a]).slice(0, 6);
+      
+      if (sorted.length === 0) {
+        container.innerHTML = '<p style="color:var(--text-muted);font-size:0.875rem;">Chưa có dữ liệu</p>';
+        return;
+      }
+      
+      container.innerHTML = sorted.map(key => {
+        const cat = getCategoryInfo(key);
+        const count = counts[key];
+        const percent = Math.round((count / total) * 100);
+        const color = colors[colorIndex++ % colors.length];
+        return `
+          <div class="category-bar">
+            <div class="category-bar-header">
+              <span>${cat.icon || '📁'} ${cat.name}</span>
+              <span>${count} bài (${percent}%)</span>
+            </div>
+            <div class="category-bar-track">
+              <div class="category-bar-fill" style="width:${percent}%;background:${color};"></div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function renderArticlesTable(articles) {
+      const container = document.getElementById('articlesTable');
+      if (articles.length === 0) {
+        container.innerHTML = '<div class="empty-state"><p>Chưa có bài viết nào</p><a href="editor.html" class="btn btn-primary">Viết bài đầu tiên</a></div>';
+        return;
+      }
+      
+      container.innerHTML = `
+        <table>
+          <thead><tr><th>Tiêu đề</th><th>Trạng thái</th><th>Lượt xem</th><th>Cập nhật</th><th>Thao tác</th></tr></thead>
+          <tbody>
+            ${articles.map(a => {
+              const statusBadge = a.status === 'draft' 
+                ? '<span class="badge" style="background:#fef3c7;color:#d97706;">Nháp</span>'
+                : '<span class="badge" style="background:#dcfce7;color:#16a34a;">Đã đăng</span>';
+              return `
+              <tr>
+                <td class="title-cell"><a href="../article.html?slug=${a.slug}" target="_blank">${a.title}</a>${a.featured ? ' <span style="color:gold;">★</span>' : ''}</td>
+                <td>${statusBadge}</td>
+                <td>${a.views || 0}</td>
+                <td>${formatDate(a.updatedAt || a.publishedAt)}</td>
+                <td class="actions">
+                  <a href="editor.html?id=${a.id}" class="btn-icon" title="Sửa"><i data-lucide="edit"></i></a>
+                  <button class="btn-icon delete" data-id="${a.id}" title="Xóa"><i data-lucide="trash-2"></i></button>
+                </td>
+              </tr>
+            `}).join('')}
+          </tbody>
+        </table>
+      `;
+      lucide.createIcons();
+
+      container.querySelectorAll('.delete').forEach(btn => {
+        btn.addEventListener('click', async () => {
+          if (confirm('Bạn có chắc muốn xóa bài viết này?')) {
+            await db.collection('articles').doc(btn.dataset.id).delete();
+            showToast('Đã xóa bài viết');
+            loadDashboard();
+          }
+        });
+      });
+    }
+  });
+  </script>
+</body>
+</html>

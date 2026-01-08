@@ -1,0 +1,89 @@
+{
+  "gemini_api_key": "AIzaSyCSh1qlwd52VsnSq5qgrrrzhx_v_lqvXjw",
+  "firebase": {
+    "credentials_file": "firebase-credentials.json"
+  },
+  "sources": [
+    {
+      "name": "VnExpress Số Hóa",
+      "rss": "https://vnexpress.net/rss/so-hoa.rss",
+      "category": "cong-nghe"
+    },
+    {
+      "name": "Genk",
+      "rss": "https://genk.vn/rss/home.rss",
+      "category": "cong-nghe"
+    },
+    {
+      "name": "24h Công nghệ",
+      "rss": "https://cdn.24h.com.vn/upload/rss/congnghe.rss",
+      "category": "cong-nghe"
+    },
+    {
+      "name": "VnExpress Tin tức",
+      "rss": "https://vnexpress.net/rss/tin-moi-nhat.rss",
+      "category": "tin-tuc"
+    },
+    {
+      "name": "Quantrimang Mẹo Hay",
+      "rss": "https://quantrimang.com/rss/meo-hay.rss",
+      "category": "meo-vat"
+    },
+    {
+      "name": "Quantrimang Thủ Thuật",
+      "rss": "https://quantrimang.com/rss/thu-thuat.rss",
+      "category": "huong-dan"
+    },
+    {
+      "name": "Quantrimang Windows",
+      "rss": "https://quantrimang.com/rss/windows.rss",
+      "category": "huong-dan"
+    },
+    {
+      "name": "Quantrimang Android",
+      "rss": "https://quantrimang.com/rss/android.rss",
+      "category": "huong-dan"
+    },
+    {
+      "name": "Quantrimang iOS",
+      "rss": "https://quantrimang.com/rss/ios.rss",
+      "category": "huong-dan"
+    },
+    {
+      "name": "Quantrimang Ứng dụng",
+      "rss": "https://quantrimang.com/rss/ung-dung.rss",
+      "category": "ung-dung"
+    },
+    {
+      "name": "Quantrimang Game",
+      "rss": "https://quantrimang.com/rss/game.rss",
+      "category": "giai-tri"
+    },
+    {
+      "name": "VnExpress Đời sống",
+      "rss": "https://vnexpress.net/rss/doi-song.rss",
+      "category": "doi-song"
+    },
+    {
+      "name": "Kenh14 Học đường",
+      "rss": "https://kenh14.vn/home.rss",
+      "category": "hoc-tap"
+    },
+    {
+      "name": "Báo Mới Công nghệ",
+      "rss": "https://www.baomoi.com/cong-nghe.rss",
+      "category": "cong-nghe"
+    },
+    {
+      "name": "Tinhte.vn",
+      "rss": "https://tinhte.vn/rss",
+      "category": "cong-nghe"
+    }
+  ],
+  "settings": {
+    "check_interval_minutes": 5,
+    "max_articles_per_source": 3,
+    "continuous_mode": true,
+    "auto_publish": true
+  }
+}

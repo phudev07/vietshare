@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Liên hệ - VietShare</title>
+  <meta name="description" content="Liên hệ với VietShare để gửi góp ý, câu hỏi hoặc hợp tác.">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .page-content { max-width: 800px; margin: 0 auto; padding: 3rem var(--container-padding); }
+    .page-title { font-size: 2rem; font-weight: 700; margin-bottom: 1.5rem; background: var(--gradient-primary); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .page-content p { margin-bottom: 1rem; color: var(--text-secondary); line-height: 1.8; }
+    .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
+    .contact-card { padding: 1.5rem; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: var(--radius-lg); text-align: center; transition: all 0.3s; }
+    .contact-card:hover { border-color: var(--primary); box-shadow: var(--card-shadow); }
+    .contact-icon { width: 50px; height: 50px; margin: 0 auto 1rem; background: var(--gradient-glow); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary); }
+    .contact-card h3 { font-size: 1rem; margin-bottom: 0.5rem; }
+    .contact-card p { font-size: 0.875rem; margin: 0; }
+    .contact-card a { color: var(--primary); }
+    .contact-form { margin-top: 2rem; }
+    .form-group { margin-bottom: 1.25rem; }
+    .form-label { display: block; margin-bottom: 0.5rem; font-weight: 500; font-size: 0.875rem; }
+    .form-input, .form-textarea { width: 100%; padding: 0.875rem 1rem; background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: var(--radius-md); font-size: 1rem; color: var(--text-primary); transition: all 0.2s; font-family: inherit; }
+    .form-input:focus, .form-textarea:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1); }
+    .form-textarea { min-height: 150px; resize: vertical; }
+    .submit-btn { width: 100%; padding: 1rem; background: var(--gradient-primary); color: white; font-size: 1rem; font-weight: 600; border: none; border-radius: var(--radius-md); cursor: pointer; transition: all 0.2s; }
+    .submit-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4); }
+    @media (max-width: 768px) { .page-title { font-size: 1.5rem; } }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <nav class="nav">
+        <a href="index.html" class="logo">
+          <img src="/favicon.png" alt="VietShare" style="width:40px;height:40px;">
+          <span class="logo-text">Viet<span>Share</span></span>
+        </a>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="index.html" class="nav-link">Trang chủ</a></li>
+        </ul>
+        <div class="nav-actions">
+          <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+            <i data-lucide="sun" class="icon-sun"></i>
+            <i data-lucide="moon" class="icon-moon"></i>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-content">
+    <h1 class="page-title">Liên hệ với chúng tôi</h1>
+    
+    <p>Cảm ơn bạn đã quan tâm đến VietShare! Chúng tôi luôn sẵn lòng lắng nghe ý kiến đóng góp, câu hỏi hoặc đề xuất hợp tác từ bạn.</p>
+    
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="contact-icon"><i data-lucide="mail"></i></div>
+        <h3>Email</h3>
+        <p><a href="mailto:contact@vietshare.site">contact@vietshare.site</a></p>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon"><i data-lucide="message-circle"></i></div>
+        <h3>Mạng xã hội</h3>
+        <p>Facebook, Twitter, YouTube</p>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon"><i data-lucide="clock"></i></div>
+        <h3>Thời gian phản hồi</h3>
+        <p>24 - 48 giờ làm việc</p>
+      </div>
+    </div>
+    
+    <h2 style="font-size: 1.25rem; margin: 2rem 0 1rem;">📝 Gửi tin nhắn</h2>
+    
+    <form class="contact-form" onsubmit="event.preventDefault(); alert('Cảm ơn bạn đã liên hệ! Chúng tôi sẽ phản hồi sớm nhất.');">
+      <div class="form-group">
+        <label class="form-label">Họ tên</label>
+        <input type="text" class="form-input" placeholder="Nhập họ tên của bạn" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Email</label>
+        <input type="email" class="form-input" placeholder="email@example.com" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Chủ đề</label>
+        <input type="text" class="form-input" placeholder="Nội dung bạn muốn liên hệ">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Nội dung</label>
+        <textarea class="form-textarea" placeholder="Nhập nội dung tin nhắn..." required></textarea>
+      </div>
+      <button type="submit" class="submit-btn">Gửi tin nhắn</button>
+    </form>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>© 2024 VietShare. All rights reserved.</p>
+        <div class="footer-links-inline">
+          <a href="about.html">Giới thiệu</a>
+          <a href="contact.html">Liên hệ</a>
+          <a href="privacy.html">Chính sách bảo mật</a>
+          <a href="terms.html">Điều khoản</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+    const theme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', theme);
+    document.getElementById('themeToggle').addEventListener('click', () => {
+      const current = document.documentElement.getAttribute('data-theme');
+      const next = current === 'light' ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+    });
+  </script>
+</body>
+</html>

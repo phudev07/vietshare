@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>VietShare - Blog Chia Sẻ Kiến Thức Công Nghệ, Mẹo Vặt, Lifestyle</title>
+  <meta name="description" content="VietShare - Blog chia sẻ kiến thức công nghệ, tin tức, mẹo vặt, hướng dẫn và lifestyle. Cập nhật các bài viết mới nhất về Windows, Android, iOS và nhiều hơn nữa.">
+  <meta name="keywords" content="blog công nghệ, tin tức công nghệ, mẹo vặt máy tính, hướng dẫn Windows, review sản phẩm, lifestyle, VietShare">
+  <meta name="author" content="VietShare">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://vietshare.site/">
+  
+  <!-- Favicon - All Devices -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#8B5CF6">
+  <meta name="msapplication-TileColor" content="#8B5CF6">
+  <meta name="msapplication-TileImage" content="/favicon.png">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://vietshare.site/">
+  <meta property="og:title" content="VietShare - Blog Chia Sẻ Kiến Thức Công Nghệ, Mẹo Vặt, Lifestyle">
+  <meta property="og:description" content="Blog chia sẻ kiến thức công nghệ, tin tức, mẹo vặt, hướng dẫn và lifestyle. Cập nhật các bài viết mới nhất.">
+  <meta property="og:image" content="https://vietshare.site/favicon.png">
+  <meta property="og:site_name" content="VietShare">
+  <meta property="og:locale" content="vi_VN">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="VietShare - Blog Chia Sẻ Kiến Thức">
+  <meta name="twitter:description" content="Blog chia sẻ kiến thức công nghệ, tin tức, mẹo vặt và lifestyle.">
+  <meta name="twitter:image" content="https://vietshare.site/assets/og-image.jpg">
+  
+  <!-- Structured Data - Website -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "VietShare",
+    "url": "https://vietshare.site/",
+    "description": "Blog chia sẻ kiến thức công nghệ, tin tức, mẹo vặt và lifestyle",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://vietshare.site/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+  
+  <!-- Structured Data - Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "VietShare",
+    "url": "https://vietshare.site/",
+    "logo": "https://vietshare.site/favicon.png"
+  }
+  </script>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress" id="readingProgress"></div>
+  
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <!-- Logo -->
+      <a href="index.html" class="logo">
+        <img src="favicon.png" alt="VietShare Logo" class="logo-img" style="width:40px;height:40px;">
+        <span class="logo-text">VietShare</span>
+      </a>
+      
+      <!-- Navigation -->
+      <nav class="nav">
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="index.html" class="nav-link active">Trang chủ</a></li>
+          <!-- Categories loaded dynamically from Firestore -->
+        </ul>
+        
+        <div class="nav-actions">
+          <button class="search-btn" id="searchBtn" aria-label="Tìm kiếm">
+            <i data-lucide="search"></i>
+          </button>
+          <button class="theme-toggle" id="themeToggle" aria-label="Chuyển đổi theme">
+            <i data-lucide="moon" id="themeIcon"></i>
+          </button>
+          <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="hero-badge-dot"></span>
+          Cập nhật mỗi ngày
+        </div>
+        <h1 class="hero-title">
+          Khám phá thế giới qua <span>góc nhìn mới</span>
+        </h1>
+        <p class="hero-desc">
+          Chia sẻ kiến thức, mẹo hay, tin tức công nghệ và những trải nghiệm cuộc sống thú vị. 
+          Từ hướng dẫn chi tiết đến góc nhìn độc đáo.
+        </p>
+        <form class="search-box" id="heroSearchForm">
+          <input type="text" placeholder="Tìm kiếm bài viết..." id="heroSearchInput">
+          <button type="submit">
+            <i data-lucide="search"></i>
+            Tìm kiếm
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories -->
+  <section class="categories-section">
+    <div class="container">
+      <div class="categories-scroll" id="categoriesScroll">
+        <button class="category-tab active" data-category="all">
+          Tất cả <span class="count" id="countAll">0</span>
+        </button>
+        <!-- Categories loaded dynamically from Firestore -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main>
+    <div class="container">
+      <!-- Featured Post -->
+      <section class="posts-section">
+        <div class="section-header">
+          <div class="section-title">
+            <div class="section-title-icon">
+              <i data-lucide="flame"></i>
+            </div>
+            <h2>Bài viết nổi bật</h2>
+          </div>
+        </div>
+        
+        <div id="featuredPost" class="featured-post">
+          <!-- Featured post will be loaded here -->
+          <div class="loading">
+            <div class="loading-spinner"></div>
+            <span>Đang tải...</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Mobile Ad (visible only on mobile) -->
+      <div class="mobile-ad">Quảng cáo</div>
+
+      <!-- Main Layout with Sidebar -->
+      <div class="main-layout">
+        <!-- Posts Grid -->
+        <section class="posts-main">
+          <div class="section-header">
+            <div class="section-title">
+              <div class="section-title-icon">
+                <i data-lucide="newspaper"></i>
+              </div>
+              <h2>Bài viết mới nhất</h2>
+            </div>
+            <a href="category.html" class="view-all">
+              Xem tất cả
+              <i data-lucide="arrow-right"></i>
+            </a>
+          </div>
+          
+          <div class="posts-grid" id="postsGrid">
+            <!-- Posts will be loaded here -->
+            <div class="loading">
+              <div class="loading-spinner"></div>
+              <span>Đang tải bài viết...</span>
+            </div>
+          </div>
+          
+          <!-- Pagination -->
+          <div class="pagination" id="pagination"></div>
+        </section>
+        
+        <!-- Sidebar -->
+        <aside class="sidebar">
+          <!-- Ad Placeholder -->
+          <div class="ad-placeholder">
+            📢 Quảng cáo
+          </div>
+          
+          <!-- Popular Posts -->
+          <div class="sidebar-widget">
+            <h3 class="widget-title">
+              <i data-lucide="trending-up"></i>
+              Đọc nhiều nhất
+            </h3>
+            <div class="popular-posts" id="popularPosts">
+              <!-- Popular posts will be loaded here -->
+            </div>
+          </div>
+          
+          <!-- Tags Cloud -->
+          <div class="sidebar-widget">
+            <h3 class="widget-title">
+              <i data-lucide="tags"></i>
+              Thẻ phổ biến
+            </h3>
+            <div class="tags-cloud" id="tagsCloud">
+              <!-- Tags loaded dynamically, sorted by article count -->
+            </div>
+          </div>
+          
+          <!-- Newsletter -->
+          <div class="sidebar-widget newsletter-widget">
+            <h3 class="widget-title">
+              <i data-lucide="mail"></i>
+              Đăng ký nhận tin
+            </h3>
+            <p class="newsletter-desc">
+              Nhận bài viết mới nhất qua email. Không spam, hủy bất cứ lúc nào.
+            </p>
+            <form class="newsletter-form" id="newsletterForm">
+              <input type="email" placeholder="Email của bạn..." required>
+              <button type="submit">Đăng ký</button>
+            </form>
+          </div>
+          
+          <!-- Another Ad -->
+          <div class="ad-placeholder">
+            📢 Quảng cáo
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Brand -->
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <img src="favicon.png" alt="VietShare" style="width:40px;height:40px;">
+            <span class="logo-text">VietShare</span>
+          </a>
+          <p>
+            Blog chia sẻ kiến thức đa lĩnh vực. Từ công nghệ, mẹo vặt đến lifestyle và nhiều chủ đề thú vị khác.
+          </p>
+
+        </div>
+        
+        <!-- Categories -->
+        <div class="footer-column">
+          <h4>Chuyên mục</h4>
+          <ul class="footer-links">
+            <li><a href="category.html?cat=cong-nghe">Công nghệ</a></li>
+            <li><a href="category.html?cat=tin-tuc">Tin tức</a></li>
+            <li><a href="category.html?cat=meo-vat">Mẹo vặt</a></li>
+            <li><a href="category.html?cat=lifestyle">Lifestyle</a></li>
+            <li><a href="category.html?cat=huong-dan">Hướng dẫn</a></li>
+          </ul>
+        </div>
+        
+        <!-- Quick Links -->
+        <div class="footer-column">
+          <h4>Liên kết</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">Giới thiệu</a></li>
+            <li><a href="contact.html">Liên hệ</a></li>
+            <li><a href="privacy.html">Chính sách bảo mật</a></li>
+            <li><a href="terms.html">Điều khoản</a></li>
+          </ul>
+        </div>
+        
+        <!-- Contact -->
+        <div class="footer-column">
+          <h4>Liên hệ</h4>
+          <ul class="footer-links">
+            <li>📧 contact@vietshare.site</li>
+            <li>📍 Việt Nam</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>© 2024 VietShare. All rights reserved.</p>
+        <p>Made with ❤️ in Vietnam</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="backToTop" aria-label="Lên đầu trang">
+    <i data-lucide="arrow-up"></i>
+  </button>
+
+  <!-- Search Modal -->
+  <div class="search-modal" id="searchModal">
+    <div class="search-modal-content">
+      <div class="search-modal-header">
+        <i data-lucide="search"></i>
+        <input type="text" class="search-modal-input" placeholder="Tìm kiếm bài viết..." id="searchModalInput">
+        <button class="search-modal-close" id="searchModalClose">
+          <i data-lucide="x"></i>
+        </button>
+      </div>
+      <div class="search-modal-results" id="searchResults">
+        <!-- Search results will appear here -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+  
+  <!-- App Scripts -->
+  <script src="js/firebase-config.js"></script>
+  <script src="js/app.js"></script>
+  
+  <script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+  </script>
+</body>
+</html>

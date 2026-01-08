@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quản lý danh mục - VietShare Admin</title>
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="admin.css">
+  <style>
+    .admin-layout { display: none; }
+    .category-table { width: 100%; border-collapse: collapse; }
+    .category-table th, .category-table td { padding: 1rem; text-align: left; border-bottom: 1px solid var(--border-color); }
+    .category-table th { background: var(--bg-secondary); font-weight: 600; font-size: 0.875rem; color: var(--text-muted); }
+    .category-table tr:hover { background: var(--bg-secondary); }
+    .category-icon-cell { font-size: 1.5rem; width: 60px; }
+    .category-name { font-weight: 600; }
+    .category-slug { color: var(--text-muted); font-size: 0.875rem; font-family: monospace; }
+    .category-desc { color: var(--text-muted); font-size: 0.875rem; max-width: 300px; }
+    .actions-cell { display: flex; gap: 0.5rem; }
+    .btn-icon { padding: 0.5rem; border-radius: var(--radius-md); background: var(--bg-secondary); border: 1px solid var(--border-color); cursor: pointer; transition: all 0.2s; display: inline-flex; align-items: center; justify-content: center; }
+    .btn-icon:hover { background: var(--primary); color: white; border-color: var(--primary); }
+    .btn-icon.delete:hover { background: #ef4444; border-color: #ef4444; }
+    .btn-icon svg { width: 16px; height: 16px; }
+    .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; align-items: center; justify-content: center; }
+    .modal.active { display: flex; }
+    .modal-content { background: var(--card-bg); border-radius: var(--radius-lg); padding: 2rem; width: 100%; max-width: 500px; }
+    .modal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; }
+    .modal-header h2 { font-size: 1.25rem; }
+    .modal-close { background: none; border: none; cursor: pointer; color: var(--text-muted); font-size: 1.5rem; }
+    .emoji-picker { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem; }
+    .emoji-btn { padding: 0.5rem; font-size: 1.5rem; border: 2px solid transparent; border-radius: var(--radius-md); cursor: pointer; background: var(--bg-secondary); transition: all 0.2s; }
+    .emoji-btn:hover, .emoji-btn.selected { border-color: var(--primary); background: rgba(139, 92, 246, 0.1); }
+    .stats-badge { display: inline-flex; align-items: center; gap: 0.25rem; padding: 0.25rem 0.5rem; background: var(--bg-secondary); border-radius: var(--radius-sm); font-size: 0.75rem; color: var(--text-muted); }
+  </style>
+</head>
+<body>
+  <div class="admin-layout">
+    <aside class="admin-sidebar">
+      <div class="sidebar-header">
+        <a href="../index.html" class="logo">
+          <img src="/favicon.png" alt="VietShare" style="width:40px;height:40px;">
+          <span class="logo-text">VietShare</span>
+        </a>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="index.html" class="nav-item"><i data-lucide="layout-dashboard"></i> Dashboard</a>
+        <a href="editor.html" class="nav-item"><i data-lucide="edit-3"></i> Viết bài mới</a>
+        <a href="articles.html" class="nav-item"><i data-lucide="file-text"></i> Quản lý bài viết</a>
+        <a href="categories.html" class="nav-item active"><i data-lucide="folder"></i> Danh mục</a>
+      </nav>
+      <div class="sidebar-footer">
+        <button class="nav-item" id="logoutBtn"><i data-lucide="log-out"></i> Đăng xuất</button>
+      </div>
+    </aside>
+
+    <main class="admin-main">
+      <header class="admin-header">
+        <h1>Quản lý danh mục</h1>
+        <button class="btn btn-primary" id="addCategoryBtn"><i data-lucide="plus"></i> Thêm danh mục</button>
+      </header>
+
+      <div class="admin-section">
+        <table class="category-table" id="categoryTable">
+          <thead>
+            <tr>
+              <th>Icon</th>
+              <th>Tên danh mục</th>
+              <th>Slug</th>
+              <th>Mô tả</th>
+              <th>Thống kê</th>
+              <th>Thao tác</th>
+            </tr>
+          </thead>
+          <tbody id="categoryBody">
+            <tr><td colspan="6" style="text-align:center;padding:2rem;">Đang tải...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+
+  <!-- Add/Edit Category Modal -->
+  <div class="modal" id="categoryModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 id="modalTitle">Thêm danh mục mới</h2>
+        <button class="modal-close" id="closeModal">&times;</button>
+      </div>
+      <form id="categoryForm">
+        <div class="form-group" style="margin-bottom:1rem;">
+          <label class="form-label">Tên danh mục</label>
+          <input type="text" class="form-input" id="catName" placeholder="Ví dụ: Du lịch" required>
+        </div>
+        <div class="form-group" style="margin-bottom:1rem;">
+          <label class="form-label">Slug (URL)</label>
+          <input type="text" class="form-input" id="catSlug" placeholder="Ví dụ: du-lich" required>
+        </div>
+        <div class="form-group" style="margin-bottom:1rem;">
+          <label class="form-label">Mô tả</label>
+          <input type="text" class="form-input" id="catDesc" placeholder="Mô tả ngắn gọn về danh mục">
+        </div>
+        <div class="form-group" style="margin-bottom:1.5rem;">
+          <label class="form-label">Chọn icon</label>
+          <div class="emoji-picker" id="emojiPicker">
+            <button type="button" class="emoji-btn" data-emoji="🖥️">🖥️</button>
+            <button type="button" class="emoji-btn" data-emoji="📰">📰</button>
+            <button type="button" class="emoji-btn" data-emoji="💡">💡</button>
+            <button type="button" class="emoji-btn" data-emoji="🌿">🌿</button>
+            <button type="button" class="emoji-btn" data-emoji="📚">📚</button>
+            <button type="button" class="emoji-btn" data-emoji="⭐">⭐</button>
+            <button type="button" class="emoji-btn" data-emoji="✈️">✈️</button>
+            <button type="button" class="emoji-btn" data-emoji="🎮">🎮</button>
+            <button type="button" class="emoji-btn" data-emoji="🎬">🎬</button>
+            <button type="button" class="emoji-btn" data-emoji="🍜">🍜</button>
+            <button type="button" class="emoji-btn" data-emoji="💰">💰</button>
+            <button type="button" class="emoji-btn" data-emoji="🏋️">🏋️</button>
+            <button type="button" class="emoji-btn" data-emoji="🎵">🎵</button>
+            <button type="button" class="emoji-btn" data-emoji="📱">📱</button>
+            <button type="button" class="emoji-btn" data-emoji="🏠">🏠</button>
+            <button type="button" class="emoji-btn" data-emoji="🎨">🎨</button>
+          </div>
+          <input type="hidden" id="catIcon" value="📁">
+        </div>
+        <div style="display:flex;gap:1rem;">
+          <button type="button" class="btn btn-secondary" id="cancelBtn" style="flex:1;">Hủy</button>
+          <button type="submit" class="btn btn-primary" id="saveBtn" style="flex:1;">Lưu danh mục</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+  <script src="../js/firebase-config.js"></script>
+  <script>
+  (function(){
+    lucide.createIcons();
+    
+    if(!window.VietShare){document.body.innerHTML='<p>Lỗi tải Firebase</p>';return;}
+    
+    var db=window.VietShare.db,auth=window.VietShare.auth;
+    var CATEGORIES=window.VietShare.CATEGORIES;
+    var showToast=window.VietShare.showToast;
+    var adminLayout=document.querySelector('.admin-layout');
+    var modal=document.getElementById('categoryModal');
+    var editingSlug=null;
+
+    auth.onAuthStateChanged(function(u){
+      if(!u){location.href='login.html';}
+      else{adminLayout.style.display='grid';loadCategories();}
+    });
+
+    document.getElementById('logoutBtn').onclick=function(){auth.signOut().then(function(){location.href='login.html';});};
+
+    function loadCategories(){
+      db.collection('articles').get().then(function(snapshot){
+        var articles=snapshot.docs.map(function(d){return d.data();});
+        var counts={},views={};
+        articles.forEach(function(a){
+          counts[a.category]=(counts[a.category]||0)+1;
+          views[a.category]=(views[a.category]||0)+(a.views||0);
+        });
+        
+        db.collection('categories').get().then(function(catSnapshot){
+          var customCats={};
+          catSnapshot.docs.forEach(function(d){
+            customCats[d.id]=d.data();
+          });
+          renderCategories(counts,views,customCats);
+        }).catch(function(){
+          renderCategories(counts,views,{});
+        });
+      }).catch(function(){
+        renderCategories({},{},{});
+      });
+    }
+
+    function renderCategories(counts,views,customCats){
+      var tbody=document.getElementById('categoryBody');
+      var allCats=Object.assign({},CATEGORIES,customCats);
+      var slugs=Object.keys(allCats);
+      
+      if(slugs.length===0){
+        tbody.innerHTML='<tr><td colspan="6" style="text-align:center;padding:2rem;">Chưa có danh mục nào</td></tr>';
+        return;
+      }
+      
+      tbody.innerHTML=slugs.map(function(slug){
+        var cat=allCats[slug];
+        var count=counts[slug]||0;
+        var viewCount=views[slug]||0;
+        
+        return '<tr data-slug="'+slug+'">' +
+          '<td class="category-icon-cell">'+(cat.icon||'📁')+'</td>' +
+          '<td><div class="category-name">'+cat.name+'</div></td>' +
+          '<td><span class="category-slug">/'+slug+'</span></td>' +
+          '<td><span class="category-desc">'+(cat.desc||'-')+'</span></td>' +
+          '<td>' +
+            '<span class="stats-badge"><i data-lucide="file-text" style="width:12px;height:12px;"></i> '+count+'</span> ' +
+            '<span class="stats-badge"><i data-lucide="eye" style="width:12px;height:12px;"></i> '+viewCount+'</span>' +
+          '</td>' +
+          '<td class="actions-cell">' +
+            '<button class="btn-icon edit-cat" data-slug="'+slug+'" title="Sửa"><i data-lucide="edit"></i></button>' +
+            '<button class="btn-icon delete delete-cat" data-slug="'+slug+'" title="Xóa"><i data-lucide="trash-2"></i></button>' +
+            '<a href="articles.html?cat='+slug+'" class="btn-icon" title="Xem bài viết"><i data-lucide="external-link"></i></a>' +
+          '</td>' +
+        '</tr>';
+      }).join('');
+      
+      lucide.createIcons();
+      bindEvents();
+    }
+
+    function bindEvents(){
+      document.querySelectorAll('.edit-cat').forEach(function(btn){
+        btn.onclick=function(){openEditModal(btn.dataset.slug);};
+      });
+      document.querySelectorAll('.delete-cat').forEach(function(btn){
+        btn.onclick=function(){deleteCategory(btn.dataset.slug);};
+      });
+    }
+
+    document.getElementById('addCategoryBtn').onclick=openAddModal;
+    document.getElementById('closeModal').onclick=closeModal;
+    document.getElementById('cancelBtn').onclick=closeModal;
+
+    function openAddModal(){
+      editingSlug=null;
+      document.getElementById('modalTitle').textContent='Thêm danh mục mới';
+      document.getElementById('catName').value='';
+      document.getElementById('catSlug').value='';
+      document.getElementById('catSlug').disabled=false;
+      document.getElementById('catDesc').value='';
+      document.getElementById('catIcon').value='📁';
+      document.querySelectorAll('.emoji-btn').forEach(function(b){b.classList.remove('selected');});
+      modal.classList.add('active');
+    }
+
+    function openEditModal(slug){
+      var allCats=Object.assign({},CATEGORIES);
+      db.collection('categories').get().then(function(snap){
+        snap.docs.forEach(function(d){allCats[d.id]=d.data();});
+        
+        if(allCats[slug]){
+          var cat=allCats[slug];
+          editingSlug=slug;
+          document.getElementById('modalTitle').textContent='Sửa danh mục';
+          document.getElementById('catName').value=cat.name||'';
+          document.getElementById('catSlug').value=slug;
+          document.getElementById('catSlug').disabled=true;
+          document.getElementById('catDesc').value=cat.desc||'';
+          document.getElementById('catIcon').value=cat.icon||'📁';
+          document.querySelectorAll('.emoji-btn').forEach(function(b){
+            b.classList.toggle('selected',b.dataset.emoji===cat.icon);
+          });
+          modal.classList.add('active');
+        }
+      });
+    }
+
+    function closeModal(){
+      modal.classList.remove('active');
+      document.getElementById('catSlug').disabled=false;
+    }
+
+    document.getElementById('catName').oninput=function(){
+      if(!editingSlug){
+        var name=this.value;
+        var slug=name.toLowerCase()
+          .normalize('NFD').replace(/[\u0300-\u036f]/g,'')
+          .replace(/đ/g,'d').replace(/Đ/g,'D')
+          .replace(/[^a-z0-9]+/g,'-')
+          .replace(/^-|-$/g,'');
+        document.getElementById('catSlug').value=slug;
+      }
+    };
+
+    document.querySelectorAll('.emoji-btn').forEach(function(btn){
+      btn.onclick=function(){
+        document.querySelectorAll('.emoji-btn').forEach(function(b){b.classList.remove('selected');});
+        btn.classList.add('selected');
+        document.getElementById('catIcon').value=btn.dataset.emoji;
+      };
+    });
+
+    document.getElementById('categoryForm').onsubmit=function(e){
+      e.preventDefault();
+      var name=document.getElementById('catName').value.trim();
+      var slug=document.getElementById('catSlug').value.trim();
+      var desc=document.getElementById('catDesc').value.trim();
+      var icon=document.getElementById('catIcon').value;
+      
+      if(!name||!slug){showToast('Vui lòng điền đầy đủ thông tin');return;}
+      
+      var data={name:name,desc:desc,icon:icon,updatedAt:firebase.firestore.FieldValue.serverTimestamp()};
+      
+      db.collection('categories').doc(slug).set(data,{merge:true}).then(function(){
+        showToast(editingSlug?'Đã cập nhật danh mục!':'Đã thêm danh mục mới!');
+        closeModal();
+        loadCategories();
+      }).catch(function(err){
+        showToast('Lỗi: '+err.message);
+      });
+    };
+
+    function deleteCategory(slug){
+      if(confirm('Bạn có chắc muốn xóa danh mục "'+slug+'"?\nBài viết trong danh mục sẽ không bị xóa.')){
+        db.collection('categories').doc(slug).delete().then(function(){
+          showToast('Đã xóa danh mục');
+          loadCategories();
+        }).catch(function(err){
+          showToast('Lỗi: '+err.message);
+        });
+      }
+    }
+  })();
+  </script>
+</body>
+</html>

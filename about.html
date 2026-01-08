@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giới thiệu - VietShare</title>
+  <meta name="description" content="Tìm hiểu về VietShare - Blog chia sẻ kiến thức công nghệ, mẹo vặt và lifestyle hàng đầu Việt Nam.">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .page-content { max-width: 800px; margin: 0 auto; padding: 3rem var(--container-padding); }
+    .page-title { font-size: 2rem; font-weight: 700; margin-bottom: 1.5rem; background: var(--gradient-primary); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .page-content p { margin-bottom: 1rem; color: var(--text-secondary); line-height: 1.8; }
+    .page-content h2 { font-size: 1.25rem; margin: 2rem 0 1rem; color: var(--text-primary); }
+    .page-content ul { margin: 1rem 0 1rem 1.5rem; color: var(--text-secondary); }
+    .page-content li { margin-bottom: 0.5rem; }
+    .team-card { display: flex; gap: 1.5rem; padding: 1.5rem; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: var(--radius-lg); margin: 1.5rem 0; }
+    .team-avatar { width: 80px; height: 80px; border-radius: 50%; background: var(--gradient-primary); display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem; flex-shrink: 0; }
+    .team-info h3 { font-size: 1.125rem; margin-bottom: 0.25rem; }
+    .team-info p { font-size: 0.875rem; color: var(--text-muted); margin: 0; }
+    @media (max-width: 768px) {
+      .page-title { font-size: 1.5rem; }
+      .team-card { flex-direction: column; text-align: center; }
+      .team-avatar { margin: 0 auto; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <nav class="nav">
+        <a href="index.html" class="logo">
+          <img src="/favicon.png" alt="VietShare" style="width:40px;height:40px;">
+          <span class="logo-text">Viet<span>Share</span></span>
+        </a>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="index.html" class="nav-link">Trang chủ</a></li>
+        </ul>
+        <div class="nav-actions">
+          <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+            <i data-lucide="sun" class="icon-sun"></i>
+            <i data-lucide="moon" class="icon-moon"></i>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-content">
+    <h1 class="page-title">Giới thiệu về VietShare</h1>
+    
+    <p>Chào mừng bạn đến với <strong>VietShare</strong> - nền tảng blog chia sẻ kiến thức công nghệ, mẹo vặt và lifestyle hàng đầu dành cho người Việt.</p>
+    
+    <h2>📌 Sứ mệnh của chúng tôi</h2>
+    <p>VietShare được thành lập với mục tiêu mang đến những nội dung chất lượng, hữu ích và dễ hiểu nhất cho cộng đồng người dùng Việt Nam. Chúng tôi tin rằng kiến thức công nghệ không nên là rào cản, mà là công cụ giúp mọi người nâng cao chất lượng cuộc sống.</p>
+    
+    <h2>🎯 Những gì chúng tôi mang đến</h2>
+    <ul>
+      <li><strong>Tin tức công nghệ:</strong> Cập nhật những xu hướng mới nhất trong thế giới công nghệ</li>
+      <li><strong>Hướng dẫn chi tiết:</strong> Các bài viết hướng dẫn từ cơ bản đến nâng cao</li>
+      <li><strong>Mẹo vặt hay:</strong> Những thủ thuật giúp bạn sử dụng thiết bị hiệu quả hơn</li>
+      <li><strong>Review sản phẩm:</strong> Đánh giá chân thực và khách quan</li>
+      <li><strong>Lifestyle:</strong> Chia sẻ về lối sống số hiện đại</li>
+    </ul>
+    
+    <h2>👨‍💻 Đội ngũ</h2>
+    <div class="team-card">
+      <div class="team-avatar">VS</div>
+      <div class="team-info">
+        <h3>VietShare Team</h3>
+        <p>Đội ngũ biên tập viên và content creator đam mê công nghệ, luôn nỗ lực mang đến những nội dung chất lượng nhất cho độc giả.</p>
+      </div>
+    </div>
+    
+    <h2>📞 Liên hệ với chúng tôi</h2>
+    <p>Nếu bạn có bất kỳ câu hỏi, góp ý hoặc muốn hợp tác, đừng ngần ngại <a href="contact.html" style="color: var(--primary);">liên hệ với chúng tôi</a>.</p>
+    
+    <p style="margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--border-color); font-size: 0.875rem; color: var(--text-muted);">
+      Cảm ơn bạn đã ghé thăm VietShare! 💜
+    </p>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>© 2024 VietShare. All rights reserved.</p>
+        <div class="footer-links-inline">
+          <a href="about.html">Giới thiệu</a>
+          <a href="contact.html">Liên hệ</a>
+          <a href="privacy.html">Chính sách bảo mật</a>
+          <a href="terms.html">Điều khoản</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+    // Theme toggle
+    const theme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', theme);
+    document.getElementById('themeToggle').addEventListener('click', () => {
+      const current = document.documentElement.getAttribute('data-theme');
+      const next = current === 'light' ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+    });
+  </script>
+</body>
+</html>

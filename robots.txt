@@ -1,0 +1,15 @@
+# VietShare Robots.txt
+# https://vietshare.site
+
+User-agent: *
+Allow: /
+
+# Disallow admin and tools
+Disallow: /admin/
+Disallow: /tools/
+
+# Sitemap
+Sitemap: https://vietshare.site/sitemap.xml
+
+# Crawl delay
+Crawl-delay: 1
