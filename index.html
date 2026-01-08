@@ -36,6 +36,13 @@
   <meta name="twitter:description" content="Blog chia sẻ kiến thức công nghệ, tin tức, mẹo vặt và lifestyle.">
   <meta name="twitter:image" content="https://vietshare.site/assets/og-image.jpg">
   
+  <!-- Preload Critical Resources -->
+  <link rel="preload" href="css/style.css" as="style">
+  <link rel="preload" href="favicon.png" as="image">
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://www.gstatic.com">
+  <link rel="dns-prefetch" href="https://firebasestorage.googleapis.com">
+  
   <!-- Structured Data - Website -->
   <script type="application/ld+json">
   {
@@ -63,16 +70,33 @@
   }
   </script>
   
-  <!-- Google Fonts -->
+  <!-- Google Fonts - Optimized -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet"></noscript>
   
-  <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <!-- Lucide Icons - Deferred -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
   
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="css/style.css">
+  <!-- Critical CSS - Inline for faster first paint -->
+  <style>
+    :root{--bg-primary:#fff;--text-primary:#0f172a;--font-sans:'Inter',-apple-system,sans-serif}
+    [data-theme="dark"]{--bg-primary:#0f172a;--text-primary:#f8fafc}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:var(--font-sans);background:var(--bg-primary);color:var(--text-primary)}
+    .header{position:sticky;top:0;z-index:100;background:var(--bg-primary);padding:1rem 0;border-bottom:1px solid rgba(0,0,0,0.1)}
+    .container{max-width:1280px;margin:0 auto;padding:0 1.5rem}
+    .header-inner{display:flex;align-items:center;justify-content:space-between}
+    .logo{display:flex;align-items:center;gap:0.5rem;font-weight:700;font-size:1.25rem}
+    .loading{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:3rem}
+    .loading-spinner{width:40px;height:40px;border:3px solid rgba(0,0,0,0.1);border-top-color:#6366f1;border-radius:50%;animation:spin 1s linear infinite}
+    @keyframes spin{to{transform:rotate(360deg)}}
+  </style>
+  
+  <!-- Main CSS - Async load -->
+  <link rel="stylesheet" href="css/style.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="css/style.css"></noscript>
 </head>
 <body>
   <!-- Reading Progress Bar -->

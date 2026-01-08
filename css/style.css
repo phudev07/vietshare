@@ -411,12 +411,29 @@ h4 { font-size: 1.25rem; }
   display: flex;
   gap: 0.5rem;
   overflow-x: auto;
-  padding-bottom: 0.5rem;
-  scrollbar-width: none;
+  overflow-y: hidden;
+  padding-bottom: 0.75rem;
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary) transparent;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
 }
 
 .categories-scroll::-webkit-scrollbar {
-  display: none;
+  height: 4px;
+}
+
+.categories-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.categories-scroll::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 4px;
+}
+
+.categories-scroll::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-dark);
 }
 
 .category-tab {

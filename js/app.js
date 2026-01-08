@@ -358,7 +358,7 @@
     
     elements.featuredPost.innerHTML = `
       <a href="article.html?slug=${featured.slug}" class="post-thumbnail">
-        <img src="${featured.thumbnail || 'https://via.placeholder.com/800x500'}" alt="${featured.title}">
+        <img src="${featured.thumbnail || 'https://via.placeholder.com/800x500'}" alt="${featured.title}" loading="lazy" decoding="async">
         <span class="post-category-badge">${categoryInfo.name}</span>
       </a>
       <div class="post-content">
@@ -622,6 +622,40 @@
     
     // Category tabs
     elements.categoriesScroll?.addEventListener('click', handleCategoryClick);
+    
+    // Drag to scroll for categories (desktop)
+    if (elements.categoriesScroll) {
+      let isDown = false;
+      let startX;
+      let scrollLeft;
+      
+      elements.categoriesScroll.addEventListener('mousedown', (e) => {
+        isDown = true;
+        elements.categoriesScroll.style.cursor = 'grabbing';
+        startX = e.pageX - elements.categoriesScroll.offsetLeft;
+        scrollLeft = elements.categoriesScroll.scrollLeft;
+      });
+      
+      elements.categoriesScroll.addEventListener('mouseleave', () => {
+        isDown = false;
+        elements.categoriesScroll.style.cursor = 'grab';
+      });
+      
+      elements.categoriesScroll.addEventListener('mouseup', () => {
+        isDown = false;
+        elements.categoriesScroll.style.cursor = 'grab';
+      });
+      
+      elements.categoriesScroll.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - elements.categoriesScroll.offsetLeft;
+        const walk = (x - startX) * 2;
+        elements.categoriesScroll.scrollLeft = scrollLeft - walk;
+      });
+      
+      elements.categoriesScroll.style.cursor = 'grab';
+    }
     
     // Pagination
     elements.pagination?.addEventListener('click', handlePaginationClick);
