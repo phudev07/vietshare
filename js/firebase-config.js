@@ -20,6 +20,15 @@ firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 const auth = firebase.auth();
 
+// Enable offline persistence for faster loading
+db.enablePersistence({ synchronizeTabs: true }).catch(err => {
+  if (err.code === 'failed-precondition') {
+    console.log('Persistence unavailable: multiple tabs open');
+  } else if (err.code === 'unimplemented') {
+    console.log('Persistence not supported by browser');
+  }
+});
+
 // ============================================
 // Cloudinary Configuration
 // ============================================

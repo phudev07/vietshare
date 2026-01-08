@@ -177,20 +177,29 @@
   // Fetch Articles from Firestore
   // ============================================
   async function fetchArticles() {
+    // Return cached data if available
+    if (state.articles.length > 0) {
+      renderFeaturedPost();
+      renderPosts();
+      renderPopularPosts();
+      renderPopularTags();
+      return;
+    }
+    
     state.isLoading = true;
     
     try {
+      // Limit to 50 articles for faster initial load
       const snapshot = await db.collection('articles')
+        .where('status', '==', 'published')
         .orderBy('publishedAt', 'desc')
+        .limit(50)
         .get();
       
-      // Only show published articles (filter out drafts)
-      state.articles = snapshot.docs
-        .map(doc => ({
-          id: doc.id,
-          ...doc.data()
-        }))
-        .filter(article => article.status !== 'draft');
+      state.articles = snapshot.docs.map(doc => ({
+        id: doc.id,
+        ...doc.data()
+      }));
 
       updateCategoryCounts();
       renderFeaturedPost();
@@ -200,6 +209,29 @@
       
     } catch (error) {
       console.error('Error fetching articles:', error);
+      
+      // Fallback: try without composite index requirement
+      if (error.code === 'failed-precondition') {
+        try {
+          const snapshot = await db.collection('articles')
+            .orderBy('publishedAt', 'desc')
+            .limit(50)
+            .get();
+          
+          state.articles = snapshot.docs
+            .map(doc => ({ id: doc.id, ...doc.data() }))
+            .filter(article => article.status !== 'draft');
+          
+          updateCategoryCounts();
+          renderFeaturedPost();
+          renderPosts();
+          renderPopularPosts();
+          renderPopularTags();
+          return;
+        } catch (e) {
+          console.error('Fallback also failed:', e);
+        }
+      }
       
       // Show demo content if Firebase is not configured
       if (error.code === 'permission-denied' || error.message.includes('API key')) {
@@ -765,8 +797,11 @@
   async function init() {
     initTheme();
     initEventListeners();
-    await loadNavbarCategories();
-    fetchArticles();
+    // Load categories and articles in parallel for faster startup
+    await Promise.all([
+      loadNavbarCategories(),
+      fetchArticles()
+    ]);
   }
 
   // Start when DOM is ready
