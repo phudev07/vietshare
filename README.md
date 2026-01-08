@@ -4,7 +4,7 @@ Blog tin tức công nghệ, mẹo vặt, hướng dẫn và đời sống - Ti�
 
 ## 🌐 Demo
 
-[vietshare.site](https://vietshare.site) (nếu đã deploy)
+[vietshare.site](https://vietshare.site)
 
 ## ✨ Tính năng
 
