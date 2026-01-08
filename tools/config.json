@@ -25,58 +25,43 @@
       "category": "tin-tuc"
     },
     {
-      "name": "Quantrimang Mẹo Hay",
-      "rss": "https://quantrimang.com/rss/meo-hay.rss",
-      "category": "meo-vat"
-    },
-    {
-      "name": "Quantrimang Thủ Thuật",
-      "rss": "https://quantrimang.com/rss/thu-thuat.rss",
-      "category": "huong-dan"
-    },
-    {
-      "name": "Quantrimang Windows",
-      "rss": "https://quantrimang.com/rss/windows.rss",
-      "category": "huong-dan"
-    },
-    {
-      "name": "Quantrimang Android",
-      "rss": "https://quantrimang.com/rss/android.rss",
-      "category": "huong-dan"
-    },
-    {
-      "name": "Quantrimang iOS",
-      "rss": "https://quantrimang.com/rss/ios.rss",
-      "category": "huong-dan"
-    },
-    {
-      "name": "Quantrimang Ứng dụng",
-      "rss": "https://quantrimang.com/rss/ung-dung.rss",
-      "category": "ung-dung"
-    },
-    {
-      "name": "Quantrimang Game",
-      "rss": "https://quantrimang.com/rss/game.rss",
-      "category": "giai-tri"
-    },
-    {
       "name": "VnExpress Đời sống",
       "rss": "https://vnexpress.net/rss/doi-song.rss",
       "category": "doi-song"
     },
     {
-      "name": "Kenh14 Học đường",
-      "rss": "https://kenh14.vn/home.rss",
+      "name": "VnExpress Giáo dục",
+      "rss": "https://vnexpress.net/rss/giao-duc.rss",
       "category": "hoc-tap"
     },
     {
-      "name": "Báo Mới Công nghệ",
-      "rss": "https://www.baomoi.com/cong-nghe.rss",
-      "category": "cong-nghe"
+      "name": "VnExpress Ý kiến",
+      "rss": "https://vnexpress.net/rss/y-kien.rss",
+      "category": "tin-tuc"
     },
     {
       "name": "Tinhte.vn",
       "rss": "https://tinhte.vn/rss",
+      "category": "cong-nghe"
+    },
+    {
+      "name": "Genk Game",
+      "rss": "https://genk.vn/rss/game.rss",
+      "category": "giai-tri"
+    },
+    {
+      "name": "24h Đời sống",
+      "rss": "https://cdn.24h.com.vn/upload/rss/doisong.rss",
+      "category": "doi-song"
+    },
+    {
+      "name": "VnExpress Khoa học",
+      "rss": "https://vnexpress.net/rss/khoa-hoc.rss",
+      "category": "cong-nghe"
+    },
+    {
+      "name": "VnExpress Xe",
+      "rss": "https://vnexpress.net/rss/oto-xe-may.rss",
       "category": "cong-nghe"
     }
   ],

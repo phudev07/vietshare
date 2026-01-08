@@ -87,13 +87,19 @@
   // Search
   // ============================================
   function openSearch() {
-    elements.searchModal?.classList.add('active');
+    if (elements.searchModal) {
+      elements.searchModal.style.display = 'flex';
+      elements.searchModal.classList.add('active');
+    }
     elements.searchModalInput?.focus();
     document.body.style.overflow = 'hidden';
   }
 
   function closeSearch() {
-    elements.searchModal?.classList.remove('active');
+    if (elements.searchModal) {
+      elements.searchModal.classList.remove('active');
+      elements.searchModal.style.display = 'none';
+    }
     document.body.style.overflow = '';
     if (elements.searchModalInput) elements.searchModalInput.value = '';
     if (elements.searchResults) elements.searchResults.innerHTML = '';
