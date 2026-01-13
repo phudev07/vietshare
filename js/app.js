@@ -375,7 +375,14 @@
     
     Object.keys(cats).forEach(cat => {
       const countEl = document.getElementById(`count-${cat}`);
-      if (countEl) countEl.textContent = counts[cat] || 0;
+      if (countEl) {
+        countEl.textContent = counts[cat] || 0;
+        // Hide categories with 0 articles to avoid AdSense policy violation
+        const tabEl = countEl.closest('.category-tab');
+        if (tabEl) {
+          tabEl.style.display = (counts[cat] || 0) > 0 ? '' : 'none';
+        }
+      }
     });
   }
 
