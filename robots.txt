@@ -1,15 +1,8 @@
-# VietShare Robots.txt
-# https://vietshare.site
-
 User-agent: *
 Allow: /
 
-# Disallow admin and tools
+# Disallow admin pages
 Disallow: /admin/
-Disallow: /tools/
 
-# Sitemap
+# Sitemap location
 Sitemap: https://vietshare.site/sitemap.xml
-
-# Crawl delay
-Crawl-delay: 1

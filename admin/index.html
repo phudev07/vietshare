@@ -1,327 +1,286 @@
 <!DOCTYPE html>
-<html lang="vi" data-theme="light">
+<html lang="vi">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
-  <meta name="googlebot" content="noindex, nofollow">
-  <title>Admin Dashboard - VietShare</title>
-  <link rel="icon" type="image/png" href="../favicon.png">
+  <title>Dashboard - VietShare Admin</title>
+  
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
-  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
-  <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="admin.css">
-  <style>
-    .admin-layout { display: none; }
-    .dashboard-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 1.5rem; margin-top: 1.5rem; }
-    @media (max-width: 1024px) { .dashboard-grid { grid-template-columns: 1fr; } }
-    .top-articles { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.5rem; }
-    .top-articles h3 { margin-bottom: 1rem; font-size: 1rem; display: flex; align-items: center; gap: 0.5rem; }
-    .top-article-item { display: flex; justify-content: space-between; align-items: center; padding: 0.75rem 0; border-bottom: 1px solid var(--border-color); }
-    .top-article-item:last-child { border-bottom: none; }
-    .top-article-title { font-size: 0.875rem; color: var(--text-primary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; }
-    .top-article-views { font-size: 0.75rem; color: var(--text-muted); display: flex; align-items: center; gap: 0.25rem; }
-    .category-stats { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.5rem; margin-top: 1rem; }
-    .category-stats h3 { margin-bottom: 1rem; font-size: 1rem; }
-    .category-bar { margin-bottom: 0.75rem; }
-    .category-bar-header { display: flex; justify-content: space-between; font-size: 0.8125rem; margin-bottom: 0.25rem; }
-    .category-bar-track { height: 8px; background: var(--bg-secondary); border-radius: 4px; overflow: hidden; }
-    .category-bar-fill { height: 100%; border-radius: 4px; transition: width 0.5s ease; }
-    .quick-stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
-    .quick-stat { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1rem; text-align: center; }
-    .quick-stat-value { font-size: 1.5rem; font-weight: 700; color: var(--text-primary); }
-    .quick-stat-label { font-size: 0.75rem; color: var(--text-muted); }
-  </style>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  
+  <!-- Dark Mode -->
+  <script src="../js/dark-mode.js"></script>
 </head>
 <body>
   <div class="admin-layout">
+    <!-- Sidebar -->
     <aside class="admin-sidebar">
-      <div class="sidebar-header">
-        <a href="../index.html" class="logo">
-          <img src="/favicon.png" alt="VietShare" style="width:40px;height:40px;">
-          <span class="logo-text">VietShare</span>
+      <div class="admin-sidebar-logo">VietShare</div>
+      <ul class="admin-nav">
+        <li><a href="/admin/index.html" class="active">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+          <span>Dashboard</span>
+        </a></li>
+        <li><a href="/admin/articles.html">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          <span>Bài viết</span>
+        </a></li>
+        <li><a href="/admin/editor.html">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+          <span>Viết bài</span>
+        </a></li>
+        <li><a href="/admin/quick-editor.html">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M9 9h6"/><path d="M9 13h6"/><path d="M9 17h4"/></svg>
+          <span>Quick Paste</span>
+        </a></li>
+        <li><a href="/admin/categories.html">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+          <span>Danh mục</span>
+        </a></li>
+      </ul>
+      
+      <div style="margin-top: auto; padding-top: var(--spacing-xl);">
+        <a href="/" style="display: block; padding: var(--spacing-sm); color: rgba(255,255,255,0.5); font-size: 0.875rem;">
+          ← Xem trang web
         </a>
-      </div>
-      <nav class="sidebar-nav">
-        <a href="index.html" class="nav-item active"><i data-lucide="layout-dashboard"></i> Dashboard</a>
-        <a href="editor.html" class="nav-item"><i data-lucide="edit-3"></i> Viết bài mới</a>
-        <a href="articles.html" class="nav-item"><i data-lucide="file-text"></i> Quản lý bài viết</a>
-        <a href="categories.html" class="nav-item"><i data-lucide="folder"></i> Danh mục</a>
-      </nav>
-      <div class="sidebar-footer">
-        <button class="nav-item" id="logoutBtn"><i data-lucide="log-out"></i> Đăng xuất</button>
+        <button id="logoutBtn" class="btn btn-secondary" style="width: 100%; margin-top: var(--spacing-sm);">
+          Đăng xuất
+        </button>
       </div>
     </aside>
-
+    
+    <!-- Main Content -->
     <main class="admin-main">
-      <header class="admin-header">
-        <h1>Dashboard</h1>
-        <div class="admin-user" id="adminUser">
-          <img src="https://ui-avatars.com/api/?name=Admin&background=6366f1&color=fff" alt="Admin" class="user-avatar">
-          <span>Admin</span>
+      <div class="admin-header">
+        <h1 class="admin-title">Dashboard</h1>
+      </div>
+      
+      <!-- Main Stats -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: var(--spacing-md); margin-bottom: var(--spacing-lg);">
+        <div style="background: var(--color-bg); padding: var(--spacing-lg); border-left: 4px solid var(--color-accent);">
+          <p class="text-muted" style="font-size: 0.8rem; margin-bottom: var(--spacing-xs);">Tổng bài viết</p>
+          <p style="font-size: 1.75rem; font-weight: 700; margin: 0;" id="totalArticles">0</p>
         </div>
-      </header>
-
-      <!-- Stats Cards -->
-      <div class="stats-grid">
-        <div class="stat-card">
-          <div class="stat-icon" style="background: #dbeafe; color: #2563eb;"><i data-lucide="file-text"></i></div>
-          <div class="stat-content">
-            <h3 id="totalArticles">0</h3>
-            <p>Tổng bài viết</p>
-          </div>
+        <div style="background: var(--color-bg); padding: var(--spacing-lg); border-left: 4px solid var(--color-success);">
+          <p class="text-muted" style="font-size: 0.8rem; margin-bottom: var(--spacing-xs);">Đã đăng</p>
+          <p style="font-size: 1.75rem; font-weight: 700; margin: 0;" id="publishedArticles">0</p>
         </div>
-        <div class="stat-card">
-          <div class="stat-icon" style="background: #dcfce7; color: #16a34a;"><i data-lucide="check-circle"></i></div>
-          <div class="stat-content">
-            <h3 id="publishedCount">0</h3>
-            <p>Đã đăng</p>
-          </div>
+        <div style="background: var(--color-bg); padding: var(--spacing-lg); border-left: 4px solid #F59E0B;">
+          <p class="text-muted" style="font-size: 0.8rem; margin-bottom: var(--spacing-xs);">Bản nháp</p>
+          <p style="font-size: 1.75rem; font-weight: 700; margin: 0;" id="draftArticles">0</p>
         </div>
-        <div class="stat-card">
-          <div class="stat-icon" style="background: #fef3c7; color: #d97706;"><i data-lucide="edit"></i></div>
-          <div class="stat-content">
-            <h3 id="draftCount">0</h3>
-            <p>Bản nháp</p>
-          </div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-icon" style="background: #fce7f3; color: #db2777;"><i data-lucide="eye"></i></div>
-          <div class="stat-content">
-            <h3 id="totalViews">0</h3>
-            <p>Tổng lượt xem</p>
-          </div>
+        <div style="background: var(--color-bg); padding: var(--spacing-lg); border-left: 4px solid #8B5CF6;">
+          <p class="text-muted" style="font-size: 0.8rem; margin-bottom: var(--spacing-xs);">Tổng lượt xem</p>
+          <p style="font-size: 1.75rem; font-weight: 700; margin: 0;" id="totalViews">0</p>
         </div>
       </div>
-
-      <!-- Dashboard Grid -->
-      <div class="dashboard-grid">
-        <!-- Left Column - Recent Articles -->
-        <div>
-          <section class="admin-section">
-            <div class="section-header">
-              <h2>Bài viết gần đây</h2>
-              <a href="editor.html" class="btn btn-primary"><i data-lucide="plus"></i> Viết bài mới</a>
-            </div>
-            <div class="articles-table" id="articlesTable">
-              <div class="loading"><div class="loading-spinner"></div><span>Đang tải...</span></div>
-            </div>
-          </section>
+      
+      <!-- Platform Stats -->
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--spacing-md); margin-bottom: var(--spacing-lg);">
+        <div style="background: var(--color-bg); padding: var(--spacing-md); text-align: center;">
+          <p class="text-muted" style="font-size: 0.75rem; margin-bottom: var(--spacing-xs);">Zalo PC</p>
+          <p style="font-size: 1.25rem; font-weight: 600; margin: 0;" id="statZaloPC">0</p>
         </div>
-
-        <!-- Right Column - Stats -->
-        <div>
-          <!-- Top Articles -->
-          <div class="top-articles">
-            <h3><i data-lucide="trophy" style="width:18px;height:18px;color:#d97706;"></i> Bài viết xem nhiều nhất</h3>
-            <div id="topArticles">
-              <div class="loading"><div class="loading-spinner"></div></div>
-            </div>
-          </div>
-
-          <!-- Category Stats -->
-          <div class="category-stats">
-            <h3>Phân bố theo danh mục</h3>
-            <div id="categoryStats">
-              <div class="loading"><div class="loading-spinner"></div></div>
-            </div>
-          </div>
-
-          <!-- Quick Stats -->
-          <div class="quick-stats" style="margin-top:1rem;">
-            <div class="quick-stat">
-              <div class="quick-stat-value" id="avgViews">0</div>
-              <div class="quick-stat-label">TB lượt xem/bài</div>
-            </div>
-            <div class="quick-stat">
-              <div class="quick-stat-value" id="featuredCount">0</div>
-              <div class="quick-stat-label">Bài nổi bật</div>
-            </div>
-          </div>
+        <div style="background: var(--color-bg); padding: var(--spacing-md); text-align: center;">
+          <p class="text-muted" style="font-size: 0.75rem; margin-bottom: var(--spacing-xs);">Zalo Web</p>
+          <p style="font-size: 1.25rem; font-weight: 600; margin: 0;" id="statZaloWeb">0</p>
         </div>
+        <div style="background: var(--color-bg); padding: var(--spacing-md); text-align: center;">
+          <p class="text-muted" style="font-size: 0.75rem; margin-bottom: var(--spacing-xs);">Zalo Mobile</p>
+          <p style="font-size: 1.25rem; font-weight: 600; margin: 0;" id="statZaloMobile">0</p>
+        </div>
+      </div>
+      
+      <!-- Category Stats -->
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--spacing-md); margin-bottom: var(--spacing-xl);">
+        <div style="background: var(--color-bg); padding: var(--spacing-sm); text-align: center; border-top: 3px solid #EF4444;">
+          <p style="font-size: 1.125rem; font-weight: 600; margin: 0;" id="statLoi">0</p>
+          <p class="text-muted" style="font-size: 0.6875rem; margin: 0;">Lỗi</p>
+        </div>
+        <div style="background: var(--color-bg); padding: var(--spacing-sm); text-align: center; border-top: 3px solid #3B82F6;">
+          <p style="font-size: 1.125rem; font-weight: 600; margin: 0;" id="statViSao">0</p>
+          <p class="text-muted" style="font-size: 0.6875rem; margin: 0;">Vì sao</p>
+        </div>
+        <div style="background: var(--color-bg); padding: var(--spacing-sm); text-align: center; border-top: 3px solid #10B981;">
+          <p style="font-size: 1.125rem; font-weight: 600; margin: 0;" id="statMeo">0</p>
+          <p class="text-muted" style="font-size: 0.6875rem; margin: 0;">Mẹo</p>
+        </div>
+        <div style="background: var(--color-bg); padding: var(--spacing-sm); text-align: center; border-top: 3px solid #F59E0B;">
+          <p style="font-size: 1.125rem; font-weight: 600; margin: 0;" id="statHuongDan">0</p>
+          <p class="text-muted" style="font-size: 0.6875rem; margin: 0;">Hướng dẫn</p>
+        </div>
+      </div>
+      
+      <!-- Quick Actions -->
+      <div style="margin-bottom: var(--spacing-xl);">
+        <h2 style="font-size: 1.125rem; margin-bottom: var(--spacing-md);">Thao tác nhanh</h2>
+        <div class="flex gap-md">
+          <a href="/admin/editor.html" class="btn btn-primary">+ Viết bài mới</a>
+          <a href="/admin/quick-editor.html" class="btn btn-secondary">Quick Paste</a>
+          <a href="/admin/articles.html" class="btn btn-secondary">Quản lý bài viết</a>
+        </div>
+      </div>
+      
+      <!-- Recent Articles -->
+      <div>
+        <h2 style="font-size: 1.125rem; margin-bottom: var(--spacing-md);">Bài viết gần đây</h2>
+        <table class="table" id="recentArticlesTable">
+          <thead>
+            <tr>
+              <th>Tiêu đề</th>
+              <th>Danh mục</th>
+              <th>Views</th>
+              <th>Trạng thái</th>
+              <th>Ngày tạo</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="recentArticles">
+            <tr>
+              <td colspan="6" class="text-center text-muted">Đang tải...</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </main>
   </div>
-
-  <div class="toast" id="toast"></div>
-
-  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
-  <script src="../js/firebase-config.js"></script>
-  <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    lucide.createIcons();
+  
+  <script type="module">
+    import { auth, db, onAuthStateChanged, signOut, collection, getDocs, query, orderBy, limit, where } from '../js/firebase-config.js';
     
-    if (!window.VietShare || !window.VietShare.auth || !window.VietShare.db) {
-      document.body.innerHTML = '<div style="padding:2rem;text-align:center;"><h2>Lỗi tải Firebase</h2><p><a href="login.html">Quay lại đăng nhập</a></p></div>';
-      return;
-    }
-
-    const db = window.VietShare.db;
-    const auth = window.VietShare.auth;
-    const formatDate = window.VietShare.formatDate;
-    const getCategoryInfo = window.VietShare.getCategoryInfo;
-    const showToast = window.VietShare.showToast;
-    const loadCategories = window.VietShare.loadCategories;
-    
-    const adminLayout = document.querySelector('.admin-layout');
-
-    auth.onAuthStateChanged(function(user) {
+    // Auth check
+    onAuthStateChanged(auth, (user) => {
       if (!user) {
-        window.location.href = 'login.html';
+        window.location.href = '/admin/login.html';
       } else {
-        adminLayout.style.display = 'grid';
-        document.getElementById('adminUser').querySelector('span').textContent = user.email;
         loadDashboard();
       }
     });
-
-    document.getElementById('logoutBtn').addEventListener('click', function() {
-      auth.signOut().then(function() {
-        window.location.href = 'login.html';
-      });
+    
+    // Logout
+    document.getElementById('logoutBtn').addEventListener('click', async () => {
+      await signOut(auth);
+      window.location.href = '/admin/login.html';
     });
-
+    
+    // Load Dashboard Data
     async function loadDashboard() {
       try {
-        // Load categories first
-        await loadCategories();
+        const articlesRef = collection(db, 'articles');
+        const snapshot = await getDocs(articlesRef);
         
-        const snapshot = await db.collection('articles').orderBy('updatedAt', 'desc').get();
-        const articles = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+        let total = 0;
+        let published = 0;
+        let draft = 0;
+        let totalViews = 0;
         
-        // Basic stats
-        const published = articles.filter(a => a.status !== 'draft');
-        const drafts = articles.filter(a => a.status === 'draft');
-        const totalViews = articles.reduce((sum, a) => sum + (a.views || 0), 0);
-        const featured = articles.filter(a => a.featured);
+        // Platform counts
+        let zaloPC = 0, zaloWeb = 0, zaloMobile = 0;
         
-        document.getElementById('totalArticles').textContent = articles.length;
-        document.getElementById('publishedCount').textContent = published.length;
-        document.getElementById('draftCount').textContent = drafts.length;
-        document.getElementById('totalViews').textContent = totalViews.toLocaleString();
-        document.getElementById('avgViews').textContent = articles.length > 0 ? Math.round(totalViews / articles.length) : 0;
-        document.getElementById('featuredCount').textContent = featured.length;
+        // Category counts
+        let catLoi = 0, catViSao = 0, catMeo = 0, catHuongDan = 0;
         
-        // Top articles by views
-        renderTopArticles(articles);
+        const articles = [];
         
-        // Category distribution
-        renderCategoryStats(articles);
-        
-        // Recent articles table
-        renderArticlesTable(articles.slice(0, 8));
-        
-      } catch (error) {
-        console.error('Dashboard error:', error);
-        renderArticlesTable([]);
-      }
-    }
-
-    function renderTopArticles(articles) {
-      const container = document.getElementById('topArticles');
-      const top5 = [...articles].sort((a, b) => (b.views || 0) - (a.views || 0)).slice(0, 5);
-      
-      if (top5.length === 0) {
-        container.innerHTML = '<p style="color:var(--text-muted);font-size:0.875rem;">Chưa có dữ liệu</p>';
-        return;
-      }
-      
-      container.innerHTML = top5.map((a, i) => `
-        <div class="top-article-item">
-          <span class="top-article-title" title="${a.title}">${i + 1}. ${a.title}</span>
-          <span class="top-article-views"><i data-lucide="eye" style="width:12px;height:12px;"></i> ${(a.views || 0).toLocaleString()}</span>
-        </div>
-      `).join('');
-      lucide.createIcons();
-    }
-
-    function renderCategoryStats(articles) {
-      const container = document.getElementById('categoryStats');
-      const cats = window.VietShare.CATEGORIES;
-      const counts = {};
-      
-      articles.forEach(a => {
-        if (a.category) {
-          counts[a.category] = (counts[a.category] || 0) + 1;
-        }
-      });
-      
-      const total = articles.length || 1;
-      const colors = ['#3b82f6', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6', '#ec4899'];
-      let colorIndex = 0;
-      
-      const sorted = Object.keys(counts).sort((a, b) => counts[b] - counts[a]).slice(0, 6);
-      
-      if (sorted.length === 0) {
-        container.innerHTML = '<p style="color:var(--text-muted);font-size:0.875rem;">Chưa có dữ liệu</p>';
-        return;
-      }
-      
-      container.innerHTML = sorted.map(key => {
-        const cat = getCategoryInfo(key);
-        const count = counts[key];
-        const percent = Math.round((count / total) * 100);
-        const color = colors[colorIndex++ % colors.length];
-        return `
-          <div class="category-bar">
-            <div class="category-bar-header">
-              <span>${cat.icon || '📁'} ${cat.name}</span>
-              <span>${count} bài (${percent}%)</span>
-            </div>
-            <div class="category-bar-track">
-              <div class="category-bar-fill" style="width:${percent}%;background:${color};"></div>
-            </div>
-          </div>
-        `;
-      }).join('');
-    }
-
-    function renderArticlesTable(articles) {
-      const container = document.getElementById('articlesTable');
-      if (articles.length === 0) {
-        container.innerHTML = '<div class="empty-state"><p>Chưa có bài viết nào</p><a href="editor.html" class="btn btn-primary">Viết bài đầu tiên</a></div>';
-        return;
-      }
-      
-      container.innerHTML = `
-        <table>
-          <thead><tr><th>Tiêu đề</th><th>Trạng thái</th><th>Lượt xem</th><th>Cập nhật</th><th>Thao tác</th></tr></thead>
-          <tbody>
-            ${articles.map(a => {
-              const statusBadge = a.status === 'draft' 
-                ? '<span class="badge" style="background:#fef3c7;color:#d97706;">Nháp</span>'
-                : '<span class="badge" style="background:#dcfce7;color:#16a34a;">Đã đăng</span>';
-              return `
-              <tr>
-                <td class="title-cell"><a href="../article.html?slug=${a.slug}" target="_blank">${a.title}</a>${a.featured ? ' <span style="color:gold;">★</span>' : ''}</td>
-                <td>${statusBadge}</td>
-                <td>${a.views || 0}</td>
-                <td>${formatDate(a.updatedAt || a.publishedAt)}</td>
-                <td class="actions">
-                  <a href="editor.html?id=${a.id}" class="btn-icon" title="Sửa"><i data-lucide="edit"></i></a>
-                  <button class="btn-icon delete" data-id="${a.id}" title="Xóa"><i data-lucide="trash-2"></i></button>
-                </td>
-              </tr>
-            `}).join('')}
-          </tbody>
-        </table>
-      `;
-      lucide.createIcons();
-
-      container.querySelectorAll('.delete').forEach(btn => {
-        btn.addEventListener('click', async () => {
-          if (confirm('Bạn có chắc muốn xóa bài viết này?')) {
-            await db.collection('articles').doc(btn.dataset.id).delete();
-            showToast('Đã xóa bài viết');
-            loadDashboard();
-          }
+        snapshot.forEach(doc => {
+          const data = doc.data();
+          total++;
+          if (data.status === 'published') published++;
+          else draft++;
+          totalViews += data.views || 0;
+          
+          // Platform
+          if (data.platform === 'zalo-pc') zaloPC++;
+          else if (data.platform === 'zalo-web') zaloWeb++;
+          else if (data.platform === 'zalo-mobile') zaloMobile++;
+          
+          // Category
+          if (data.category === 'loi') catLoi++;
+          else if (data.category === 'vi-sao') catViSao++;
+          else if (data.category === 'meo') catMeo++;
+          else if (data.category === 'huong-dan') catHuongDan++;
+          
+          articles.push({ id: doc.id, ...data });
         });
-      });
+        
+        // Update main stats
+        document.getElementById('totalArticles').textContent = total;
+        document.getElementById('publishedArticles').textContent = published;
+        document.getElementById('draftArticles').textContent = draft;
+        document.getElementById('totalViews').textContent = totalViews.toLocaleString();
+        
+        // Update platform stats
+        document.getElementById('statZaloPC').textContent = zaloPC;
+        document.getElementById('statZaloWeb').textContent = zaloWeb;
+        document.getElementById('statZaloMobile').textContent = zaloMobile;
+        
+        // Update category stats
+        document.getElementById('statLoi').textContent = catLoi;
+        document.getElementById('statViSao').textContent = catViSao;
+        document.getElementById('statMeo').textContent = catMeo;
+        document.getElementById('statHuongDan').textContent = catHuongDan;
+        
+        // Sort and show recent
+        articles.sort((a, b) => {
+          const dateA = a.createdAt?.toDate?.() || new Date(0);
+          const dateB = b.createdAt?.toDate?.() || new Date(0);
+          return dateB - dateA;
+        });
+        
+        renderRecentArticles(articles.slice(0, 5));
+      } catch (error) {
+        console.error('Error loading dashboard:', error);
+      }
     }
-  });
+    
+    function renderRecentArticles(articles) {
+      const tbody = document.getElementById('recentArticles');
+      
+      if (articles.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="6" class="text-center text-muted">Chưa có bài viết nào.</td></tr>';
+        return;
+      }
+      
+      const categoryLabels = {
+        'loi': 'Lỗi',
+        'vi-sao': 'Vì sao',
+        'meo': 'Mẹo',
+        'huong-dan': 'Hướng dẫn'
+      };
+      
+      tbody.innerHTML = articles.map(article => `
+        <tr>
+          <td><a href="/admin/editor.html?id=${article.id}">${escapeHtml(article.title)}</a></td>
+          <td>${categoryLabels[article.category] || article.category}</td>
+          <td style="text-align: center;">${article.views || 0}</td>
+          <td>
+            <span style="color: ${article.status === 'published' ? 'var(--color-success)' : '#F59E0B'}">
+              ${article.status === 'published' ? 'Đã đăng' : 'Nháp'}
+            </span>
+          </td>
+          <td>${formatDate(article.createdAt)}</td>
+          <td><a href="/admin/editor.html?id=${article.id}">Sửa</a></td>
+        </tr>
+      `).join('');
+    }
+    
+    function formatDate(timestamp) {
+      if (!timestamp) return '';
+      const date = timestamp.toDate ? timestamp.toDate() : new Date(timestamp);
+      return date.toLocaleDateString('vi-VN');
+    }
+    
+    function escapeHtml(text) {
+      const div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
+    }
   </script>
 </body>
 </html>

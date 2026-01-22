@@ -1,138 +1,142 @@
 <!DOCTYPE html>
-<html lang="vi" data-theme="light">
+<html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7476202315605832"
-     crossorigin="anonymous"></script>
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-T3XL4RCMKT"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-T3XL4RCMKT');
-  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Liên hệ - VietShare</title>
-  <meta name="description" content="Liên hệ với VietShare để gửi góp ý, câu hỏi hoặc hợp tác.">
-  <meta name="robots" content="index, follow">
-  <link rel="icon" type="image/png" href="favicon.png">
+  <meta name="description" content="Liên hệ với VietShare để gửi câu hỏi, góp ý hoặc yêu cầu hỗ trợ về Zalo.">
+  <link rel="canonical" href="https://vietshare.site/contact.html">
+  
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
-  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
-  <link rel="stylesheet" href="css/style.css">
-  <style>
-    .page-content { max-width: 800px; margin: 0 auto; padding: 3rem var(--container-padding); }
-    .page-title { font-size: 2rem; font-weight: 700; margin-bottom: 1.5rem; background: var(--gradient-primary); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    .page-content p { margin-bottom: 1rem; color: var(--text-secondary); line-height: 1.8; }
-    .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
-    .contact-card { padding: 1.5rem; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: var(--radius-lg); text-align: center; transition: all 0.3s; }
-    .contact-card:hover { border-color: var(--primary); box-shadow: var(--card-shadow); }
-    .contact-icon { width: 50px; height: 50px; margin: 0 auto 1rem; background: var(--gradient-glow); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary); }
-    .contact-card h3 { font-size: 1rem; margin-bottom: 0.5rem; }
-    .contact-card p { font-size: 0.875rem; margin: 0; }
-    .contact-card a { color: var(--primary); }
-    .contact-form { margin-top: 2rem; }
-    .form-group { margin-bottom: 1.25rem; }
-    .form-label { display: block; margin-bottom: 0.5rem; font-weight: 500; font-size: 0.875rem; }
-    .form-input, .form-textarea { width: 100%; padding: 0.875rem 1rem; background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: var(--radius-md); font-size: 1rem; color: var(--text-primary); transition: all 0.2s; font-family: inherit; }
-    .form-input:focus, .form-textarea:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1); }
-    .form-textarea { min-height: 150px; resize: vertical; }
-    .submit-btn { width: 100%; padding: 1rem; background: var(--gradient-primary); color: white; font-size: 1rem; font-weight: 600; border: none; border-radius: var(--radius-md); cursor: pointer; transition: all 0.2s; }
-    .submit-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4); }
-    @media (max-width: 768px) { .page-title { font-size: 1.5rem; } }
-  </style>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  
+  <!-- Dark Mode -->
+  <script src="js/dark-mode.js"></script>
+  
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7476202315605832" crossorigin="anonymous"></script>
 </head>
 <body>
+  <!-- Header -->
   <header class="header">
-    <div class="container">
-      <nav class="nav">
-        <a href="index.html" class="logo">
-          <img src="/favicon.png" alt="VietShare" style="width:40px;height:40px;">
-          <span class="logo-text">Viet<span>Share</span></span>
-        </a>
-        <ul class="nav-menu" id="navMenu">
-          <li><a href="index.html" class="nav-link">Trang chủ</a></li>
-        </ul>
-        <div class="nav-actions">
-          <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-            <i data-lucide="sun" class="icon-sun"></i>
-            <i data-lucide="moon" class="icon-moon"></i>
-          </button>
-        </div>
-      </nav>
+    <div class="container container-wide">
+      <div class="header-inner">
+        <a href="/" class="logo">VietShare</a>
+        
+        <nav class="nav">
+          <a href="/zalo-pc/">Zalo PC</a>
+          <a href="/zalo-web/">Zalo Web</a>
+          <a href="/zalo-mobile/">Zalo Mobile</a>
+        </nav>
+        
+        <button class="theme-toggle" id="themeToggle" aria-label="Chuyển đổi dark mode">
+          <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        </button>
+      </div>
     </div>
   </header>
-
-  <main class="page-content">
-    <h1 class="page-title">Liên hệ với chúng tôi</h1>
-    
-    <p>Cảm ơn bạn đã quan tâm đến VietShare! Chúng tôi luôn sẵn lòng lắng nghe ý kiến đóng góp, câu hỏi hoặc đề xuất hợp tác từ bạn.</p>
-    
-    <div class="contact-grid">
-      <div class="contact-card">
-        <div class="contact-icon"><i data-lucide="mail"></i></div>
-        <h3>Email</h3>
-        <p><a href="mailto:contact@vietshare.site">contact@vietshare.site</a></p>
-      </div>
-      <div class="contact-card">
-        <div class="contact-icon"><i data-lucide="message-circle"></i></div>
-        <h3>Mạng xã hội</h3>
-        <p>Facebook, Twitter, YouTube</p>
-      </div>
-      <div class="contact-card">
-        <div class="contact-icon"><i data-lucide="clock"></i></div>
-        <h3>Thời gian phản hồi</h3>
-        <p>24 - 48 giờ làm việc</p>
+  
+  <!-- Main Content -->
+  <main>
+    <div class="section">
+      <div class="container">
+        <h1>Liên hệ</h1>
+        
+        <div class="article-content" style="padding-top: 0;">
+          <p>Chúng tôi luôn sẵn sàng lắng nghe ý kiến của bạn. Hãy liên hệ với chúng tôi qua form bên dưới hoặc email.</p>
+          
+          <div class="info-box mb-xl">
+            <p class="info-box-title">Email liên hệ</p>
+            <p style="margin-bottom: 0;"><a href="mailto:contact@vietshare.site">contact@vietshare.site</a></p>
+          </div>
+          
+          <h2>Gửi tin nhắn</h2>
+          
+          <form id="contactForm">
+            <div class="form-group">
+              <label class="form-label" for="name">Họ tên</label>
+              <input type="text" class="form-input" id="name" required>
+            </div>
+            
+            <div class="form-group">
+              <label class="form-label" for="email">Email</label>
+              <input type="email" class="form-input" id="email" required>
+            </div>
+            
+            <div class="form-group">
+              <label class="form-label" for="subject">Chủ đề</label>
+              <select class="form-select" id="subject">
+                <option value="question">Câu hỏi về Zalo</option>
+                <option value="feedback">Góp ý nội dung</option>
+                <option value="error">Báo lỗi website</option>
+                <option value="other">Khác</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label class="form-label" for="message">Nội dung</label>
+              <textarea class="form-textarea" id="message" rows="5" required></textarea>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Gửi tin nhắn</button>
+          </form>
+          
+          <div id="successMessage" class="info-box success-box mt-lg" style="display: none;">
+            <p style="margin-bottom: 0;">Cảm ơn bạn đã liên hệ! Chúng tôi sẽ phản hồi trong thời gian sớm nhất.</p>
+          </div>
+        </div>
       </div>
     </div>
-    
-    <h2 style="font-size: 1.25rem; margin: 2rem 0 1rem;">📝 Gửi tin nhắn</h2>
-    
-    <form class="contact-form" onsubmit="event.preventDefault(); alert('Cảm ơn bạn đã liên hệ! Chúng tôi sẽ phản hồi sớm nhất.');">
-      <div class="form-group">
-        <label class="form-label">Họ tên</label>
-        <input type="text" class="form-input" placeholder="Nhập họ tên của bạn" required>
-      </div>
-      <div class="form-group">
-        <label class="form-label">Email</label>
-        <input type="email" class="form-input" placeholder="email@example.com" required>
-      </div>
-      <div class="form-group">
-        <label class="form-label">Chủ đề</label>
-        <input type="text" class="form-input" placeholder="Nội dung bạn muốn liên hệ">
-      </div>
-      <div class="form-group">
-        <label class="form-label">Nội dung</label>
-        <textarea class="form-textarea" placeholder="Nhập nội dung tin nhắn..." required></textarea>
-      </div>
-      <button type="submit" class="submit-btn">Gửi tin nhắn</button>
-    </form>
   </main>
-
+  
+  <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <div class="footer-bottom">
-        <p>© 2024 VietShare. All rights reserved.</p>
-        <div class="footer-links-inline">
-          <a href="about.html">Giới thiệu</a>
-          <a href="contact.html">Liên hệ</a>
-          <a href="privacy.html">Chính sách bảo mật</a>
-          <a href="terms.html">Điều khoản</a>
+      <div class="footer-inner">
+        <div class="footer-links">
+          <a href="/about.html">Giới thiệu</a>
+          <a href="/contact.html">Liên hệ</a>
+          <a href="/privacy-policy.html">Chính sách bảo mật</a>
+          <a href="/terms.html">Điều khoản</a>
         </div>
+        <p class="footer-copyright">© 2026 VietShare. Mọi quyền được bảo lưu.</p>
       </div>
     </div>
   </footer>
-
-  <script>
-    lucide.createIcons();
-    const theme = localStorage.getItem('theme') || 'light';
-    document.documentElement.setAttribute('data-theme', theme);
-    document.getElementById('themeToggle').addEventListener('click', () => {
-      const current = document.documentElement.getAttribute('data-theme');
-      const next = current === 'light' ? 'dark' : 'light';
-      document.documentElement.setAttribute('data-theme', next);
-      localStorage.setItem('theme', next);
+  
+  <script type="module">
+    import { db, collection, addDoc } from './js/firebase-config.js';
+    import { serverTimestamp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+    
+    document.getElementById('contactForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const subject = document.getElementById('subject').value;
+      const message = document.getElementById('message').value;
+      
+      try {
+        await addDoc(collection(db, 'contacts'), {
+          name,
+          email,
+          subject,
+          message,
+          createdAt: serverTimestamp()
+        });
+        
+        document.getElementById('contactForm').style.display = 'none';
+        document.getElementById('successMessage').style.display = 'block';
+      } catch (error) {
+        console.error('Error sending message:', error);
+        alert('Không thể gửi tin nhắn. Vui lòng thử lại sau.');
+      }
     });
   </script>
 </body>

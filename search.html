@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tìm kiếm - VietShare</title>
+  <meta name="robots" content="noindex">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  
+  <!-- Dark Mode -->
+  <script src="js/dark-mode.js"></script>
+  
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7476202315605832" crossorigin="anonymous"></script>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container container-wide">
+      <div class="header-inner">
+        <a href="/" class="logo">VietShare</a>
+        
+        <nav class="nav">
+          <a href="/zalo-pc/">Zalo PC</a>
+          <a href="/zalo-web/">Zalo Web</a>
+          <a href="/zalo-mobile/">Zalo Mobile</a>
+        </nav>
+        
+        <div class="search-box">
+          <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+          <input type="text" class="search-input" id="searchInput" placeholder="Tìm kiếm mẹo, lỗi Zalo...">
+        </div>
+        
+        <button class="theme-toggle" id="themeToggle" aria-label="Chuyển đổi dark mode">
+          <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+  
+  <!-- Main Content -->
+  <main>
+    <section class="section">
+      <div class="container">
+        <h1>Kết quả tìm kiếm</h1>
+        <p class="text-muted mb-lg" id="searchQuery"></p>
+        
+        <div class="article-list" id="searchResults">
+          <div class="loading">
+            <div class="spinner"></div>
+            <span>Đang tìm kiếm...</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-links">
+          <a href="/about.html">Giới thiệu</a>
+          <a href="/contact.html">Liên hệ</a>
+          <a href="/privacy-policy.html">Chính sách bảo mật</a>
+          <a href="/terms.html">Điều khoản</a>
+        </div>
+        <p class="footer-copyright">© 2026 VietShare. Mọi quyền được bảo lưu.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- Fuse.js for search -->
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
+  
+  <script type="module">
+    import { db, collection, getDocs, query, where } from './js/firebase-config.js';
+    
+    const urlParams = new URLSearchParams(window.location.search);
+    const searchQuery = urlParams.get('q') || '';
+    
+    document.getElementById('searchInput').value = searchQuery;
+    document.getElementById('searchQuery').textContent = searchQuery ? `Tìm kiếm: "${searchQuery}"` : '';
+    
+    const categoryLabels = {
+      'loi': 'Lỗi',
+      'vi-sao': 'Vì sao',
+      'meo': 'Mẹo',
+      'huong-dan': 'Hướng dẫn'
+    };
+    
+    async function performSearch() {
+      if (!searchQuery) {
+        document.getElementById('searchResults').innerHTML = 
+          '<p class="text-muted">Vui lòng nhập từ khóa để tìm kiếm.</p>';
+        return;
+      }
+      
+      try {
+        // Load all published articles
+        const articlesRef = collection(db, 'articles');
+        const q = query(articlesRef, where('status', '==', 'published'));
+        const snapshot = await getDocs(q);
+        
+        const articles = [];
+        snapshot.forEach(doc => {
+          articles.push({ id: doc.id, ...doc.data() });
+        });
+        
+        // Use Fuse.js for fuzzy search
+        const fuse = new Fuse(articles, {
+          keys: ['title', 'description', 'content'],
+          threshold: 0.4,
+          includeScore: true
+        });
+        
+        const results = fuse.search(searchQuery);
+        renderResults(results.map(r => r.item));
+      } catch (error) {
+        console.error('Error searching:', error);
+        document.getElementById('searchResults').innerHTML = 
+          '<p class="text-error">Không thể thực hiện tìm kiếm.</p>';
+      }
+    }
+    
+    function renderResults(articles) {
+      const container = document.getElementById('searchResults');
+      
+      if (articles.length === 0) {
+        container.innerHTML = `
+          <p class="text-muted">Không tìm thấy kết quả cho "${escapeHtml(searchQuery)}".</p>
+          <p class="text-muted">Gợi ý:</p>
+          <ul>
+            <li>Kiểm tra chính tả</li>
+            <li>Thử từ khóa khác</li>
+            <li>Sử dụng từ khóa ngắn hơn</li>
+          </ul>
+        `;
+        return;
+      }
+      
+      container.innerHTML = `
+        <p class="text-muted mb-lg">Tìm thấy ${articles.length} kết quả</p>
+        ${articles.map(article => `
+          <a href="/article.html?id=${article.id}" class="article-card">
+            <span class="article-card-category">${categoryLabels[article.category] || article.category}</span>
+            <h3 class="article-card-title">${escapeHtml(article.title)}</h3>
+            <p class="article-card-meta">${article.description ? escapeHtml(article.description.substring(0, 100)) + '...' : ''}</p>
+          </a>
+        `).join('')}
+      `;
+    }
+    
+    function escapeHtml(text) {
+      const div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
+    }
+    
+    // Handle search form
+    document.getElementById('searchInput').addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        const query = e.target.value.trim();
+        if (query) {
+          window.location.href = `/search.html?q=${encodeURIComponent(query)}`;
+        }
+      }
+    });
+    
+    performSearch();
+  </script>
+</body>
+</html>

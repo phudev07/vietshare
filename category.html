@@ -1,210 +1,290 @@
 <!DOCTYPE html>
-<html lang="vi" data-theme="light">
+<html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7476202315605832"
-     crossorigin="anonymous"></script>
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-T3XL4RCMKT"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-T3XL4RCMKT');
-  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="pageTitle">Danh mục - VietShare</title>
+  <meta name="description" id="pageDescription" content="Danh sách bài viết về Zalo">
+  <link rel="canonical" id="pageCanonical" href="https://vietshare.site/category.html">
   
-  <!-- SEO Meta Tags - dynamically updated -->
-  <title>Danh mục - VietShare</title>
-  <meta name="description" content="Xem tất cả bài viết trên VietShare - Blog chia sẻ kiến thức công nghệ, mẹo vặt và lifestyle">
-  <meta name="robots" content="index, follow">
+  <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="favicon.png">
+  <meta name="theme-color" content="#2563EB">
   
-  <!-- Open Graph -->
+  <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Danh mục - VietShare">
-  <meta property="og:description" content="Xem tất cả bài viết trên VietShare">
+  <meta property="og:url" id="ogUrl" content="https://vietshare.site/category.html">
+  <meta property="og:title" id="ogTitle" content="Danh mục - VietShare">
+  <meta property="og:description" id="ogDescription" content="Danh sách bài viết về Zalo">
+  <meta property="og:image" content="https://vietshare.site/assets/og-image.png">
   <meta property="og:site_name" content="VietShare">
+  <meta property="og:locale" content="vi_VN">
   
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Danh mục - VietShare">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" id="twitterTitle" content="Danh mục - VietShare">
+  <meta name="twitter:description" id="twitterDescription" content="Danh sách bài viết về Zalo">
+  <meta name="twitter:image" content="https://vietshare.site/assets/og-image.png">
   
-  <!-- Google Fonts -->
+  <!-- Preload critical resources -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
-  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
-  <link rel="stylesheet" href="css/style.css">
-  <style>
-    .category-page { padding: 2rem 0 4rem; }
-    .category-header { margin-bottom: 2rem; }
-    .category-header h1 { font-size: 2rem; margin-bottom: 0.5rem; }
-    .category-header p { color: var(--text-muted); }
-    .articles-list { display: flex; flex-direction: column; gap: 1.5rem; }
-    .article-row { display: flex; gap: 1.5rem; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: var(--radius-lg); overflow: hidden; transition: all 0.2s; }
-    .article-row:hover { border-color: var(--primary); box-shadow: var(--card-shadow-hover); }
-    .article-row-thumb { width: 280px; min-height: 180px; flex-shrink: 0; overflow: hidden; }
-    .article-row-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }
-    .article-row:hover .article-row-thumb img { transform: scale(1.05); }
-    .article-row-content { flex: 1; padding: 1.25rem; display: flex; flex-direction: column; }
-    .article-row-category { display: inline-block; padding: 0.25rem 0.75rem; background: var(--gradient-primary); color: white; font-size: 0.7rem; font-weight: 600; text-transform: uppercase; border-radius: var(--radius-full); margin-bottom: 0.75rem; width: fit-content; }
-    .article-row-title { font-size: 1.25rem; margin-bottom: 0.5rem; line-height: 1.4; }
-    .article-row-title a:hover { color: var(--primary); }
-    .article-row-excerpt { color: var(--text-secondary); font-size: 0.9375rem; line-height: 1.6; margin-bottom: 0.75rem; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-    .article-row-meta { display: flex; gap: 1rem; color: var(--text-muted); font-size: 0.8125rem; margin-top: auto; }
-    .article-row-meta span { display: flex; align-items: center; gap: 0.375rem; }
-    @media (max-width: 768px) {
-      .article-row { flex-direction: column; }
-      .article-row-thumb { width: 100%; min-height: 200px; }
-    }
-    .empty-msg { text-align: center; padding: 3rem; color: var(--text-muted); }
-  </style>
+  <link rel="dns-prefetch" href="https://firestore.googleapis.com">
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  
+  <!-- Dark Mode -->
+  <script src="js/dark-mode.js"></script>
+  
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7476202315605832" crossorigin="anonymous"></script>
 </head>
 <body>
+  <!-- Header -->
   <header class="header">
-    <div class="container header-inner">
-      <a href="index.html" class="logo">
-        <img src="/favicon.png" alt="VietShare" style="width:40px;height:40px;">
-        <span class="logo-text">VietShare</span>
-      </a>
-      <nav class="nav">
-        <ul class="nav-menu" id="navMenu">
-          <li><a href="index.html" class="nav-link">Trang chủ</a></li>
-          <!-- Categories loaded dynamically -->
-        </ul>
-        <div class="nav-actions">
-          <button class="theme-toggle" id="themeToggle" aria-label="Chuyển đổi theme"><i data-lucide="moon" id="themeIcon"></i></button>
-          <button class="menu-toggle" id="menuToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    <div class="container container-wide">
+      <div class="header-inner">
+        <a href="/" class="logo">VietShare</a>
+        
+        <nav class="nav">
+          <a href="/category.html?platform=zalo-pc" id="navZaloPC">Zalo PC</a>
+          <a href="/category.html?platform=zalo-web" id="navZaloWeb">Zalo Web</a>
+          <a href="/category.html?platform=zalo-mobile" id="navZaloMobile">Zalo Mobile</a>
+        </nav>
+        
+        <div class="search-box">
+          <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+          <input type="text" class="search-input" id="searchInput" placeholder="Tìm kiếm mẹo, lỗi Zalo...">
         </div>
-      </nav>
+        
+        <button class="theme-toggle" id="themeToggle" aria-label="Chuyển đổi dark mode">
+          <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        </button>
+      </div>
     </div>
   </header>
-
-  <main class="category-page">
-    <div class="container">
-      <div class="category-header">
-        <h1 id="categoryTitle">Tất cả bài viết</h1>
-        <p id="categoryDesc">Danh sách tất cả bài viết</p>
+  
+  <!-- Main Content -->
+  <main>
+    <!-- Category Header -->
+    <section class="hero" style="padding: var(--spacing-2xl) 0;">
+      <div class="container">
+        <h1 id="categoryTitle">Danh mục</h1>
+        <p id="categoryDescription" style="margin-bottom: 0;"></p>
       </div>
-      <div class="articles-list" id="articlesList">
-        <div class="loading"><div class="loading-spinner"></div><span>Đang tải...</span></div>
+    </section>
+    
+    <!-- Filter Tabs -->
+    <section style="background: var(--color-bg); border-bottom: 1px solid var(--color-border);">
+      <div class="container">
+        <div class="filter-tabs" id="filterTabs">
+          <a href="?type=all" class="filter-tab" data-type="all">Tất cả</a>
+          <a href="?type=loi" class="filter-tab" data-type="loi">Lỗi</a>
+          <a href="?type=vi-sao" class="filter-tab" data-type="vi-sao">Vì sao</a>
+          <a href="?type=meo" class="filter-tab" data-type="meo">Mẹo</a>
+          <a href="?type=huong-dan" class="filter-tab" data-type="huong-dan">Hướng dẫn</a>
+        </div>
       </div>
-    </div>
+    </section>
+    
+    <!-- Articles -->
+    <section class="section">
+      <div class="container">
+        <div class="article-list" id="articlesList">
+          <div class="loading">
+            <div class="spinner"></div>
+            <span>Đang tải...</span>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
-
+  
+  <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <div class="footer-bottom">
-        <p>© 2024 VietShare. All rights reserved.</p>
+      <div class="footer-inner">
+        <div class="footer-logo">VietShare</div>
+        <div class="footer-links">
+          <a href="/about.html">Giới thiệu</a>
+          <a href="/contact.html">Liên hệ</a>
+          <a href="/privacy-policy.html">Chính sách bảo mật</a>
+          <a href="/terms.html">Điều khoản</a>
+        </div>
+        <p class="footer-copyright">© 2026 VietShare. Mọi quyền được bảo lưu.</p>
       </div>
     </div>
   </footer>
-
-  <button class="back-to-top" id="backToTop" aria-label="Lên đầu trang"><i data-lucide="arrow-up"></i></button>
-
-  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
-  <script src="js/firebase-config.js"></script>
-  <script>
-  (function(){
-    lucide.createIcons();
-    if(!window.VietShare){document.getElementById('articlesList').innerHTML='<p class="empty-msg">Lỗi cấu hình</p>';return;}
-    const {db,formatRelativeTime,truncateText,getCategoryInfo,CATEGORIES}=window.VietShare;
-    const params=new URLSearchParams(location.search);
-    const cat=params.get('cat');
-    const tag=params.get('tag');
+  
+  <script type="module">
+    import { db, collection, getDocs, query, where, limit } from './js/firebase-config.js';
     
-    // Theme
-    const savedTheme=localStorage.getItem('theme')||'light';
-    document.documentElement.setAttribute('data-theme',savedTheme);
-    document.getElementById('themeToggle').onclick=function(){
-      const current=document.documentElement.getAttribute('data-theme');
-      const newTheme=current==='light'?'dark':'light';
-      document.documentElement.setAttribute('data-theme',newTheme);
-      localStorage.setItem('theme',newTheme);
-      document.getElementById('themeIcon').setAttribute('data-lucide',newTheme==='light'?'moon':'sun');
-      lucide.createIcons();
+    const PLATFORM_DATA = {
+      'zalo-pc': {
+        title: 'Zalo PC',
+        description: 'Hướng dẫn sử dụng, mẹo hay và cách khắc phục lỗi Zalo trên máy tính.'
+      },
+      'zalo-web': {
+        title: 'Zalo Web',
+        description: 'Hướng dẫn sử dụng, mẹo hay và cách khắc phục lỗi Zalo Web trên trình duyệt.'
+      },
+      'zalo-mobile': {
+        title: 'Zalo Mobile',
+        description: 'Hướng dẫn sử dụng, mẹo hay và cách khắc phục lỗi Zalo trên điện thoại.'
+      }
     };
     
-    // Menu toggle
-    document.getElementById('menuToggle').onclick=function(){document.getElementById('navMenu').classList.toggle('active');};
+    const CATEGORY_LABELS = {
+      'loi': 'Lỗi',
+      'vi-sao': 'Vì sao',
+      'meo': 'Mẹo',
+      'huong-dan': 'Hướng dẫn'
+    };
     
-    // Back to top
-    window.addEventListener('scroll',function(){document.getElementById('backToTop').classList.toggle('visible',window.pageYOffset>500);});
-    document.getElementById('backToTop').onclick=function(){window.scrollTo({top:0,behavior:'smooth'});};
-
-    // Load navbar categories dynamically
-    loadCategories().then(function(){
-      const cats=window.VietShare.CATEGORIES;
-      const navMenu=document.getElementById('navMenu');
-      Object.keys(cats).slice(0,4).forEach(function(key){
-        const c=cats[key];
-        const li=document.createElement('li');
-        const isActive=cat===key?'active':'';
-        li.innerHTML='<a href="category.html?cat='+key+'" class="nav-link '+isActive+'">'+c.name+'</a>';
-        navMenu.appendChild(li);
-      });
-    });
-
-    // Update header
-    if(cat && CATEGORIES[cat]){
-      const info=CATEGORIES[cat];
-      document.getElementById('categoryTitle').textContent=info.name;
-      document.getElementById('categoryDesc').textContent='Bài viết về '+info.name.toLowerCase();
-      document.title=info.name+' - VietShare';
-    }else if(tag){
-      document.getElementById('categoryTitle').textContent='#'+tag;
-      document.getElementById('categoryDesc').textContent='Bài viết có thẻ: '+tag;
-      document.title='#'+tag+' - VietShare';
+    // Get URL params
+    const urlParams = new URLSearchParams(window.location.search);
+    const platform = urlParams.get('platform') || '';
+    const typeFilter = urlParams.get('type') || 'all';
+    
+    // Update page based on platform
+    if (platform && PLATFORM_DATA[platform]) {
+      const data = PLATFORM_DATA[platform];
+      document.getElementById('pageTitle').textContent = `${data.title} - VietShare`;
+      document.getElementById('categoryTitle').textContent = data.title;
+      document.getElementById('categoryDescription').textContent = data.description;
+      document.title = `${data.title} - Hướng dẫn, Mẹo, Khắc phục lỗi | VietShare`;
+    } else {
+      document.getElementById('categoryTitle').textContent = 'Tất cả bài viết';
+      document.getElementById('categoryDescription').textContent = 'Danh sách tất cả bài viết về Zalo PC, Web và Mobile.';
     }
-
-    // Load articles - get all then filter to avoid composite index requirement
-    db.collection('articles').orderBy('publishedAt','desc').get().then(function(snapshot){
-      let articles=snapshot.docs.map(d=>({id:d.id,...d.data()}));
+    
+    // Update filter tabs with current params
+    document.querySelectorAll('.filter-tab').forEach(tab => {
+      const type = tab.dataset.type;
+      let href = '?';
+      if (platform) href += `platform=${platform}&`;
+      if (type !== 'all') href += `type=${type}`;
+      else href = href.slice(0, -1) || '?';
+      tab.href = href || '/category.html';
       
-      // Filter out drafts - only show published
-      articles=articles.filter(a=>a.status!=='draft');
-      
-      // Filter by category if specified
-      if(cat){
-        articles=articles.filter(a=>a.category===cat);
+      if (type === typeFilter) {
+        tab.classList.add('active');
       }
+    });
+    
+    // Highlight active nav
+    if (platform) {
+      const navId = 'nav' + platform.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join('');
+      const navEl = document.getElementById(navId);
+      if (navEl) navEl.classList.add('active');
+    }
+    
+    // Load articles
+    async function loadArticles() {
+      const container = document.getElementById('articlesList');
       
-      // Filter by tag if specified
-      if(tag){
-        articles=articles.filter(a=>a.tags&&a.tags.some(t=>t.toLowerCase()===tag.toLowerCase()));
+      try {
+        const articlesRef = collection(db, 'articles');
+        let constraints = [where('status', '==', 'published')];
+        
+        if (platform) {
+          constraints.push(where('platform', '==', platform));
+        }
+        if (typeFilter !== 'all') {
+          constraints.push(where('category', '==', typeFilter));
+        }
+        constraints.push(limit(20));
+        
+        const q = query(articlesRef, ...constraints);
+        const snapshot = await getDocs(q);
+        const articles = [];
+        
+        snapshot.forEach(doc => {
+          articles.push({ id: doc.id, ...doc.data() });
+        });
+        
+        // Sort by date
+        articles.sort((a, b) => {
+          const dateA = a.createdAt?.toDate?.() || new Date(0);
+          const dateB = b.createdAt?.toDate?.() || new Date(0);
+          return dateB - dateA;
+        });
+        
+        renderArticles(container, articles);
+      } catch (error) {
+        console.error('Error loading articles:', error);
+        container.innerHTML = '<p class="text-muted">Không thể tải bài viết.</p>';
       }
-      
-      if(articles.length===0){
-        document.getElementById('articlesList').innerHTML='<p class="empty-msg">Chưa có bài viết nào</p>';
+    }
+    
+    function renderArticles(container, articles) {
+      if (articles.length === 0) {
+        container.innerHTML = `
+          <div class="no-data">
+            <p class="no-data-text">Chưa có bài viết nào trong danh mục này.</p>
+          </div>
+        `;
         return;
       }
       
-      document.getElementById('articlesList').innerHTML=articles.map(function(a){
-        const catInfo=getCategoryInfo(a.category);
-        return`<article class="article-row">
-          <a href="article.html?slug=${a.slug}" class="article-row-thumb">
-            <img src="${a.thumbnail||'https://via.placeholder.com/280x180'}" alt="${a.title}" loading="lazy">
-          </a>
-          <div class="article-row-content">
-            <span class="article-row-category">${catInfo.name}</span>
-            <h2 class="article-row-title"><a href="article.html?slug=${a.slug}">${a.title}</a></h2>
-            <p class="article-row-excerpt">${a.excerpt||truncateText(a.content,150)}</p>
-            <div class="article-row-meta">
-              <span><i data-lucide="calendar"></i>${formatRelativeTime(a.publishedAt)}</span>
-              <span><i data-lucide="eye"></i>${a.views||0} lượt xem</span>
+      // Default placeholder image
+      const defaultThumb = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="140" height="95" fill="%23E2E8F0"%3E%3Crect width="140" height="95"/%3E%3Ctext x="50%25" y="50%25" text-anchor="middle" dy=".3em" fill="%2394A3B8" font-size="12"%3ENo Image%3C/text%3E%3C/svg%3E';
+      
+      container.innerHTML = articles.map(article => {
+        const thumbSrc = (article.heroImage && article.heroImage.trim()) ? article.heroImage : defaultThumb;
+        const categoryLabel = CATEGORY_LABELS[article.category] || article.category || 'Bài viết';
+        
+        return `
+          <a href="/article.html?id=${article.id}" class="article-card">
+            <div class="article-card-thumb-wrap">
+              <img src="${thumbSrc}" alt="${escapeHtml(article.title)}" class="article-card-thumb" loading="lazy">
+              <span class="article-card-category">${categoryLabel}</span>
             </div>
-          </div>
-        </article>`;
+            <div class="article-card-body">
+              <h3 class="article-card-title">${escapeHtml(article.title)}</h3>
+              ${article.description ? `<p class="article-card-desc">${escapeHtml(article.description)}</p>` : ''}
+            </div>
+          </a>
+        `;
       }).join('');
-      lucide.createIcons();
-    }).catch(function(e){
-      console.error(e);
-      document.getElementById('articlesList').innerHTML='<p class="empty-msg">Lỗi tải bài viết</p>';
+    }
+    
+    function formatDate(timestamp) {
+      if (!timestamp) return 'Mới cập nhật';
+      try {
+        const date = timestamp.toDate ? timestamp.toDate() : new Date(timestamp);
+        return date.toLocaleDateString('vi-VN', { year: 'numeric', month: 'long', day: 'numeric' });
+      } catch {
+        return 'Mới cập nhật';
+      }
+    }
+    
+    function escapeHtml(text) {
+      if (!text) return '';
+      const div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
+    }
+    
+    // Search
+    document.getElementById('searchInput').addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        const query = e.target.value.trim();
+        if (query.length >= 2) {
+          window.location.href = `/search.html?q=${encodeURIComponent(query)}`;
+        }
+      }
     });
-  })();
+    
+    loadArticles();
   </script>
 </body>
 </html>

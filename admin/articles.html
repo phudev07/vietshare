@@ -1,241 +1,266 @@
 <!DOCTYPE html>
-<html lang="vi" data-theme="light">
+<html lang="vi">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
-  <meta name="googlebot" content="noindex, nofollow">
   <title>Quản lý bài viết - VietShare Admin</title>
-  <link rel="icon" type="image/png" href="../favicon.png">
+  
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
-  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
-  <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="admin.css">
-  <style>.admin-layout { display: none; }</style>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  
+  <!-- Dark Mode -->
+  <script src="../js/dark-mode.js"></script>
 </head>
 <body>
   <div class="admin-layout">
     <!-- Sidebar -->
     <aside class="admin-sidebar">
-      <div class="sidebar-header">
-        <a href="../index.html" class="logo">
-          <img src="/favicon.png" alt="VietShare" style="width:40px;height:40px;">
-          <span class="logo-text">VietShare</span>
+      <div class="admin-sidebar-logo">VietShare</div>
+      <ul class="admin-nav">
+        <li><a href="/admin/index.html">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+          <span>Dashboard</span>
+        </a></li>
+        <li><a href="/admin/articles.html" class="active">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          <span>Bài viết</span>
+        </a></li>
+        <li><a href="/admin/editor.html">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+          <span>Viết bài</span>
+        </a></li>
+        <li><a href="/admin/quick-editor.html">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M9 9h6"/><path d="M9 13h6"/><path d="M9 17h4"/></svg>
+          <span>Quick Paste</span>
+        </a></li>
+        <li><a href="/admin/categories.html">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+          <span>Danh mục</span>
+        </a></li>
+      </ul>
+      
+      <div style="margin-top: auto; padding-top: var(--spacing-xl);">
+        <a href="/" style="display: block; padding: var(--spacing-sm); color: rgba(255,255,255,0.5); font-size: 0.875rem;">
+          ← Xem trang web
         </a>
-      </div>
-      <nav class="sidebar-nav">
-        <a href="index.html" class="nav-item"><i data-lucide="layout-dashboard"></i> Dashboard</a>
-        <a href="editor.html" class="nav-item"><i data-lucide="edit-3"></i> Viết bài mới</a>
-        <a href="articles.html" class="nav-item active"><i data-lucide="file-text"></i> Quản lý bài viết</a>
-        <a href="categories.html" class="nav-item"><i data-lucide="folder"></i> Danh mục</a>
-      </nav>
-      <div class="sidebar-footer">
-        <button class="nav-item" id="logoutBtn"><i data-lucide="log-out"></i> Đăng xuất</button>
+        <button id="logoutBtn" class="btn btn-secondary" style="width: 100%; margin-top: var(--spacing-sm);">
+          Đăng xuất
+        </button>
       </div>
     </aside>
-
+    
     <!-- Main Content -->
     <main class="admin-main">
-      <header class="admin-header">
-        <h1>Quản lý bài viết</h1>
-        <a href="editor.html" class="btn btn-primary"><i data-lucide="plus"></i> Viết bài mới</a>
-      </header>
-
-      <div class="admin-section" style="margin-bottom:1.5rem;">
-        <div style="display:flex;gap:1rem;flex-wrap:wrap;align-items:center;">
-          <select class="form-select" id="filterStatus" style="width:auto;">
-            <option value="">Tất cả trạng thái</option>
-            <option value="published">✅ Đã đăng</option>
-            <option value="draft">✏️ Bản nháp</option>
-          </select>
-          <select class="form-select" id="filterCategory" style="width:auto;">
-            <option value="">Đang tải...</option>
-          </select>
-          <input type="text" class="form-input" id="searchInput" placeholder="Tìm kiếm bài viết..." style="width:300px;">
-          <span id="totalCount" style="color:var(--text-muted);margin-left:auto;">Tổng: 0 bài viết</span>
-        </div>
-      </div>
-
-      <!-- Articles Table -->
-      <div class="admin-section">
-        <div class="articles-table" id="articlesTable">
-          <div class="loading"><div class="loading-spinner"></div><span>Đang tải...</span></div>
-        </div>
+      <div class="admin-header flex items-center justify-between">
+        <h1 class="admin-title">Quản lý bài viết</h1>
+        <a href="/admin/editor.html" class="btn btn-primary">+ Viết bài mới</a>
       </div>
       
-      <!-- Pagination -->
-      <div class="pagination" id="pagination" style="margin-top:1.5rem;"></div>
+      <!-- Filters -->
+      <div class="flex gap-md mb-lg" style="flex-wrap: wrap;">
+        <select class="form-select" id="filterCategory" style="width: auto;">
+          <option value="">Tất cả danh mục</option>
+          <option value="loi">Lỗi</option>
+          <option value="vi-sao">Vì sao</option>
+          <option value="meo">Mẹo</option>
+          <option value="huong-dan">Hướng dẫn</option>
+        </select>
+        
+        <select class="form-select" id="filterStatus" style="width: auto;">
+          <option value="">Tất cả trạng thái</option>
+          <option value="published">Đã đăng</option>
+          <option value="draft">Bản nháp</option>
+        </select>
+        
+        <input type="text" class="form-input" id="searchArticles" placeholder="Tìm kiếm..." style="width: 250px;">
+      </div>
+      
+      <!-- Articles Table -->
+      <table class="table">
+        <thead>
+          <tr>
+            <th style="width: 60px;">Ảnh</th>
+            <th>Tiêu đề</th>
+            <th>Nền tảng</th>
+            <th>Danh mục</th>
+            <th>Views</th>
+            <th>Trạng thái</th>
+            <th>Ngày tạo</th>
+            <th>Thao tác</th>
+          </tr>
+        </thead>
+        <tbody id="articlesTable">
+          <tr>
+            <td colspan="8" class="text-center text-muted">Đang tải...</td>
+          </tr>
+        </tbody>
+      </table>
     </main>
   </div>
-
-  <div class="toast" id="toast"></div>
-
-  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
-  <script src="../js/firebase-config.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      lucide.createIcons();
-      
-      if (!window.VietShare || !window.VietShare.auth || !window.VietShare.db) {
-        document.body.innerHTML = '<div style="padding:2rem;text-align:center;"><h2>Lỗi tải Firebase</h2><p><a href="login.html">Quay lại đăng nhập</a></p></div>';
-        return;
-      }
-
-      var db = window.VietShare.db;
-      var auth = window.VietShare.auth;
-      var formatDate = window.VietShare.formatDate;
-      var getCategoryInfo = window.VietShare.getCategoryInfo;
-      var showToast = window.VietShare.showToast;
-      
-      var adminLayout = document.querySelector('.admin-layout');
-      var allArticles = [];
-      var currentPage = 1;
-      var perPage = 15;
-
-      // Auth check
-      auth.onAuthStateChanged(function(user) {
-        if (!user) {
-          window.location.href = 'login.html';
-        } else {
-          adminLayout.style.display = 'grid';
-          loadArticles();
-        }
-      });
-
-      // Logout
-      document.getElementById('logoutBtn').addEventListener('click', function() {
-        auth.signOut().then(function() {
-          window.location.href = 'login.html';
-        });
-      });
-
-      // Load articles
-      async function loadArticles() {
-        // Load dynamic categories
-        await window.VietShare.loadCategories();
-        var cats=window.VietShare.CATEGORIES;
-        var catSelect=document.getElementById('filterCategory');
-        catSelect.innerHTML='<option value="">Tất cả danh mục</option>';
-        Object.keys(cats).forEach(function(key){
-          var c=cats[key];
-          catSelect.innerHTML+='<option value="'+key+'">'+(c.icon||'📁')+' '+c.name+'</option>';
-        });
-
-        db.collection('articles').orderBy('updatedAt', 'desc').get()
-          .then(function(snapshot) {
-            allArticles = snapshot.docs.map(function(doc) {
-              return { id: doc.id, ...doc.data() };
-            });
-            renderArticles();
-          })
-          .catch(function(error) {
-            console.error(error);
-            document.getElementById('articlesTable').innerHTML = '<div class="empty-state"><p>Lỗi tải dữ liệu</p></div>';
-          });
-      }
-
-      // Filter and search
-      document.getElementById('filterCategory').addEventListener('change', renderArticles);
-      document.getElementById('filterStatus').addEventListener('change', renderArticles);
-      document.getElementById('searchInput').addEventListener('input', renderArticles);
-
-      function renderArticles() {
-        var category = document.getElementById('filterCategory').value;
-        var status = document.getElementById('filterStatus').value;
-        var search = document.getElementById('searchInput').value.toLowerCase();
-        
-        var filtered = allArticles.filter(function(a) {
-          var matchCategory = !category || a.category === category;
-          var matchStatus = !status || a.status === status;
-          var matchSearch = !search || a.title.toLowerCase().includes(search);
-          return matchCategory && matchStatus && matchSearch;
-        });
-
-        document.getElementById('totalCount').textContent = 'Tổng: ' + filtered.length + ' bài viết';
-        
-        var container = document.getElementById('articlesTable');
-        
-        if (filtered.length === 0) {
-          container.innerHTML = '<div class="empty-state"><p>Không có bài viết nào</p><a href="editor.html" class="btn btn-primary">Viết bài đầu tiên</a></div>';
-          document.getElementById('pagination').innerHTML = '';
-          return;
-        }
-
-        var start = (currentPage - 1) * perPage;
-        var paged = filtered.slice(start, start + perPage);
-
-        container.innerHTML = '<table>' +
-          '<thead><tr><th style="width:60px">Ảnh</th><th style="width:30%">Tiêu đề</th><th>Danh mục</th><th>Trạng thái</th><th>Lượt xem</th><th>Cập nhật</th><th>Thao tác</th></tr></thead>' +
-          '<tbody>' + paged.map(function(a) {
-            var cat = getCategoryInfo(a.category);
-            var statusBadge = a.status === 'draft' 
-              ? '<span class="badge" style="background:#fef3c7;color:#d97706;">Nháp</span>'
-              : '<span class="badge" style="background:#dcfce7;color:#16a34a;">Đã đăng</span>';
-            var thumbSrc = a.thumbnail || 'https://placehold.co/60x40?text=No+Image';
-            return '<tr>' +
-              '<td><img src="' + thumbSrc + '" style="width:60px;height:40px;object-fit:cover;border-radius:4px;" onerror="this.src=\'https://placehold.co/60x40?text=Error\'"></td>' +
-              '<td class="title-cell"><a href="../article.html?slug=' + a.slug + '" target="_blank">' + a.title + '</a>' + 
-              (a.featured ? ' <span style="color:gold;">★</span>' : '') + '</td>' +
-              '<td><span class="badge">' + cat.name + '</span></td>' +
-              '<td>' + statusBadge + '</td>' +
-              '<td>' + (a.views || 0) + '</td>' +
-              '<td>' + formatDate(a.updatedAt || a.publishedAt) + '</td>' +
-              '<td class="actions">' +
-                '<a href="editor.html?id=' + a.id + '" class="btn-icon" title="Sửa"><i data-lucide="edit"></i></a>' +
-                '<button class="btn-icon delete" data-id="' + a.id + '" title="Xóa"><i data-lucide="trash-2"></i></button>' +
-              '</td>' +
-            '</tr>';
-          }).join('') + '</tbody></table>';
-
-        lucide.createIcons();
-        renderPagination(filtered.length);
-        bindDeleteButtons();
-      }
-
-      function renderPagination(total) {
-        var pages = Math.ceil(total / perPage);
-        var paginationEl = document.getElementById('pagination');
-        
-        if (pages <= 1) {
-          paginationEl.innerHTML = '';
-          return;
-        }
-
-        var html = '';
-        for (var i = 1; i <= pages; i++) {
-          html += '<button class="pagination-btn ' + (i === currentPage ? 'active' : '') + '" data-page="' + i + '">' + i + '</button>';
-        }
-        paginationEl.innerHTML = html;
-
-        paginationEl.querySelectorAll('.pagination-btn').forEach(function(btn) {
-          btn.addEventListener('click', function() {
-            currentPage = parseInt(btn.dataset.page);
-            renderArticles();
-            window.scrollTo(0, 0);
-          });
-        });
-      }
-
-      function bindDeleteButtons() {
-        document.querySelectorAll('.delete').forEach(function(btn) {
-          btn.addEventListener('click', function() {
-            if (confirm('Bạn có chắc muốn xóa bài viết này?')) {
-              db.collection('articles').doc(btn.dataset.id).delete()
-                .then(function() {
-                  showToast('Đã xóa bài viết');
-                  loadArticles();
-                })
-                .catch(function(e) {
-                  showToast('Lỗi xóa bài viết');
-                });
-            }
-          });
-        });
+  
+  <script type="module">
+    import { auth, db, onAuthStateChanged, signOut, collection, getDocs, doc, deleteDoc } from '../js/firebase-config.js';
+    
+    let allArticles = [];
+    
+    // Auth check
+    onAuthStateChanged(auth, (user) => {
+      if (!user) {
+        window.location.href = '/admin/login.html';
+      } else {
+        loadArticles();
       }
     });
+    
+    // Logout
+    document.getElementById('logoutBtn').addEventListener('click', async () => {
+      await signOut(auth);
+      window.location.href = '/admin/login.html';
+    });
+    
+    // Load all articles
+    async function loadArticles() {
+      try {
+        const articlesRef = collection(db, 'articles');
+        const snapshot = await getDocs(articlesRef);
+        
+        allArticles = [];
+        snapshot.forEach(d => {
+          allArticles.push({ id: d.id, ...d.data() });
+        });
+        
+        // Sort by date
+        allArticles.sort((a, b) => {
+          const dateA = a.createdAt?.toDate?.() || new Date(0);
+          const dateB = b.createdAt?.toDate?.() || new Date(0);
+          return dateB - dateA;
+        });
+        
+        renderArticles(allArticles);
+      } catch (error) {
+        console.error('Error loading articles:', error);
+        document.getElementById('articlesTable').innerHTML = 
+          '<tr><td colspan="8" class="text-center text-error">Không thể tải bài viết.</td></tr>';
+      }
+    }
+    
+    function renderArticles(articles) {
+      const tbody = document.getElementById('articlesTable');
+      
+      if (articles.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="8" class="text-center text-muted">Không có bài viết nào.</td></tr>';
+        return;
+      }
+      
+      const categoryLabels = {
+        'loi': 'Lỗi',
+        'vi-sao': 'Vì sao',
+        'meo': 'Mẹo',
+        'huong-dan': 'Hướng dẫn'
+      };
+      
+      const platformLabels = {
+        'zalo-pc': 'Zalo PC',
+        'zalo-web': 'Zalo Web',
+        'zalo-mobile': 'Zalo Mobile'
+      };
+      
+      const defaultThumb = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="80" height="55" fill="%23E2E8F0"%3E%3Crect width="80" height="55"/%3E%3C/svg%3E';
+      
+      tbody.innerHTML = articles.map(article => {
+        const thumbSrc = (article.heroImage && article.heroImage.trim()) ? article.heroImage : defaultThumb;
+        return `
+        <tr>
+          <td style="padding: 4px;"><img src="${thumbSrc}" alt="" style="width: 80px; height: 55px; object-fit: cover; display: block;"></td>
+          <td>
+            <a href="/admin/editor.html?id=${article.id}" style="color: var(--color-text); font-weight: 500;">
+              ${escapeHtml(article.title)}
+            </a>
+          </td>
+          <td>${platformLabels[article.platform] || article.platform || '-'}</td>
+          <td>${categoryLabels[article.category] || article.category || '-'}</td>
+          <td style="text-align: center;">${article.views || 0}</td>
+          <td>
+            <span style="color: ${article.status === 'published' ? 'var(--color-success)' : '#F59E0B'}">
+              ${article.status === 'published' ? 'Đã đăng' : 'Nháp'}
+            </span>
+          </td>
+          <td>${formatDate(article.createdAt)}</td>
+          <td>
+            <div class="flex gap-sm">
+              <a href="/admin/editor.html?id=${article.id}" class="text-accent">Sửa</a>
+              <a href="/article.html?id=${article.id}" target="_blank" class="text-muted">Xem</a>
+              <a href="#" class="text-error delete-btn" data-id="${article.id}">Xóa</a>
+            </div>
+          </td>
+        </tr>
+      `}).join('');
+      
+      // Attach delete handlers
+      tbody.querySelectorAll('.delete-btn').forEach(btn => {
+        btn.addEventListener('click', async (e) => {
+          e.preventDefault();
+          const articleId = btn.dataset.id;
+          try {
+            await deleteDoc(doc(db, 'articles', articleId));
+            loadArticles();
+          } catch (error) {
+            console.error('Error deleting:', error);
+            alert('Lỗi: ' + error.message);
+          }
+        });
+      });
+    }
+    
+    // Filter articles
+    function filterArticles() {
+      const category = document.getElementById('filterCategory').value;
+      const status = document.getElementById('filterStatus').value;
+      const search = document.getElementById('searchArticles').value.toLowerCase();
+      
+      let filtered = allArticles;
+      
+      if (category) {
+        filtered = filtered.filter(a => a.category === category);
+      }
+      
+      if (status) {
+        filtered = filtered.filter(a => a.status === status);
+      }
+      
+      if (search) {
+        filtered = filtered.filter(a => 
+          a.title?.toLowerCase().includes(search) || 
+          a.description?.toLowerCase().includes(search)
+        );
+      }
+      
+      renderArticles(filtered);
+    }
+    
+    // Event listeners
+    document.getElementById('filterCategory').addEventListener('change', filterArticles);
+    document.getElementById('filterStatus').addEventListener('change', filterArticles);
+    document.getElementById('searchArticles').addEventListener('input', filterArticles);
+    
+    // Utilities
+    function formatDate(timestamp) {
+      if (!timestamp) return '-';
+      const date = timestamp.toDate ? timestamp.toDate() : new Date(timestamp);
+      return date.toLocaleDateString('vi-VN');
+    }
+    
+    function escapeHtml(text) {
+      const div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
+    }
   </script>
 </body>
 </html>

@@ -1,383 +1,191 @@
 <!DOCTYPE html>
-<html lang="vi" data-theme="light">
+<html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7476202315605832"
-     crossorigin="anonymous"></script>
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-T3XL4RCMKT"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-T3XL4RCMKT');
-  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <!-- SEO Meta Tags -->
-  <title>VietShare - Blog Chia Sẻ Kiến Thức Công Nghệ, Mẹo Vặt, Lifestyle</title>
-  <meta name="description" content="VietShare - Blog chia sẻ kiến thức công nghệ, tin tức, mẹo vặt, hướng dẫn và lifestyle. Cập nhật các bài viết mới nhất về Windows, Android, iOS và nhiều hơn nữa.">
-  <meta name="keywords" content="blog công nghệ, tin tức công nghệ, mẹo vặt máy tính, hướng dẫn Windows, review sản phẩm, lifestyle, VietShare">
-  <meta name="author" content="VietShare">
-  <meta name="robots" content="index, follow">
+  <title>VietShare - Mẹo Zalo, Khắc phục lỗi Zalo PC, Web, Mobile</title>
+  <meta name="description" content="Trang chuyên hướng dẫn sử dụng Zalo, khắc phục lỗi Zalo PC, Zalo Web, Zalo Mobile. Mẹo và thủ thuật Zalo hữu ích.">
   <link rel="canonical" href="https://vietshare.site/">
   
-  <!-- Favicon - All Devices -->
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png">
-  <link rel="manifest" href="/manifest.json">
-  <meta name="theme-color" content="#8B5CF6">
-  <meta name="msapplication-TileColor" content="#8B5CF6">
-  <meta name="msapplication-TileImage" content="/favicon.png">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="favicon.png">
+  <meta name="theme-color" content="#2563EB">
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://vietshare.site/">
-  <meta property="og:title" content="VietShare - Blog Chia Sẻ Kiến Thức Công Nghệ, Mẹo Vặt, Lifestyle">
-  <meta property="og:description" content="Blog chia sẻ kiến thức công nghệ, tin tức, mẹo vặt, hướng dẫn và lifestyle. Cập nhật các bài viết mới nhất.">
-  <meta property="og:image" content="https://vietshare.site/favicon.png">
+  <meta property="og:title" content="VietShare - Mẹo Zalo, Khắc phục lỗi Zalo PC, Web, Mobile">
+  <meta property="og:description" content="Trang chuyên hướng dẫn sử dụng Zalo, khắc phục lỗi Zalo PC, Zalo Web, Zalo Mobile. Mẹo và thủ thuật Zalo hữu ích.">
+  <meta property="og:image" content="https://vietshare.site/assets/og-image.png">
   <meta property="og:site_name" content="VietShare">
   <meta property="og:locale" content="vi_VN">
   
-  <!-- Twitter Card -->
+  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="VietShare - Blog Chia Sẻ Kiến Thức">
-  <meta name="twitter:description" content="Blog chia sẻ kiến thức công nghệ, tin tức, mẹo vặt và lifestyle.">
-  <meta name="twitter:image" content="https://vietshare.site/assets/og-image.jpg">
+  <meta name="twitter:url" content="https://vietshare.site/">
+  <meta name="twitter:title" content="VietShare - Mẹo Zalo, Khắc phục lỗi Zalo PC, Web, Mobile">
+  <meta name="twitter:description" content="Trang chuyên hướng dẫn sử dụng Zalo, khắc phục lỗi Zalo PC, Zalo Web, Zalo Mobile. Mẹo và thủ thuật Zalo hữu ích.">
+  <meta name="twitter:image" content="https://vietshare.site/assets/og-image.png">
   
-  <!-- Preload Critical Resources -->
-  <link rel="preload" href="css/style.css" as="style">
-  <link rel="preload" href="favicon.png" as="image">
-  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-  <link rel="dns-prefetch" href="https://www.gstatic.com">
-  <link rel="dns-prefetch" href="https://firebasestorage.googleapis.com">
+  <!-- Preload critical resources -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://www.gstatic.com">
+  <link rel="dns-prefetch" href="https://firestore.googleapis.com">
   
-  <!-- Structured Data - Website -->
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  
+  <!-- Dark Mode -->
+  <script src="js/dark-mode.js"></script>
+  
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7476202315605832" crossorigin="anonymous"></script>
+  
+  <!-- Schema -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "VietShare",
     "url": "https://vietshare.site/",
-    "description": "Blog chia sẻ kiến thức công nghệ, tin tức, mẹo vặt và lifestyle",
+    "description": "Trang chuyên hướng dẫn sử dụng Zalo, khắc phục lỗi và mẹo Zalo",
     "potentialAction": {
       "@type": "SearchAction",
-      "target": "https://vietshare.site/search?q={search_term_string}",
+      "target": "https://vietshare.site/search.html?q={search_term_string}",
       "query-input": "required name=search_term_string"
     }
   }
   </script>
-  
-  <!-- Structured Data - Organization -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "VietShare",
-    "url": "https://vietshare.site/",
-    "logo": "https://vietshare.site/favicon.png"
-  }
-  </script>
-  
-  <!-- Google Fonts - Optimized -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet"></noscript>
-  
-  <!-- Lucide Icons - Deferred -->
-  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
-  
-  <!-- Critical CSS - Inline for faster first paint -->
-  <style>
-    :root{--bg-primary:#fff;--text-primary:#0f172a;--font-sans:'Inter',-apple-system,sans-serif}
-    [data-theme="dark"]{--bg-primary:#0f172a;--text-primary:#f8fafc}
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:var(--font-sans);background:var(--bg-primary);color:var(--text-primary)}
-    .header{position:sticky;top:0;z-index:100;background:var(--bg-primary);padding:1rem 0;border-bottom:1px solid rgba(0,0,0,0.1)}
-    .container{max-width:1280px;margin:0 auto;padding:0 1.5rem}
-    .header-inner{display:flex;align-items:center;justify-content:space-between}
-    .logo{display:flex;align-items:center;gap:0.5rem;font-weight:700;font-size:1.25rem}
-    .loading{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:3rem}
-    .loading-spinner{width:40px;height:40px;border:3px solid rgba(0,0,0,0.1);border-top-color:#6366f1;border-radius:50%;animation:spin 1s linear infinite}
-    @keyframes spin{to{transform:rotate(360deg)}}
-  </style>
-  
-  <!-- Main CSS - Async load -->
-  <link rel="stylesheet" href="css/style.css" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="css/style.css"></noscript>
 </head>
 <body>
-  <!-- Reading Progress Bar -->
-  <div class="reading-progress" id="readingProgress"></div>
-  
   <!-- Header -->
   <header class="header">
-    <div class="container header-inner">
-      <!-- Logo -->
-      <a href="index.html" class="logo">
-        <img src="favicon.png" alt="VietShare Logo" class="logo-img" style="width:40px;height:40px;">
-        <span class="logo-text">VietShare</span>
-      </a>
-      
-      <!-- Navigation -->
-      <nav class="nav">
-        <ul class="nav-menu" id="navMenu">
-          <li><a href="index.html" class="nav-link active">Trang chủ</a></li>
-          <!-- Categories loaded dynamically from Firestore -->
-        </ul>
+    <div class="container container-wide">
+      <div class="header-inner">
+        <a href="/" class="logo">VietShare</a>
         
-        <div class="nav-actions">
-          <button class="search-btn" id="searchBtn" aria-label="Tìm kiếm">
-            <i data-lucide="search"></i>
-          </button>
-          <button class="theme-toggle" id="themeToggle" aria-label="Chuyển đổi theme">
-            <i data-lucide="moon" id="themeIcon"></i>
-          </button>
-          <button class="menu-toggle" id="menuToggle" aria-label="Menu">
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
+        <nav class="nav">
+          <a href="/category.html?platform=zalo-pc">Zalo PC</a>
+          <a href="/category.html?platform=zalo-web">Zalo Web</a>
+          <a href="/category.html?platform=zalo-mobile">Zalo Mobile</a>
+        </nav>
+        
+        <div class="search-box">
+          <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+          <input type="text" class="search-input" id="searchInput" placeholder="Tìm kiếm mẹo, lỗi Zalo...">
         </div>
-      </nav>
+        
+        <button class="theme-toggle" id="themeToggle" aria-label="Chuyển đổi dark mode">
+          <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        </button>
+      </div>
     </div>
   </header>
-
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="container">
-      <div class="hero-content">
-        <div class="hero-badge">
-          <span class="hero-badge-dot"></span>
-          Cập nhật mỗi ngày
-        </div>
-        <h1 class="hero-title">
-          Khám phá thế giới qua <span>góc nhìn mới</span>
-        </h1>
-        <p class="hero-desc">
-          Chia sẻ kiến thức, mẹo hay, tin tức công nghệ và những trải nghiệm cuộc sống thú vị. 
-          Từ hướng dẫn chi tiết đến góc nhìn độc đáo.
-        </p>
-        <form class="search-box" id="heroSearchForm">
-          <input type="text" placeholder="Tìm kiếm bài viết..." id="heroSearchInput">
-          <button type="submit">
-            <i data-lucide="search"></i>
-            Tìm kiếm
-          </button>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <!-- Categories -->
-  <section class="categories-section">
-    <div class="container">
-      <div class="categories-scroll" id="categoriesScroll">
-        <button class="category-tab active" data-category="all">
-          Tất cả <span class="count" id="countAll">0</span>
-        </button>
-        <!-- Categories loaded dynamically from Firestore -->
-      </div>
-    </div>
-  </section>
-
+  
   <!-- Main Content -->
   <main>
-    <div class="container">
-      <!-- Featured Post -->
-      <section class="posts-section">
-        <div class="section-header">
-          <div class="section-title">
-            <div class="section-title-icon">
-              <i data-lucide="flame"></i>
-            </div>
-            <h2>Bài viết nổi bật</h2>
-          </div>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <h1>Hướng dẫn Zalo từ A-Z</h1>
+        <p>Giải thích lỗi, cách khắc phục, mẹo sử dụng Zalo trên PC, Web và Mobile. Cập nhật thường xuyên.</p>
+      </div>
+    </section>
+    
+    <!-- Quick Links -->
+    <section style="background: var(--color-bg); border-bottom: 1px solid var(--color-border);">
+      <div class="container container-wide">
+        <div class="flex gap-lg justify-center" style="padding: var(--spacing-lg) 0;">
+          <a href="/category.html?platform=zalo-pc" class="btn btn-secondary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="0"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            Zalo PC
+          </a>
+          <a href="/category.html?platform=zalo-web" class="btn btn-secondary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            Zalo Web
+          </a>
+          <a href="/category.html?platform=zalo-mobile" class="btn btn-secondary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="0"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+            Zalo Mobile
+          </a>
         </div>
-        
-        <div id="featuredPost" class="featured-post">
-          <!-- Featured post will be loaded here -->
+      </div>
+    </section>
+    
+    <!-- Lỗi Zalo phổ biến -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Lỗi Zalo phổ biến</h2>
+          <a href="/category.html?type=loi" class="section-link">Xem tất cả →</a>
+        </div>
+        <div class="article-list" id="errorArticles">
           <div class="loading">
-            <div class="loading-spinner"></div>
+            <div class="spinner"></div>
             <span>Đang tải...</span>
           </div>
         </div>
-      </section>
-
-      <!-- Mobile Ad (visible only on mobile) -->
-      <div class="mobile-ad">Quảng cáo</div>
-
-      <!-- Main Layout with Sidebar -->
-      <div class="main-layout">
-        <!-- Posts Grid -->
-        <section class="posts-main">
-          <div class="section-header">
-            <div class="section-title">
-              <div class="section-title-icon">
-                <i data-lucide="newspaper"></i>
-              </div>
-              <h2>Bài viết mới nhất</h2>
-            </div>
-            <a href="category.html" class="view-all">
-              Xem tất cả
-              <i data-lucide="arrow-right"></i>
-            </a>
-          </div>
-          
-          <div class="posts-grid" id="postsGrid">
-            <!-- Posts will be loaded here -->
-            <div class="loading">
-              <div class="loading-spinner"></div>
-              <span>Đang tải bài viết...</span>
-            </div>
-          </div>
-          
-          <!-- Pagination -->
-          <div class="pagination" id="pagination"></div>
-        </section>
-        
-        <!-- Sidebar -->
-        <aside class="sidebar">
-          <!-- Popular Posts -->
-          <div class="sidebar-widget">
-            <h3 class="widget-title">
-              <i data-lucide="trending-up"></i>
-              Đọc nhiều nhất
-            </h3>
-            <div class="popular-posts" id="popularPosts">
-              <!-- Popular posts will be loaded here -->
-            </div>
-          </div>
-          
-          <!-- Tags Cloud -->
-          <div class="sidebar-widget">
-            <h3 class="widget-title">
-              <i data-lucide="tags"></i>
-              Thẻ phổ biến
-            </h3>
-            <div class="tags-cloud" id="tagsCloud">
-              <!-- Tags loaded dynamically, sorted by article count -->
-            </div>
-          </div>
-          
-          <!-- Newsletter -->
-          <div class="sidebar-widget newsletter-widget">
-            <h3 class="widget-title">
-              <i data-lucide="mail"></i>
-              Đăng ký nhận tin
-            </h3>
-            <p class="newsletter-desc">
-              Nhận bài viết mới nhất qua email. Không spam, hủy bất cứ lúc nào.
-            </p>
-            <form class="newsletter-form" id="newsletterForm">
-              <input type="email" placeholder="Email của bạn..." required>
-              <button type="submit">Đăng ký</button>
-            </form>
-          </div>
-          
-          <!-- Another Ad -->
-          <div class="ad-placeholder">
-            📢 Quảng cáo
-          </div>
-        </aside>
       </div>
-    </div>
+    </section>
+    
+    <!-- Mẹo Zalo -->
+    <section class="section" style="background: var(--color-bg-alt);">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Mẹo Zalo hay</h2>
+          <a href="/category.html?type=meo" class="section-link">Xem tất cả →</a>
+        </div>
+        <div class="article-list" id="tipsArticles">
+          <div class="loading">
+            <div class="spinner"></div>
+            <span>Đang tải...</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Bài mới nhất -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Bài viết mới nhất</h2>
+        </div>
+        <div class="article-list" id="latestArticles">
+          <div class="loading">
+            <div class="spinner"></div>
+            <span>Đang tải...</span>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
-
+  
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <div class="footer-grid">
-        <!-- Brand -->
-        <div class="footer-brand">
-          <a href="index.html" class="logo">
-            <img src="favicon.png" alt="VietShare" style="width:40px;height:40px;">
-            <span class="logo-text">VietShare</span>
-          </a>
-          <p>
-            Blog chia sẻ kiến thức đa lĩnh vực. Từ công nghệ, mẹo vặt đến lifestyle và nhiều chủ đề thú vị khác.
-          </p>
-
+      <div class="footer-inner">
+        <div class="footer-logo">VietShare</div>
+        <div class="footer-links">
+          <a href="/about.html">Giới thiệu</a>
+          <a href="/contact.html">Liên hệ</a>
+          <a href="/privacy-policy.html">Chính sách bảo mật</a>
+          <a href="/terms.html">Điều khoản</a>
         </div>
-        
-        <!-- Categories -->
-        <div class="footer-column">
-          <h4>Chuyên mục</h4>
-          <ul class="footer-links">
-            <li><a href="category.html?cat=cong-nghe">Công nghệ</a></li>
-            <li><a href="category.html?cat=tin-tuc">Tin tức</a></li>
-            <li><a href="category.html?cat=meo-vat">Mẹo vặt</a></li>
-            <li><a href="category.html?cat=lifestyle">Lifestyle</a></li>
-            <li><a href="category.html?cat=huong-dan">Hướng dẫn</a></li>
-          </ul>
-        </div>
-        
-        <!-- Quick Links -->
-        <div class="footer-column">
-          <h4>Liên kết</h4>
-          <ul class="footer-links">
-            <li><a href="about.html">Giới thiệu</a></li>
-            <li><a href="contact.html">Liên hệ</a></li>
-            <li><a href="privacy.html">Chính sách bảo mật</a></li>
-            <li><a href="terms.html">Điều khoản</a></li>
-          </ul>
-        </div>
-        
-        <!-- Contact -->
-        <div class="footer-column">
-          <h4>Liên hệ</h4>
-          <ul class="footer-links">
-            <li>📧 contact@vietshare.site</li>
-            <li>📍 Việt Nam</li>
-          </ul>
-        </div>
-      </div>
-      
-      <div class="footer-bottom">
-        <p>© 2024 VietShare. All rights reserved.</p>
-        <p>Made with ❤️ in Vietnam</p>
+        <p class="footer-copyright">© 2026 VietShare. Mọi quyền được bảo lưu.</p>
       </div>
     </div>
   </footer>
-
-  <!-- Back to Top -->
-  <button class="back-to-top" id="backToTop" aria-label="Lên đầu trang">
-    <i data-lucide="arrow-up"></i>
-  </button>
-
-  <!-- Search Modal -->
-  <div class="search-modal" id="searchModal" style="display: none;">
-    <div class="search-modal-content">
-      <div class="search-modal-header">
-        <i data-lucide="search"></i>
-        <input type="text" class="search-modal-input" placeholder="Tìm kiếm bài viết..." id="searchModalInput">
-        <button class="search-modal-close" id="searchModalClose">
-          <i data-lucide="x"></i>
-        </button>
-      </div>
-      <div class="search-modal-results" id="searchResults">
-        <!-- Search results will appear here -->
-      </div>
-    </div>
-  </div>
-
-  <!-- Toast -->
-  <div class="toast" id="toast"></div>
-
-  <!-- Firebase SDK -->
-  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
   
-  <!-- App Scripts -->
-  <script src="js/firebase-config.js"></script>
-  <script src="js/app.js"></script>
-  
-  <script>
-    // Initialize Lucide icons
-    lucide.createIcons();
-  </script>
+  <!-- Scripts -->
+  <script type="module" src="js/firebase-config.js"></script>
+  <script type="module" src="js/app.js"></script>
 </body>
 </html>
