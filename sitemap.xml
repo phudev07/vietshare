@@ -5,7 +5,7 @@
   <!-- Homepage -->
   <url>
     <loc>https://vietshare.site/</loc>
-    <lastmod>2026-01-22</lastmod>
+    <lastmod>2026-01-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -13,28 +13,28 @@
   <!-- Static Pages -->
   <url>
     <loc>https://vietshare.site/about.html</loc>
-    <lastmod>2026-01-22</lastmod>
+    <lastmod>2026-01-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://vietshare.site/contact.html</loc>
-    <lastmod>2026-01-22</lastmod>
+    <lastmod>2026-01-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://vietshare.site/privacy-policy.html</loc>
-    <lastmod>2026-01-22</lastmod>
+    <lastmod>2026-01-23</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   
   <url>
     <loc>https://vietshare.site/terms.html</loc>
-    <lastmod>2026-01-22</lastmod>
+    <lastmod>2026-01-23</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
@@ -42,37 +42,335 @@
   <!-- Category Pages -->
   <url>
     <loc>https://vietshare.site/zalo-pc/</loc>
-    <lastmod>2026-01-22</lastmod>
+    <lastmod>2026-01-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://vietshare.site/zalo-web/</loc>
-    <lastmod>2026-01-22</lastmod>
+    <lastmod>2026-01-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://vietshare.site/zalo-mobile/</loc>
-    <lastmod>2026-01-22</lastmod>
+    <lastmod>2026-01-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
-  <!-- Articles will be added dynamically -->
-  <!-- Example article with image sitemap:
+  <!-- Articles (31 bài) -->
   <url>
-    <loc>https://vietshare.site/article.html?id=abc123</loc>
+    <loc>https://vietshare.site/article.html?id=0FUvXKgEnI7Q43qx6VqD</loc>
     <lastmod>2026-01-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
-      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/f_auto,q_auto,w_800/meo-zalo.webp</image:loc>
-      <image:title>Mẹo Zalo</image:title>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769093008/icuba35xzysfcouq8oxa.png</image:loc>
+      <image:title>Vì sao Zalo Mobile hao pin khi chạy nền?</image:title>
     </image:image>
   </url>
-  -->
+  <url>
+    <loc>https://vietshare.site/article.html?id=3bzhwGCMfsnFCXR6C8VJ</loc>
+    <lastmod>2026-01-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769094326/wxbweidzdqkvvtpodwbw.png</image:loc>
+      <image:title>Mẹo giảm dung lượng Zalo Mobile khi máy sắp đầy</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vietshare.site/article.html?id=3jftadu7BJdSc42rA1q6</loc>
+    <lastmod>2026-01-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769092270/yurhhvzhznlbfoxdss4q.png</image:loc>
+      <image:title>Mẹo gửi file dung lượng lớn trên Zalo Mobile</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vietshare.site/article.html?id=6h2PhijeqATWsUYwrWmQ</loc>
+    <lastmod>2026-01-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769095314/isr8xlye3t6u1eyf7p1w.png</image:loc>
+      <image:title>Mẹo hạn chế bị làm phiền từ nhóm Zalo đông người</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vietshare.site/article.html?id=ApbM8RA4SaSk9WyEn9nf</loc>
+    <lastmod>2026-01-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769094138/royucznmtyukiyy29csa.png</image:loc>
+      <image:title>Hướng dẫn đăng nhập Zalo Web không cần quét QR</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vietshare.site/article.html?id=GNX8FCeaZlIWpCicMw5O</loc>
+    <lastmod>2026-01-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769095497/vfqdyyo5qxfxbl6rsd5y.png</image:loc>
+      <image:title>Vì sao Zalo Web hay tự đăng xuất sau một thời gian</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vietshare.site/article.html?id=II79emi0e9guEG0JvRmZ</loc>
+    <lastmod>2026-01-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769094633/ivukuldckyl7pvcjnbjq.png</image:loc>
+      <image:title>Mẹo quản lý nhóm chat Zalo hiệu quả hơn</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vietshare.site/article.html?id=Jnv94KjKDg8kPRooOPvw</loc>
+    <lastmod>2026-01-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769093988/ix8drna6wh29guf57pdt.png</image:loc>
+      <image:title>Lỗi Zalo Web không gửi được file tài liệu</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vietshare.site/article.html?id=KFgPHNMEDyoFckJEahCL</loc>
+    <lastmod>2026-01-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769094433/xchhevlr7ks7lw7dnrkc.png</image:loc>
+      <image:title>Lỗi Zalo PC không đồng bộ tin nhắn mới</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vietshare.site/article.html?id=KdHfe6gMGJXoH8dAIrgE</loc>
+    <lastmod>2026-01-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769094791/zmsl3chovjp5k4y6v73w.png</image:loc>
+      <image:title>Hướng dẫn chuyển đổi tài khoản Zalo giữa hai điện thoại</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vietshare.site/article.html?id=LxHLBBbI5DR7O9UY65VV</loc>
+    <lastmod>2026-01-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769093870/cennar5mzzwxynjbdyty.png</image:loc>
+      <image:title>Mẹo ẩn trạng thái online trên Zalo PC</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vietshare.site/article.html?id=ROFhRSI5oUj5QbgPU3Kq</loc>
+    <lastmod>2026-01-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769094068/goitychyetraxbprgv6q.png</image:loc>
+      <image:title>Vì sao Zalo Mobile không hiện lịch sử chat cũ?</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vietshare.site/article.html?id=RTIuIs1RJgZOmwv8VEGy</loc>
+    <lastmod>2026-01-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769092902/ppo2h68pqs9mx9rblh7t.png</image:loc>
+      <image:title>Mẹo tìm nhanh tin nhắn cũ trên Zalo Web</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vietshare.site/article.html?id=TgAbfBqA23yKCYDrbIPo</loc>
+    <lastmod>2026-01-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769092742/ishfoemdnh4avakafjl8.png</image:loc>
+      <image:title>Hướng dẫn sao lưu tin nhắn Zalo PC an toàn</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vietshare.site/article.html?id=X8EV1LOuV60pTVmBUBqD</loc>
+    <lastmod>2026-01-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769093215/nprhvdguaucnccmd8kat.jpg</image:loc>
+      <image:title>Lỗi Zalo PC không gửi được hình ảnh</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vietshare.site/article.html?id=YHzFRRPsHkDRGsZDXBXx</loc>
+    <lastmod>2026-01-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769094968/tnzyvngopvsgs6tkewea.png</image:loc>
+      <image:title>Mẹo ẩn cuộc trò chuyện nhạy cảm trên Zalo</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vietshare.site/article.html?id=ZYSvDnMvgLY4LE6dBn3R</loc>
+    <lastmod>2026-01-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769096071/f41hbxl9pszeaj9bofe0.png</image:loc>
+      <image:title>Zalo Web không tải được hình ảnh trong khung chat</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vietshare.site/article.html?id=bwQR3ZOixF2TBxIPxXZu</loc>
+    <lastmod>2026-01-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769093769/vrlz57nrc58pffk0wvwt.png</image:loc>
+      <image:title>Hướng dẫn đăng xuất Zalo từ xa để bảo mật tài khoản</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vietshare.site/article.html?id=ceASUHBw0tRTihRgFWdd</loc>
+    <lastmod>2026-01-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769095384/pykune78bugmafufioet.png</image:loc>
+      <image:title>Lỗi Zalo PC không mở được link trong tin nhắn</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vietshare.site/article.html?id=dGslOqktm6Wc9F0bFGv6</loc>
+    <lastmod>2026-01-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769095222/egjamzrgvhgjjwzvq5ks.png</image:loc>
+      <image:title>Hướng dẫn đồng bộ danh bạ Zalo đúng cách</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vietshare.site/article.html?id=fABVyG1e3gN34RsiwwNB</loc>
+    <lastmod>2026-01-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769096351/y0alz9qc3ovae4aywwso.png</image:loc>
+      <image:title>Vì sao Zalo Mobile không hiện thông báo tin nhắn</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vietshare.site/article.html?id=fQ98AMBXFN9tl7vqgJQM</loc>
+    <lastmod>2026-01-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769095044/f6tybgwngvkpla8tcopr.png</image:loc>
+      <image:title>Lỗi Zalo Mobile không tải được ảnh và video</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vietshare.site/article.html?id=h2K6yHa68lR2e38dG3SW</loc>
+    <lastmod>2026-01-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769094725/d1awbj0mgqhbsvviw6lc.png</image:loc>
+      <image:title>Vì sao Zalo PC chạy chậm sau thời gian dài?</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vietshare.site/article.html?id=ilNO3QZix84GJhlKPi6i</loc>
+    <lastmod>2026-01-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769095650/y3zi8qjqa1lgsbgcjfok.png</image:loc>
+      <image:title>Hướng dẫn tắt thông báo Zalo PC theo khung giờ</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vietshare.site/article.html?id=jZwmWNrl76LEbd4bxwbU</loc>
+    <lastmod>2026-01-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769091725/rhwkfoasrutqfeysjiju.png</image:loc>
+      <image:title>Zalo PC không nhận thông báo dù đang mở</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vietshare.site/article.html?id=npVyyZOh3j5pzZ4jGlBN</loc>
+    <lastmod>2026-01-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769095156/tr3piyrl1gnamuqzpatx.png</image:loc>
+      <image:title>Vì sao Zalo Web không nhận được thông báo?</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vietshare.site/article.html?id=qtNHKSYhBqnCfMTnP5Vs</loc>
+    <lastmod>2026-01-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769097586/xefuzrmhehijx3f22ane.png</image:loc>
+      <image:title>Hướng dẫn đăng nhập Zalo Web bằng mã QR</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vietshare.site/article.html?id=s73GxAABNxmAOvAOV1Vv</loc>
+    <lastmod>2026-01-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769096495/wtblhocj9wg20bjbf5pu.png</image:loc>
+      <image:title>Hướng dẫn sao lưu và khôi phục tin nhắn Zalo Mobile</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vietshare.site/article.html?id=tLZykH0F6HclmpM4V5js</loc>
+    <lastmod>2026-01-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769095582/ssngiavxjmtlxep748mk.png</image:loc>
+      <image:title>Mẹo gửi file dung lượng lớn qua Zalo Mobile</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vietshare.site/article.html?id=tVUMBGMxUq2xLc5XACIK</loc>
+    <lastmod>2026-01-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769092074/rf4a7zykx037wnkso9wf.png</image:loc>
+      <image:title>Vì sao Zalo Web hay tự đăng xuất?</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vietshare.site/article.html?id=zc8ykUwcEBlpwmIEAY9Z</loc>
+    <lastmod>2026-01-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769096424/vmyctonqxnyfijt0g1j8.png</image:loc>
+      <image:title>Mẹo tìm lại tin nhắn Zalo đã bị trôi nhanh</image:title>
+    </image:image>
+  </url>
   
 </urlset>
