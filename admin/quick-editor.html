@@ -408,6 +408,7 @@ tags: [từ khóa 1, từ khóa 2, từ khóa 3]
           platform: metadata.platform || 'zalo-pc',
           category: metadata.category || 'meo',
           tags: metadata.tags ? metadata.tags.split(',').map(t => t.trim()) : [],
+          heroImage: metadata.heroImage || '',
           content: content
         };
       } else {
@@ -466,7 +467,7 @@ tags: [từ khóa 1, từ khóa 2, từ khóa 3]
           platform: parsedData.platform,
           category: parsedData.category,
           tags: parsedData.tags,
-          heroImage: uploadedImageUrl || '',
+          heroImage: uploadedImageUrl || parsedData.heroImage || '',
           content: htmlContent,
           status: 'published',
           views: 0,
