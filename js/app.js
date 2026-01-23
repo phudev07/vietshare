@@ -100,6 +100,13 @@ async function loadLatestArticles(containerId) {
 async function loadArticlePage() {
   const urlParams = new URLSearchParams(window.location.search);
   const articleId = urlParams.get('id');
+  const slug = urlParams.get('slug');
+  
+  // Handle old slug URLs
+  if (slug && !articleId) {
+    showArticleError('Bài viết này đã bị xóa hoặc chuyển sang địa chỉ mới. Vui lòng tìm kiếm bài viết tương tự trên trang chủ.');
+    return;
+  }
   
   if (!articleId) {
     showArticleError('Không tìm thấy bài viết.');
