@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Generate Sitemap - VietShare Admin</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  
+  <!-- Dark Mode -->
+  <script src="../js/dark-mode.js"></script>
+  
+  <style>
+    .sitemap-output {
+      background: #1E293B;
+      color: #E2E8F0;
+      padding: var(--spacing-lg);
+      font-family: monospace;
+      font-size: 0.75rem;
+      white-space: pre-wrap;
+      word-break: break-all;
+      max-height: 60vh;
+      overflow-y: auto;
+      border: 1px solid var(--color-border);
+    }
+    
+    .btn-group {
+      display: flex;
+      gap: var(--spacing-md);
+      margin-bottom: var(--spacing-lg);
+    }
+    
+    .stats {
+      background: var(--color-bg-alt);
+      padding: var(--spacing-md);
+      margin-bottom: var(--spacing-lg);
+      border-left: 4px solid var(--color-accent);
+    }
+  </style>
+</head>
+<body>
+  <div class="admin-layout">
+    <!-- Sidebar -->
+    <aside class="admin-sidebar">
+      <div class="admin-sidebar-logo">VietShare</div>
+      <ul class="admin-nav">
+        <li><a href="/admin/index.html">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+          <span>Dashboard</span>
+        </a></li>
+        <li><a href="/admin/articles.html">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          <span>Bài viết</span>
+        </a></li>
+        <li><a href="/admin/sitemap.html" class="active">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"/><path d="M3 5v14a2 2 0 0 0 2 2h16v-5"/><path d="M18 12a2 2 0 0 0 0 4h4v-4Z"/></svg>
+          <span>Sitemap</span>
+        </a></li>
+      </ul>
+      
+      <div style="margin-top: auto; padding-top: var(--spacing-xl);">
+        <a href="/" style="display: block; padding: var(--spacing-sm); color: rgba(255,255,255,0.5); font-size: 0.875rem;">
+          ← Xem trang web
+        </a>
+      </div>
+    </aside>
+    
+    <!-- Main Content -->
+    <main class="admin-main">
+      <div class="admin-header">
+        <h1 class="admin-title">Generate Sitemap</h1>
+      </div>
+      
+      <div class="stats" id="stats">
+        <p>Đang tải thống kê...</p>
+      </div>
+      
+      <div class="btn-group">
+        <button class="btn btn-primary" id="generateBtn">🔄 Generate Sitemap</button>
+        <button class="btn btn-secondary" id="copyBtn" disabled>📋 Copy to Clipboard</button>
+        <button class="btn btn-secondary" id="downloadBtn" disabled>💾 Download sitemap.xml</button>
+      </div>
+      
+      <div class="sitemap-output" id="output">Click "Generate Sitemap" để tạo sitemap mới từ database</div>
+    </main>
+  </div>
+  
+  <script type="module">
+    import { db, collection, getDocs, query, where, orderBy } from '../js/firebase-config.js';
+    import { auth, onAuthStateChanged } from '../js/firebase-config.js';
+    
+    // Check auth
+    onAuthStateChanged(auth, (user) => {
+      if (!user) {
+        window.location.href = '/admin/login.html';
+      }
+    });
+    
+    const output = document.getElementById('output');
+    const generateBtn = document.getElementById('generateBtn');
+    const copyBtn = document.getElementById('copyBtn');
+    const downloadBtn = document.getElementById('downloadBtn');
+    const statsDiv = document.getElementById('stats');
+    
+    let sitemapContent = '';
+    
+    // Load stats
+    async function loadStats() {
+      try {
+        const articlesRef = collection(db, 'articles');
+        const q = query(articlesRef, where('status', '==', 'published'));
+        const snapshot = await getDocs(q);
+        
+        statsDiv.innerHTML = `
+          <p><strong>📊 Thống kê:</strong> ${snapshot.size} bài viết đã published</p>
+          <p style="margin-bottom:0; font-size:0.875rem; color:var(--color-text-muted)">Sitemap sẽ bao gồm tất cả bài viết published + các trang tĩnh</p>
+        `;
+      } catch (error) {
+        console.error('Error loading stats:', error);
+        statsDiv.innerHTML = '<p class="text-error">Không thể tải thống kê</p>';
+      }
+    }
+    
+    loadStats();
+    
+    generateBtn.addEventListener('click', async () => {
+      generateBtn.disabled = true;
+      generateBtn.textContent = '⏳ Đang tạo...';
+      output.textContent = 'Đang lấy dữ liệu từ Firebase...';
+      
+      try {
+        const articlesRef = collection(db, 'articles');
+        const q = query(articlesRef, where('status', '==', 'published'), orderBy('createdAt', 'desc'));
+        const snapshot = await getDocs(q);
+        
+        const today = new Date().toISOString().split('T')[0];
+        
+        let xml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- Homepage -->
+  <url>
+    <loc>https://vietshare.site/</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <!-- Static Pages -->
+  <url>
+    <loc>https://vietshare.site/about.html</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://vietshare.site/contact.html</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://vietshare.site/privacy-policy.html</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  
+  <url>
+    <loc>https://vietshare.site/terms.html</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  
+  <!-- Category Pages -->
+  <url>
+    <loc>https://vietshare.site/zalo-pc/</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://vietshare.site/zalo-web/</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://vietshare.site/zalo-mobile/</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Articles (${snapshot.size} bài) -->`;
+        
+        snapshot.forEach(doc => {
+          const article = doc.data();
+          const articleDate = article.updatedAt?.toDate?.() || article.createdAt?.toDate?.() || new Date();
+          const lastmod = articleDate.toISOString().split('T')[0];
+          
+          xml += `
+  <url>
+    <loc>https://vietshare.site/article.html?id=${doc.id}</loc>
+    <lastmod>${lastmod}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>${article.heroImage ? `
+    <image:image>
+      <image:loc>${article.heroImage}</image:loc>
+      <image:title>${escapeXml(article.title)}</image:title>
+    </image:image>` : ''}
+  </url>`;
+        });
+        
+        xml += `
+  
+</urlset>`;
+        
+        sitemapContent = xml;
+        output.textContent = xml;
+        copyBtn.disabled = false;
+        downloadBtn.disabled = false;
+        
+        generateBtn.textContent = `✅ Đã tạo (${snapshot.size} bài viết)`;
+        
+      } catch (error) {
+        console.error('Error generating sitemap:', error);
+        output.textContent = 'Lỗi: ' + error.message;
+        generateBtn.textContent = '❌ Lỗi - Thử lại';
+      }
+      
+      generateBtn.disabled = false;
+    });
+    
+    copyBtn.addEventListener('click', () => {
+      navigator.clipboard.writeText(sitemapContent).then(() => {
+        copyBtn.textContent = '✅ Đã copy!';
+        setTimeout(() => {
+          copyBtn.textContent = '📋 Copy to Clipboard';
+        }, 2000);
+      });
+    });
+    
+    downloadBtn.addEventListener('click', () => {
+      const blob = new Blob([sitemapContent], { type: 'application/xml' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'sitemap.xml';
+      a.click();
+      URL.revokeObjectURL(url);
+    });
+    
+    function escapeXml(text) {
+      if (!text) return '';
+      return text
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&apos;');
+    }
+  </script>
+</body>
+</html>
