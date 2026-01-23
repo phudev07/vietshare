@@ -137,7 +137,7 @@
       
       try {
         const articlesRef = collection(db, 'articles');
-        const q = query(articlesRef, where('status', '==', 'published'), orderBy('createdAt', 'desc'));
+        const q = query(articlesRef, where('status', '==', 'published'));
         const snapshot = await getDocs(q);
         
         const today = new Date().toISOString().split('T')[0];
