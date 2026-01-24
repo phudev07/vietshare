@@ -277,7 +277,16 @@ function renderArticle(article) {
   const contentContainer = document.getElementById('articleContent');
   if (contentContainer) {
     if (article.content && article.content.trim()) {
-      contentContainer.innerHTML = article.content;
+      // Check if content is markdown (contains ## or - at start of lines)
+      const isMarkdown = /^##\s|^-\s|^\*\s/m.test(article.content);
+      
+      if (isMarkdown && typeof marked !== 'undefined') {
+        // Parse markdown to HTML
+        contentContainer.innerHTML = marked.parse(article.content);
+      } else {
+        // Already HTML or marked not loaded
+        contentContainer.innerHTML = article.content;
+      }
     } else {
       contentContainer.innerHTML = `
         <div class="info-box warning-box">
