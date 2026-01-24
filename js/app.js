@@ -98,15 +98,14 @@ async function loadLatestArticles(containerId) {
 
 // ========== Article Page ==========
 async function loadArticlePage() {
-  // Check for slug URL from 404 redirect
-  const articlePath = sessionStorage.getItem('articlePath');
-  sessionStorage.removeItem('articlePath'); // Clear after reading
+  const urlParams = new URLSearchParams(window.location.search);
   
   let platform = null;
   let slug = null;
   let articleId = null;
   
-  // Parse path from 404 redirect: /zalo-pc/slug-here
+  // Check for slug URL from 404 redirect: ?path=/zalo-pc/slug-here
+  const articlePath = urlParams.get('path');
   if (articlePath) {
     const parts = articlePath.split('/').filter(Boolean);
     if (parts.length === 2) {
@@ -115,9 +114,8 @@ async function loadArticlePage() {
     }
   }
   
-  // Fallback to URL params (old format)
+  // Fallback to old format: ?id=xxx
   if (!slug) {
-    const urlParams = new URLSearchParams(window.location.search);
     articleId = urlParams.get('id');
   }
   

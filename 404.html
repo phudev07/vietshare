@@ -30,12 +30,10 @@
       // Valid platforms
       const platforms = ['zalo-pc', 'zalo-web', 'zalo-mobile'];
       
-      // If URL is /platform/slug format, redirect to article.html
+      // If URL is /platform/slug format, redirect to article.html with path as query
       if (parts.length === 2 && platforms.includes(parts[0])) {
-        // Save path for article.html to read
-        sessionStorage.setItem('articlePath', path);
-        // Redirect to article.html
-        window.location.replace('/article.html');
+        // Use query param instead of sessionStorage
+        window.location.replace('/article.html?path=' + encodeURIComponent(path));
       }
       // Otherwise show normal 404 page
     })();
