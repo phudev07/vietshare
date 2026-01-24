@@ -4,12 +4,173 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Zalo Mobile - Hướng dẫn, Mẹo, Khắc phục lỗi | VietShare</title>
-  <meta name="description" content="Tổng hợp hướng dẫn sử dụng Zalo Mobile, mẹo hay và cách khắc phục các lỗi thường gặp trên điện thoại.">
+  <meta name="description" content="Tổng hợp hướng dẫn sử dụng Zalo Mobile, mẹo hay và cách khắc phục các lỗi thường gặp trên máy tính.">
   <link rel="canonical" href="https://vietshare.site/zalo-mobile/">
-  <script>window.location.href = '/category.html?platform=zalo-mobile';</script>
-  <meta http-equiv="refresh" content="0; url=/category.html?platform=zalo-mobile">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/favicon.png">
+  <meta name="theme-color" content="#2563EB">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://vietshare.site/zalo-mobile/">
+  <meta property="og:title" content="Zalo Mobile - Hướng dẫn, Mẹo, Khắc phục lỗi | VietShare">
+  <meta property="og:description" content="Tổng hợp hướng dẫn sử dụng Zalo Mobile, mẹo hay và cách khắc phục các lỗi thường gặp trên máy tính.">
+  <meta property="og:image" content="https://vietshare.site/assets/og-image.png">
+  
+  <!-- Preload -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/css/style.css">
+  
+  <!-- Dark Mode -->
+  <script src="/js/dark-mode.js"></script>
+  
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7476202315605832" crossorigin="anonymous"></script>
 </head>
 <body>
-  <p>Đang chuyển hướng...</p>
+  <!-- Header -->
+  <header class="header">
+    <div class="container container-wide">
+      <div class="header-inner">
+        <a href="/" class="logo">VietShare</a>
+        
+        <nav class="nav">
+          <a href="/zalo-mobile/" class="active">Zalo Mobile</a>
+          <a href="/zalo-web/">Zalo Web</a>
+          <a href="/zalo-mobile/">Zalo Mobile</a>
+        </nav>
+        
+        <div class="search-box">
+          <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+          <input type="text" class="search-input" id="searchInput" placeholder="Tìm kiếm mẹo, lỗi Zalo...">
+        </div>
+        
+        <button class="theme-toggle" id="themeToggle" aria-label="Chuyển đổi dark mode">
+          <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+  
+  <!-- Main Content -->
+  <main>
+    <section class="hero" style="padding: var(--spacing-2xl) 0;">
+      <div class="container">
+        <h1>Zalo Mobile</h1>
+        <p class="text-muted" style="text-align:center;">Hướng dẫn sử dụng, mẹo hay và cách khắc phục lỗi Zalo trên máy tính.</p>
+      </div>
+    </section>
+    
+    <section class="section">
+      <div class="container">
+        <div class="article-list" id="articlesList">
+          <div class="loading">
+            <div class="spinner"></div>
+            <span>Đang tải...</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-logo">VietShare</div>
+        <div class="footer-links">
+          <a href="/about.html">Giới thiệu</a>
+          <a href="/contact.html">Liên hệ</a>
+          <a href="/privacy-policy.html">Chính sách bảo mật</a>
+          <a href="/terms.html">Điều khoản</a>
+        </div>
+        <p class="footer-copyright">© 2026 VietShare. Mọi quyền được bảo lưu.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- Scripts -->
+  <script type="module">
+    import { db, collection, getDocs, query, where, orderBy, limit } from '/js/firebase-config.js';
+    
+    const CATEGORY_LABELS = {
+      'loi': 'Lỗi',
+      'vi-sao': 'Vì sao',
+      'meo': 'Mẹo',
+      'huong-dan': 'Hướng dẫn'
+    };
+    
+    async function loadArticles() {
+      const container = document.getElementById('articlesList');
+      
+      try {
+        const articlesRef = collection(db, 'articles');
+        const q = query(
+          articlesRef,
+          where('platform', '==', 'zalo-mobile'),
+          where('status', '==', 'published'),
+          limit(50)
+        );
+        
+        const snapshot = await getDocs(q);
+        const articles = [];
+        snapshot.forEach(doc => articles.push({ id: doc.id, ...doc.data() }));
+        
+        if (articles.length === 0) {
+          container.innerHTML = '<p class="text-muted text-center">Chưa có bài viết nào.</p>';
+          return;
+        }
+        
+        const defaultThumb = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="140" height="95" fill="%23E2E8F0"%3E%3Crect width="140" height="95"/%3E%3Ctext x="50%25" y="50%25" text-anchor="middle" dy=".3em" fill="%2394A3B8" font-size="12"%3ENo Image%3C/text%3E%3C/svg%3E';
+        
+        container.innerHTML = articles.map(article => {
+          const thumbSrc = (article.heroImage && article.heroImage.trim()) ? article.heroImage : defaultThumb;
+          const categoryLabel = CATEGORY_LABELS[article.category] || article.category || 'Bài viết';
+          const articleUrl = article.slug ? `/zalo-mobile/${article.slug}` : `/article.html?id=${article.id}`;
+          
+          return `
+            <a href="${articleUrl}" class="article-card">
+              <div class="article-card-thumb-wrap">
+                <img src="${thumbSrc}" alt="${escapeHtml(article.title)}" class="article-card-thumb" loading="lazy">
+                <span class="article-card-category">${categoryLabel}</span>
+              </div>
+              <div class="article-card-body">
+                <h3 class="article-card-title">${escapeHtml(article.title)}</h3>
+                ${article.description ? `<p class="article-card-desc">${escapeHtml(article.description)}</p>` : ''}
+              </div>
+            </a>
+          `;
+        }).join('');
+      } catch (error) {
+        console.error('Error loading articles:', error);
+        container.innerHTML = '<p class="text-muted text-center">Không thể tải bài viết.</p>';
+      }
+    }
+    
+    function escapeHtml(text) {
+      const div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
+    }
+    
+    // Search
+    document.getElementById('searchInput').addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        const q = e.target.value.trim();
+        if (q) window.location.href = `/search.html?q=${encodeURIComponent(q)}`;
+      }
+    });
+    
+    loadArticles();
+  </script>
 </body>
 </html>

@@ -52,9 +52,9 @@
         <a href="/" class="logo">VietShare</a>
         
         <nav class="nav">
-          <a href="/category.html?platform=zalo-pc" id="navZaloPC">Zalo PC</a>
-          <a href="/category.html?platform=zalo-web" id="navZaloWeb">Zalo Web</a>
-          <a href="/category.html?platform=zalo-mobile" id="navZaloMobile">Zalo Mobile</a>
+          <a href="/zalo-pc/" id="navZaloPC">Zalo PC</a>
+          <a href="/zalo-web/" id="navZaloWeb">Zalo Web</a>
+          <a href="/zalo-mobile/" id="navZaloMobile">Zalo Mobile</a>
         </nav>
         
         <div class="search-box">
@@ -149,9 +149,18 @@
       'huong-dan': 'Hướng dẫn'
     };
     
-    // Get URL params
+    // Get URL params OR detect from path
     const urlParams = new URLSearchParams(window.location.search);
-    const platform = urlParams.get('platform') || '';
+    const pathname = window.location.pathname;
+    
+    // Check if path is /zalo-pc/, /zalo-web/, /zalo-mobile/
+    let platform = urlParams.get('platform') || '';
+    if (!platform) {
+      const pathMatch = pathname.match(/^\/(zalo-pc|zalo-web|zalo-mobile)\/?$/);
+      if (pathMatch) {
+        platform = pathMatch[1];
+      }
+    }
     const typeFilter = urlParams.get('type') || 'all';
     
     // Update page based on platform
