@@ -111,6 +111,9 @@ async function loadArticlePage() {
     if (parts.length === 2) {
       platform = parts[0];
       slug = parts[1];
+      
+      // Change URL back to clean format (without reload)
+      window.history.replaceState({}, '', articlePath);
     }
   }
   
