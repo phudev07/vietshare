@@ -151,13 +151,17 @@
       
       container.innerHTML = `
         <p class="text-muted mb-lg">Tìm thấy ${articles.length} kết quả</p>
-        ${articles.map(article => `
-          <a href="/article.html?id=${article.id}" class="article-card">
+        ${articles.map(article => {
+          const articleUrl = article.slug && article.platform 
+            ? `/${article.platform}/${article.slug}`
+            : `/article.html?id=${article.id}`;
+          return `
+          <a href="${articleUrl}" class="article-card">
             <span class="article-card-category">${categoryLabels[article.category] || article.category}</span>
             <h3 class="article-card-title">${escapeHtml(article.title)}</h3>
             <p class="article-card-meta">${article.description ? escapeHtml(article.description.substring(0, 100)) + '...' : ''}</p>
           </a>
-        `).join('')}
+        `}).join('')}
       `;
     }
     

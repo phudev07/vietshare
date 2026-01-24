@@ -98,38 +98,77 @@ async function loadLatestArticles(containerId) {
 
 // ========== Article Page ==========
 async function loadArticlePage() {
-  const urlParams = new URLSearchParams(window.location.search);
-  const articleId = urlParams.get('id');
-  const slug = urlParams.get('slug');
+  // Check for slug URL from 404 redirect
+  const articlePath = sessionStorage.getItem('articlePath');
+  sessionStorage.removeItem('articlePath'); // Clear after reading
   
-  // Handle old slug URLs
-  if (slug && !articleId) {
-    showArticleError('Bài viết này đã bị xóa hoặc chuyển sang địa chỉ mới. Vui lòng tìm kiếm bài viết tương tự trên trang chủ.');
-    return;
+  let platform = null;
+  let slug = null;
+  let articleId = null;
+  
+  // Parse path from 404 redirect: /zalo-pc/slug-here
+  if (articlePath) {
+    const parts = articlePath.split('/').filter(Boolean);
+    if (parts.length === 2) {
+      platform = parts[0];
+      slug = parts[1];
+    }
   }
   
-  if (!articleId) {
+  // Fallback to URL params (old format)
+  if (!slug) {
+    const urlParams = new URLSearchParams(window.location.search);
+    articleId = urlParams.get('id');
+  }
+  
+  if (!slug && !articleId) {
     showArticleError('Không tìm thấy bài viết.');
     return;
   }
   
   try {
-    const articleRef = doc(db, 'articles', articleId);
-    const snapshot = await getDoc(articleRef);
+    let article = null;
+    let articleRef = null;
     
-    if (!snapshot.exists()) {
+    if (slug && platform) {
+      // Query by platform + slug
+      const articlesRef = collection(db, 'articles');
+      const q = query(
+        articlesRef,
+        where('platform', '==', platform),
+        where('slug', '==', slug),
+        limit(1)
+      );
+      
+      const snapshot = await getDocs(q);
+      if (!snapshot.empty) {
+        const docData = snapshot.docs[0];
+        article = { id: docData.id, ...docData.data() };
+        articleRef = doc(db, 'articles', docData.id);
+      }
+    } else if (articleId) {
+      // Query by ID (old format)
+      articleRef = doc(db, 'articles', articleId);
+      const snapshot = await getDoc(articleRef);
+      if (snapshot.exists()) {
+        article = { id: snapshot.id, ...snapshot.data() };
+      }
+    }
+    
+    if (!article) {
       showArticleError('Bài viết không tồn tại.');
       return;
     }
     
-    const article = { id: snapshot.id, ...snapshot.data() };
     renderArticle(article);
     
     // Increment view count
-    incrementViews(articleRef, article.views || 0);
+    if (articleRef) {
+      incrementViews(articleRef, article.views || 0);
+    }
     
     // Load related articles
-    await loadRelatedArticles(article.category, articleId);
+    await loadRelatedArticles(article.category, article.id);
   } catch (error) {
     console.error('Error loading article:', error);
     showArticleError('Không thể tải bài viết.');
@@ -199,8 +238,13 @@ function renderArticleList(container, articles) {
     const thumbSrc = (article.heroImage && article.heroImage.trim()) ? article.heroImage : defaultThumb;
     const categoryLabel = CATEGORY_LABELS[article.category] || article.category || 'Bài viết';
     
+    // Use slug URL if available, otherwise fallback to ID
+    const articleUrl = article.slug && article.platform 
+      ? `/${article.platform}/${article.slug}`
+      : `/article.html?id=${article.id}`;
+    
     return `
-      <a href="/article.html?id=${article.id}" class="article-card">
+      <a href="${articleUrl}" class="article-card">
         <div class="article-card-thumb-wrap">
           <img src="${thumbSrc}" alt="${escapeHtml(article.title)}" class="article-card-thumb" loading="lazy">
           <span class="article-card-category">${categoryLabel}</span>

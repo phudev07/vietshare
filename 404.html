@@ -20,6 +20,27 @@
   <!-- Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7476202315605832" crossorigin="anonymous"></script>
   
+  <!-- SPA Routing for slug URLs -->
+  <script>
+    (function() {
+      // Check if URL looks like an article: /platform/slug
+      const path = window.location.pathname;
+      const parts = path.split('/').filter(Boolean);
+      
+      // Valid platforms
+      const platforms = ['zalo-pc', 'zalo-web', 'zalo-mobile'];
+      
+      // If URL is /platform/slug format, redirect to article.html
+      if (parts.length === 2 && platforms.includes(parts[0])) {
+        // Save path for article.html to read
+        sessionStorage.setItem('articlePath', path);
+        // Redirect to article.html
+        window.location.replace('/article.html');
+      }
+      // Otherwise show normal 404 page
+    })();
+  </script>
+  
   <style>
     .error-page {
       min-height: 60vh;

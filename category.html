@@ -242,8 +242,13 @@
         const thumbSrc = (article.heroImage && article.heroImage.trim()) ? article.heroImage : defaultThumb;
         const categoryLabel = CATEGORY_LABELS[article.category] || article.category || 'Bài viết';
         
+        // Use slug URL if available
+        const articleUrl = article.slug && article.platform 
+          ? `/${article.platform}/${article.slug}`
+          : `/article.html?id=${article.id}`;
+        
         return `
-          <a href="/article.html?id=${article.id}" class="article-card">
+          <a href="${articleUrl}" class="article-card">
             <div class="article-card-thumb-wrap">
               <img src="${thumbSrc}" alt="${escapeHtml(article.title)}" class="article-card-thumb" loading="lazy">
               <span class="article-card-category">${categoryLabel}</span>

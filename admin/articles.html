@@ -179,6 +179,12 @@
       
       tbody.innerHTML = articles.map(article => {
         const thumbSrc = (article.heroImage && article.heroImage.trim()) ? article.heroImage : defaultThumb;
+        
+        // Use slug URL for viewing
+        const viewUrl = article.slug && article.platform 
+          ? `/${article.platform}/${article.slug}`
+          : `/article.html?id=${article.id}`;
+        
         return `
         <tr>
           <td style="padding: 4px;"><img src="${thumbSrc}" alt="" style="width: 80px; height: 55px; object-fit: cover; display: block;"></td>
@@ -199,7 +205,7 @@
           <td>
             <div class="flex gap-sm">
               <a href="/admin/editor.html?id=${article.id}" class="text-accent">Sửa</a>
-              <a href="/article.html?id=${article.id}" target="_blank" class="text-muted">Xem</a>
+              <a href="${viewUrl}" target="_blank" class="text-muted">Xem</a>
               <a href="#" class="text-error delete-btn" data-id="${article.id}">Xóa</a>
             </div>
           </td>

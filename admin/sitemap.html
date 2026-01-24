@@ -224,9 +224,14 @@
           const articleDate = article.updatedAt?.toDate?.() || article.createdAt?.toDate?.() || new Date();
           const lastmod = articleDate.toISOString().split('T')[0];
           
+          // Use slug URL if available
+          const articleUrl = article.slug && article.platform 
+            ? `https://vietshare.site/${article.platform}/${article.slug}`
+            : `https://vietshare.site/article.html?id=${doc.id}`;
+          
           xml += `
   <url>
-    <loc>https://vietshare.site/article.html?id=${doc.id}</loc>
+    <loc>${articleUrl}</loc>
     <lastmod>${lastmod}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>${article.heroImage ? `
