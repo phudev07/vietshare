@@ -587,7 +587,7 @@ strong, b {
 
 /* ========== Footer ========== */
 .footer {
-  background: var(--color-text);
+  background: #0F172A;
   color: #94A3B8;
   padding: var(--spacing-2xl) 0;
   margin-top: var(--spacing-3xl);
