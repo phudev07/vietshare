@@ -5,7 +5,7 @@
   <!-- Homepage -->
   <url>
     <loc>https://vietshare.site/</loc>
-    <lastmod>2026-01-24</lastmod>
+    <lastmod>2026-01-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -13,28 +13,28 @@
   <!-- Static Pages -->
   <url>
     <loc>https://vietshare.site/about.html</loc>
-    <lastmod>2026-01-24</lastmod>
+    <lastmod>2026-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://vietshare.site/contact.html</loc>
-    <lastmod>2026-01-24</lastmod>
+    <lastmod>2026-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://vietshare.site/privacy-policy.html</loc>
-    <lastmod>2026-01-24</lastmod>
+    <lastmod>2026-01-27</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   
   <url>
     <loc>https://vietshare.site/terms.html</loc>
-    <lastmod>2026-01-24</lastmod>
+    <lastmod>2026-01-27</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
@@ -42,26 +42,36 @@
   <!-- Category Pages -->
   <url>
     <loc>https://vietshare.site/zalo-pc/</loc>
-    <lastmod>2026-01-24</lastmod>
+    <lastmod>2026-01-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://vietshare.site/zalo-web/</loc>
-    <lastmod>2026-01-24</lastmod>
+    <lastmod>2026-01-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://vietshare.site/zalo-mobile/</loc>
-    <lastmod>2026-01-24</lastmod>
+    <lastmod>2026-01-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
-  <!-- Articles (121 bài) -->
+  <!-- Articles (205 bài) -->
+  <url>
+    <loc>https://vietshare.site/zalo-mobile/cach-khac-phuc-loi-zalo-mobile-khong-the-gui-hoac-tai-anh-video-va-tep-tin-dinh-kem</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769430614/snv6uc5pg8bthhuahdml.png</image:loc>
+      <image:title>Cách khắc phục lỗi Zalo Mobile không thể gửi hoặc tải ảnh, video và tệp tin đính kèm.</image:title>
+    </image:image>
+  </url>
   <url>
     <loc>https://vietshare.site/zalo-mobile/vi-sao-zalo-mobile-hao-pin-khi-chay-nen</loc>
     <lastmod>2026-01-22</lastmod>
@@ -70,6 +80,16 @@
     <image:image>
       <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769093008/icuba35xzysfcouq8oxa.png</image:loc>
       <image:title>Vì sao Zalo Mobile hao pin khi chạy nền?</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vietshare.site/zalo-web/cach-dong-bo-tin-nhan-cu-len-zalo-web-xem-lai-toan-bo-lich-su-tro-chuyen-khi-dang-nhap-moi</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769440146/zdm5qmmmezpiqywl8fwg.png</image:loc>
+      <image:title>Cách đồng bộ tin nhắn cũ lên Zalo Web (Xem lại toàn bộ lịch sử trò chuyện khi đăng nhập mới)</image:title>
     </image:image>
   </url>
   <url>
@@ -93,6 +113,26 @@
     </image:image>
   </url>
   <url>
+    <loc>https://vietshare.site/zalo-mobile/cach-khac-phuc-loi-zalo-mobile-khong-the-tai-hoac-gui-hinh-anh-video-chat-luong-cao</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769435866/dpuefjzmf605lgetxzck.png</image:loc>
+      <image:title>Cách khắc phục lỗi Zalo Mobile không thể tải hoặc gửi hình ảnh, video chất lượng cao.</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vietshare.site/zalo-mobile/meo-su-dung-tinh-nang-tin-nhan-tu-xoa-de-bao-mat-thong-tin-va-don-dep-hoi-thoai-tu-dong</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769439204/vghlxbalq4bozqyvzalw.png</image:loc>
+      <image:title>Mẹo sử dụng tính năng &quot;Tin nhắn tự xóa&quot; để bảo mật thông tin và dọn dẹp hội thoại tự động.</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://vietshare.site/zalo-mobile/meo-su-dung-ma-qr-de-dang-nhap-zalo-tren-thiet-bi-la-khong-can-mat-khau</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
@@ -110,6 +150,16 @@
     <image:image>
       <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769262014/ngwrgyg6uxiyzvj5hd15.png</image:loc>
       <image:title>Mẹo ẩn trò chuyện và sử dụng mã PIN để bảo mật tin nhắn riêng tư trên Zalo.</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vietshare.site/zalo-mobile/cach-khac-phuc-loi-zalo-mobile-khong-the-tai-hoac-gui-hinh-anh-video-hd</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769437901/k6m72ankxvvnt7hjjudr.png</image:loc>
+      <image:title>Cách khắc phục lỗi Zalo Mobile không thể tải hoặc gửi hình ảnh, video HD.</image:title>
     </image:image>
   </url>
   <url>
@@ -153,6 +203,16 @@
     </image:image>
   </url>
   <url>
+    <loc>https://vietshare.site/zalo-web/cach-tan-dung-phim-tat-va-tinh-nang-cua-so-pop-up-tren-zalo-web-bi-quyet-da-nhiem-cuc-dinh-va-day-nhanh-toc-do-lam-viec</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769434668/bad4lmzljctdr2f2xajx.png</image:loc>
+      <image:title>Cách tận dụng phím tắt và tính năng &quot;Cửa sổ pop-up&quot; trên Zalo Web: Bí quyết đa nhiệm cực đỉnh và đẩy nhanh tốc độ làm việc.</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://vietshare.site/zalo-mobile/meo-han-che-bi-lam-phien-tu-nhom-zalo-dong-nguoi</loc>
     <lastmod>2026-01-22</lastmod>
     <changefreq>monthly</changefreq>
@@ -163,6 +223,16 @@
     </image:image>
   </url>
   <url>
+    <loc>https://vietshare.site/zalo-web/cach-tan-dung-phim-tat-va-tinh-nang-cua-so-pop-up-tren-zalo-web-bi-quyet-da-nhiem-cuc-dinh-va-phan-hoi-tin-nhan-sieu-toc</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769433302/k3aktayiilxwe2bfdn06.png</image:loc>
+      <image:title>Cách tận dụng phím tắt và tính năng &quot;Cửa sổ pop-up&quot; trên Zalo Web: Bí quyết đa nhiệm cực đỉnh và phản hồi tin nhắn siêu tốc.</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://vietshare.site/zalo-web/cach-su-dung-tinh-nang-phan-loai-tag-tren-zalo-web-bi-quyet-quan-ly-hang-tram-hoi-thoai-khoa-hoc-va-chuyen-nghiep</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
@@ -170,6 +240,16 @@
     <image:image>
       <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769253020/bll2kykmjvw89g3f2foa.png</image:loc>
       <image:title>Cách sử dụng tính năng &quot;Phân loại&quot; (Tag) trên Zalo Web: Bí quyết quản lý hàng trăm hội thoại khoa học và chuyên nghiệp.</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vietshare.site/zalo-pc/huong-dan-cach-cai-dat-va-su-dung-phim-tat-hotkeys-tren-zalo-pc-giup-toi-uu-toc-do-lam-viec</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769430878/lffdbfj73dep430lscy4.png</image:loc>
+      <image:title>Hướng dẫn cách cài đặt và sử dụng phím tắt (Hotkeys) trên Zalo PC giúp tối ưu tốc độ làm việc.</image:title>
     </image:image>
   </url>
   <url>
@@ -233,6 +313,16 @@
     </image:image>
   </url>
   <url>
+    <loc>https://vietshare.site/zalo-mobile/meo-gui-anhvideo-chat-luong-cao-hd-tren-zalo-giu-nguyen-do-sac-net-cuc-don-gian</loc>
+    <lastmod>2026-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769485751/ncxi7xpcosdc4ty12nfy.png</image:loc>
+      <image:title>Mẹo gửi ảnh/video chất lượng cao HD trên Zalo giữ nguyên độ sắc nét cực đơn giản.</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://vietshare.site/zalo-web/tai-sao-zalo-web-khong-the-thuc-hien-cuoc-goi-thoai-hoac-video</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
@@ -263,6 +353,26 @@
     </image:image>
   </url>
   <url>
+    <loc>https://vietshare.site/zalo-mobile/huong-dan-cach-an-tro-chuyen-va-tim-lai-cuoc-hoi-thoai-bi-an-bang-ma-pin-tren-zalo-mobile</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769436742/ud9w9c0c0xysapvpkqlt.png</image:loc>
+      <image:title>Hướng dẫn cách ẩn trò chuyện và tìm lại cuộc hội thoại bị ẩn bằng mã PIN trên Zalo Mobile.</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vietshare.site/zalo-mobile/huong-dan-cach-an-tro-chuyen-va-tim-lai-cuoc-hoi-thoai-bi-an-bang-ma-pin-tren-zalo-mobile</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769444280/bkxltfxo3rr03hdkuhry.png</image:loc>
+      <image:title>Hướng dẫn cách ẩn trò chuyện và tìm lại cuộc hội thoại bị ẩn bằng mã PIN trên Zalo Mobile.</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://vietshare.site/zalo-mobile/meo-toi-uu-dung-luong-bo-nho-zalo-giup-dien-thoai-chay-muot-hon</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
@@ -290,6 +400,16 @@
     <image:image>
       <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769094138/royucznmtyukiyy29csa.png</image:loc>
       <image:title>Hướng dẫn đăng nhập Zalo Web không cần quét QR</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vietshare.site/zalo-pc/huong-dan-cach-dong-bo-tin-nhan-tu-dien-thoai-sang-zalo-pc-day-du-va-khong-mat-du-lieu</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769436465/kriod2irieuj7vnbacaw.png</image:loc>
+      <image:title>Hướng dẫn cách đồng bộ tin nhắn từ điện thoại sang Zalo PC đầy đủ và không mất dữ liệu.</image:title>
     </image:image>
   </url>
   <url>
@@ -333,6 +453,16 @@
     </image:image>
   </url>
   <url>
+    <loc>https://vietshare.site/zalo-web/cach-khac-phuc-loi-zalo-web-khong-dong-bo-tin-nhan-cu-4-buoc-xu-ly-don-gian-va-hieu-qua-nhat</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769437016/updgx3a5aib6mhcphjyn.png</image:loc>
+      <image:title>Cách khắc phục lỗi Zalo Web không đồng bộ tin nhắn cũ: 4 bước xử lý đơn giản và hiệu quả nhất</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://vietshare.site/zalo-mobile/vi-sao-zalo-mobile-khong-the-thuc-hien-hoac-nhan-cuoc-goi-video</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
@@ -343,6 +473,16 @@
     </image:image>
   </url>
   <url>
+    <loc>https://vietshare.site/zalo-mobile/vi-sao-zalo-mobile-khong-tu-dong-tai-anh-va-video-ve-may</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769430068/zthiqv0tsrsoaffhyq9b.png</image:loc>
+      <image:title>Vì sao Zalo Mobile không tự động tải ảnh và video về máy?</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://vietshare.site/zalo-web/cach-su-dung-tinh-nang-giao-viec-zalo-to-do-tren-zalo-web-bi-quyet-quan-ly-tien-do-va-nhac-hen-cong-viec-hieu-qua-ngay-trong-khung-chat</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
@@ -350,6 +490,16 @@
     <image:image>
       <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769253287/ivp7w5klxvwv0n7lywxc.png</image:loc>
       <image:title>Cách sử dụng tính năng &quot;Giao việc&quot; (Zalo-To-Do) trên Zalo Web: Bí quyết quản lý tiến độ và nhắc hẹn công việc hiệu quả ngay trong khung chat.</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vietshare.site/zalo-mobile/meo-tat-trang-thai-vua-moi-truy-cap-va-da-xem-de-luot-zalo-trong-che-do-an-danh</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769436880/i1thhbdjkgqczimh7d6t.png</image:loc>
+      <image:title>Mẹo tắt trạng thái &quot;Vừa mới truy cập&quot; và &quot;Đã xem&quot; để lướt Zalo trong chế độ ẩn danh.</image:title>
     </image:image>
   </url>
   <url>
@@ -393,6 +543,16 @@
     </image:image>
   </url>
   <url>
+    <loc>https://vietshare.site/zalo-mobile/huong-dan-cach-an-tro-chuyen-va-tim-lai-cuoc-hoi-thoai-bi-an-bang-ma-pin-tren-zalo-dien-thoai</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769430472/gjh14b4f3yozlmyuwrwp.png</image:loc>
+      <image:title>Hướng dẫn cách ẩn trò chuyện và tìm lại cuộc hội thoại bị ẩn bằng mã PIN trên Zalo điện thoại.</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://vietshare.site/zalo-pc/cach-khac-phuc-loi-zalo-pc-khong-hien-thi-ban-xem-truoc-link-link-preview-hoac-hinh-anh-thu-nho</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
@@ -400,6 +560,16 @@
     <image:image>
       <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769247021/rdhqciqadihkt8cpmuqn.png</image:loc>
       <image:title>Cách khắc phục lỗi Zalo PC không hiển thị bản xem trước link (link preview) hoặc hình ảnh thu nhỏ.</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vietshare.site/zalo-pc/cach-tuy-chinh-giao-dien-va-thong-bao-zalo-pc-meo-toi-uu-hoa-khong-gian-lam-viec-giup-tang-200-su-tap-trung</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769432751/uo27pxbpy4yv3dvhoxaj.png</image:loc>
+      <image:title>Cách tùy chỉnh giao diện và thông báo Zalo PC: Mẹo tối ưu hóa không gian làm việc giúp tăng 200% sự tập trung.</image:title>
     </image:image>
   </url>
   <url>
@@ -433,6 +603,36 @@
     </image:image>
   </url>
   <url>
+    <loc>https://vietshare.site/zalo-mobile/meo-gui-anhvideo-chat-luong-cao-hd-tren-zalo-khong-bi-mo-hay-giam-do-phan-giai</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769432613/eru5akrjysbzohq0e5qk.png</image:loc>
+      <image:title>Mẹo gửi ảnh/video chất lượng cao (HD) trên Zalo không bị mờ hay giảm độ phân giải.</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vietshare.site/zalo-mobile/huong-dan-cach-an-tro-chuyen-va-tim-lai-cuoc-hoi-thoai-bi-an-bang-ma-pin-tren-zalo-mobile</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769438361/wiq2b0wtlbowhgjq4vls.png</image:loc>
+      <image:title>Hướng dẫn cách ẩn trò chuyện và tìm lại cuộc hội thoại bị ẩn bằng mã PIN trên Zalo Mobile.</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vietshare.site/zalo-pc/huong-dan-cach-dong-bo-tin-nhan-tu-dien-thoai-sang-zalo-pc-day-du-va-nhanh-nhat</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769430346/lxachgt3z1bjm3jkx4qr.png</image:loc>
+      <image:title>Hướng dẫn cách đồng bộ tin nhắn từ điện thoại sang Zalo PC đầy đủ và nhanh nhất.</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://vietshare.site/zalo-pc/loi-zalo-pc-khong-dong-bo-tin-nhan-moi</loc>
     <lastmod>2026-01-22</lastmod>
     <changefreq>monthly</changefreq>
@@ -463,6 +663,16 @@
     </image:image>
   </url>
   <url>
+    <loc>https://vietshare.site/zalo-mobile/huong-dan-cach-an-tro-chuyen-va-tim-lai-bang-thanh-tim-kiem-tren-zalo-mobile</loc>
+    <lastmod>2026-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769485997/we2dswe8mmzwugxfizrl.png</image:loc>
+      <image:title>Hướng dẫn cách ẩn trò chuyện và tìm lại bằng thanh tìm kiếm trên Zalo Mobile.</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://vietshare.site/zalo-mobile/meo-dang-nhap-mot-tai-khoan-zalo-dong-thoi-tren-hai-dien-thoai-khong-bi-log-out</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
@@ -490,6 +700,36 @@
     <image:image>
       <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769248011/rjzkx8jyipy9jq4pmiwn.png</image:loc>
       <image:title>Tại sao Zalo PC chiếm dụng quá nhiều dung lượng ổ cứng C?</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vietshare.site/zalo-mobile/meo-tat-trang-thai-da-xem-va-vua-moi-truy-cap-de-su-dung-zalo-trong-im-lang</loc>
+    <lastmod>2026-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769486351/ndau0nnanxl0lhmnyyvs.png</image:loc>
+      <image:title>Mẹo tắt trạng thái &quot;Đã xem&quot; và &quot;Vừa mới truy cập&quot; để sử dụng Zalo trong im lặng.</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vietshare.site/zalo-web/cach-toi-uu-hoa-trinh-duyet-de-chay-zalo-web-muot-ma-bi-quyet-tang-toc-do-load-tin-nhan-va-khac-phuc-tinh-trang-giat-lag-khi-lam-viec</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769438792/xcpelgy0ndc8ya32wnzi.png</image:loc>
+      <image:title>Cách tối ưu hóa trình duyệt để chạy Zalo Web mượt mà: Bí quyết tăng tốc độ load tin nhắn và khắc phục tình trạng giật lag khi làm việc.</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vietshare.site/zalo-mobile/meo-tat-trang-thai-vua-moi-truy-cap-va-da-xem-de-luot-zalo-trong-che-do-an-danh</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769436006/u1dmu2pgxnpp3ov3w4gs.png</image:loc>
+      <image:title>Mẹo tắt trạng thái &quot;Vừa mới truy cập&quot; và &quot;Đã xem&quot; để lướt Zalo trong chế độ ẩn danh.</image:title>
     </image:image>
   </url>
   <url>
@@ -563,6 +803,16 @@
     </image:image>
   </url>
   <url>
+    <loc>https://vietshare.site/zalo-web/cach-dong-bo-tin-nhan-zalo-web-tu-dien-thoai-cap-nhat-day-du-du-lieu-hoi-thoai-cu</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769436607/vmk3mupytcp7efusn8uj.png</image:loc>
+      <image:title>Cách đồng bộ tin nhắn Zalo Web từ điện thoại (Cập nhật đầy đủ dữ liệu hội thoại cũ)</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://vietshare.site/zalo-web/tai-sao-zalo-web-khong-the-gui-file-dung-luong-lon-hoac-thu-muc-truc-tiep</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
@@ -593,6 +843,66 @@
     </image:image>
   </url>
   <url>
+    <loc>https://vietshare.site/zalo-web/cach-dong-bo-tin-nhan-cu-len-zalo-web-xem-lai-toan-bo-lich-su-tro-chuyen-tren-trinh-duyet</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769436145/pjtodxsw5nhri1zuytls.png</image:loc>
+      <image:title>Cách đồng bộ tin nhắn cũ lên Zalo Web (Xem lại toàn bộ lịch sử trò chuyện trên trình duyệt)</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vietshare.site/zalo-web/loi-zalo-web-bi-treo-chay-cham-hoac-tu-thoat-6-buoc-toi-uu-hoa-trinh-duyet-de-xu-ly-ngay</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769430746/idc2rtmkr914q5wgptg5.png</image:loc>
+      <image:title>Lỗi Zalo Web bị treo, chạy chậm hoặc tự thoát: 6 bước tối ưu hóa trình duyệt để xử lý ngay.</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vietshare.site/zalo-pc/cach-khac-phuc-loi-zalo-pc-khong-dong-bo-tin-nhan-cu-tu-dien-thoai-sang-may-tinh</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769433444/mowbpokubze49sqf5qxi.png</image:loc>
+      <image:title>Cách khắc phục lỗi Zalo PC không đồng bộ tin nhắn cũ từ điện thoại sang máy tính.</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vietshare.site/zalo-web/cach-dong-bo-tin-nhan-cu-len-zalo-web-xem-lai-toan-bo-lich-su-tro-chuyen-tren-trinh-duyet</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769441439/p5aeuvkcneukytoc7dvr.png</image:loc>
+      <image:title>Cách đồng bộ tin nhắn cũ lên Zalo Web (Xem lại toàn bộ lịch sử trò chuyện trên trình duyệt)</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vietshare.site/zalo-mobile/meo-su-dung-tinh-nang-tin-nhan-tu-xoa-de-bao-mat-thong-tin-va-don-dep-hoi-thoai-tu-dong</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769434344/rog7s5fn9b5i5xef3dgy.png</image:loc>
+      <image:title>Mẹo sử dụng tính năng &quot;Tin nhắn tự xóa&quot; để bảo mật thông tin và dọn dẹp hội thoại tự động.</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vietshare.site/zalo-mobile/meo-sao-luu-va-khoi-phuc-tin-nhan-zalo-tu-dong-de-khong-bao-gio-lo-mat-du-lieu-quan-trong</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769431905/egxjnesdvtp5mnhjgtah.png</image:loc>
+      <image:title>Mẹo sao lưu và khôi phục tin nhắn Zalo tự động để không bao giờ lo mất dữ liệu quan trọng.</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://vietshare.site/zalo-pc/huong-dan-sao-luu-tin-nhan-zalo-pc-an-toan</loc>
     <lastmod>2026-01-22</lastmod>
     <changefreq>monthly</changefreq>
@@ -603,6 +913,16 @@
     </image:image>
   </url>
   <url>
+    <loc>https://vietshare.site/zalo-web/cach-tan-dung-phim-tat-va-bo-loc-tin-nhan-tren-zalo-web-bi-quyet-toi-uu-hoa-toc-do-phan-hoi-va-quan-ly-hoi-thoai-thong-minh</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769429467/vwovzjjsjkjvfkvkxtq6.png</image:loc>
+      <image:title>Cách tận dụng phím tắt và bộ lọc tin nhắn trên Zalo Web: Bí quyết tối ưu hóa tốc độ phản hồi và quản lý hội thoại thông minh.</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://vietshare.site/zalo-mobile/huong-dan-cach-an-tro-chuyen-va-tim-lai-cuoc-tro-chuyen-bi-an-tren-zalo-mobile</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
@@ -610,6 +930,16 @@
     <image:image>
       <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769250087/lsn3flvm9go3iveybjgn.png</image:loc>
       <image:title>Hướng dẫn cách ẩn trò chuyện và tìm lại cuộc trò chuyện bị ẩn trên Zalo Mobile</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vietshare.site/zalo-pc/cach-tuy-bien-giao-dien-zalo-pc-meo-thay-doi-hinh-nen-doan-chat-va-che-do-dark-mode-de-lam-viec-sang-tao-hon</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769434189/t7dg6guypauicwbk8low.png</image:loc>
+      <image:title>Cách tùy biến giao diện Zalo PC: Mẹo thay đổi hình nền đoạn chat và chế độ Dark Mode để làm việc sáng tạo hơn.</image:title>
     </image:image>
   </url>
   <url>
@@ -653,6 +983,16 @@
     </image:image>
   </url>
   <url>
+    <loc>https://vietshare.site/zalo-pc/cach-tuy-bien-giao-dien-zalo-pc-meo-thay-doi-ngon-ngu-co-chu-va-hinh-nen-doan-chat-de-toi-uu-trai-nghiem-thi-giac</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769435550/ni1q06oymebpwetxao3t.png</image:loc>
+      <image:title>Cách tùy biến giao diện Zalo PC: Mẹo thay đổi ngôn ngữ, cỡ chữ và hình nền đoạn chat để tối ưu trải nghiệm thị giác.</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://vietshare.site/zalo-mobile/huong-dan-cai-dat-va-quan-ly-ma-hoa-dau-cuoi-e2ee-de-bao-mat-tin-nhan-tuyet-doi-tren-zalo-mobile</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
@@ -663,6 +1003,16 @@
     </image:image>
   </url>
   <url>
+    <loc>https://vietshare.site/zalo-mobile/huong-dan-cach-an-tro-chuyen-va-tim-lai-cuoc-hoi-thoai-bi-an-bang-ma-pin-tren-zalo-mobile</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769437488/k5ekswksctst101aryds.png</image:loc>
+      <image:title>Hướng dẫn cách ẩn trò chuyện và tìm lại cuộc hội thoại bị ẩn bằng mã PIN trên Zalo Mobile.</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://vietshare.site/zalo-pc/loi-zalo-pc-khong-gui-duoc-hinh-anh</loc>
     <lastmod>2026-01-22</lastmod>
     <changefreq>monthly</changefreq>
@@ -670,6 +1020,36 @@
     <image:image>
       <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769093215/nprhvdguaucnccmd8kat.jpg</image:loc>
       <image:title>Lỗi Zalo PC không gửi được hình ảnh</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vietshare.site/zalo-web/cach-dong-bo-tin-nhan-cu-len-zalo-web-xem-lai-toan-bo-lich-su-tro-chuyen-khi-chuyen-sang-trinh-duyet</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769431179/fp54yphpvrmalswxklpx.png</image:loc>
+      <image:title>Cách đồng bộ tin nhắn cũ lên Zalo Web (Xem lại toàn bộ lịch sử trò chuyện khi chuyển sang trình duyệt)</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vietshare.site/zalo-mobile/huong-dan-cach-an-tro-chuyen-va-tim-lai-cuoc-tro-chuyen-bi-an-tren-zalo-mobile</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769432045/mjfjfpcqvhgxq4deewva.png</image:loc>
+      <image:title>Hướng dẫn cách ẩn trò chuyện và tìm lại cuộc trò chuyện bị ẩn trên Zalo Mobile.</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vietshare.site/zalo-web/tai-sao-zalo-web-khong-the-thiet-lap-tinh-nang-tu-xoa-tin-nhan-cho-tung-hoi-thoai</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769438047/jzietk7ayfzhd1lafe8y.png</image:loc>
+      <image:title>Tại sao Zalo Web không thể thiết lập tính năng Tự xóa tin nhắn cho từng hội thoại?</image:title>
     </image:image>
   </url>
   <url>
@@ -713,6 +1093,36 @@
     </image:image>
   </url>
   <url>
+    <loc>https://vietshare.site/zalo-mobile/cach-khac-phuc-loi-zalo-mobile-khong-the-gui-hoac-tai-hinh-anh-video-chat-luong-cao</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769432196/mtcmejpfnc9omuuyze6o.png</image:loc>
+      <image:title>Cách khắc phục lỗi Zalo Mobile không thể gửi hoặc tải hình ảnh, video chất lượng cao.</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vietshare.site/zalo-pc/huong-dan-cach-dong-bo-tin-nhan-tu-dien-thoai-sang-zalo-pc-day-du-va-khong-mat-du-lieu</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769432889/lnqsfqpfeliwswmuj4wa.png</image:loc>
+      <image:title>Hướng dẫn cách đồng bộ tin nhắn từ điện thoại sang Zalo PC đầy đủ và không mất dữ liệu.</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vietshare.site/zalo-mobile/meo-tat-trang-thai-vua-moi-truy-cap-va-da-xem-de-giu-su-rieng-tu-toi-da-khi-nhan-tin-zalo</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769437620/puv4f62n4llidr8xratt.png</image:loc>
+      <image:title>Mẹo tắt trạng thái &quot;Vừa mới truy cập&quot; và &quot;Đã xem&quot; để giữ sự riêng tư tối đa khi nhắn tin Zalo.</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://vietshare.site/zalo-mobile/vi-sao-zalo-mobile-khong-the-thu-am-hoac-gui-tin-nhan-thoai</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
@@ -720,6 +1130,16 @@
     <image:image>
       <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769258737/vqjm7lmrze9gxhbec7pd.png</image:loc>
       <image:title>Vì sao Zalo Mobile không thể thu âm hoặc gửi tin nhắn thoại?</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vietshare.site/zalo-web/loi-zalo-web-khong-dong-bo-tin-nhan-cu-4-cach-khac-phuc-nhanh-chong-va-hieu-qua-nhat</loc>
+    <lastmod>2026-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769486389/fkwbwvwvm2zd2ln9oagg.png</image:loc>
+      <image:title>Lỗi Zalo Web không đồng bộ tin nhắn cũ: 4 cách khắc phục nhanh chóng và hiệu quả nhất</image:title>
     </image:image>
   </url>
   <url>
@@ -783,6 +1203,16 @@
     </image:image>
   </url>
   <url>
+    <loc>https://vietshare.site/zalo-web/loi-zalo-web-bi-cham-lag-hoac-treo-trinh-duyet-6-giai-phap-tang-toc-tuc-thi</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769435120/o7mrbd1sfo2rad84e8ej.png</image:loc>
+      <image:title>Lỗi Zalo Web bị chậm, lag hoặc treo trình duyệt: 6 giải pháp tăng tốc tức thì.</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://vietshare.site/zalo-pc/loi-zalo-pc-khong-mo-duoc-link-trong-tin-nhan</loc>
     <lastmod>2026-01-22</lastmod>
     <changefreq>monthly</changefreq>
@@ -813,6 +1243,16 @@
     </image:image>
   </url>
   <url>
+    <loc>https://vietshare.site/zalo-web/cach-tan-dung-tinh-nang-phan-loai-uu-tien-tren-zalo-web-bi-quyet-sap-xep-hoi-thoai-thong-minh-va-toi-uu-hoa-hieu-suat-lam-viec</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769439068/k6bn2zkqaiixudbxiebd.png</image:loc>
+      <image:title>Cách tận dụng tính năng &quot;Phân loại ưu tiên&quot; trên Zalo Web: Bí quyết sắp xếp hội thoại thông minh và tối ưu hóa hiệu suất làm việc.</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://vietshare.site/zalo-mobile/vi-sao-zalo-mobile-khong-hien-thong-bao-tin-nhan</loc>
     <lastmod>2026-01-22</lastmod>
     <changefreq>monthly</changefreq>
@@ -833,6 +1273,26 @@
     </image:image>
   </url>
   <url>
+    <loc>https://vietshare.site/zalo-pc/tai-sao-zalo-pc-khong-cho-phep-thu-hoi-tin-nhan-qua-1-ngay-du-nguoi-dung-rat-can</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769431466/okpd6luedoo3smkcw8ea.png</image:loc>
+      <image:title>Tại sao Zalo PC không cho phép thu hồi tin nhắn quá 1 ngày dù người dùng rất cần?</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vietshare.site/zalo-pc/tai-sao-zalo-pc-khong-hien-thi-lich-su-tro-chuyen-moi-nhat-du-dien-thoai-da-cap-nhat</loc>
+    <lastmod>2026-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769485879/e8v1qp7op637hflyzrwp.png</image:loc>
+      <image:title>Tại sao Zalo PC không hiển thị lịch sử trò chuyện mới nhất dù điện thoại đã cập nhật?</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://vietshare.site/zalo-web/cach-dang-nhap-zalo-web-bang-trinh-duyet-an-danh-dung-xong-tu-xoa-du-lieu</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
@@ -840,6 +1300,16 @@
     <image:image>
       <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769251886/fdz7acri2trtr1up3fvu.png</image:loc>
       <image:title>Cách đăng nhập Zalo Web bằng trình duyệt ẩn danh (Dùng xong tự xóa dữ liệu)</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vietshare.site/zalo-mobile/meo-tat-trang-thai-vua-moi-truy-cap-va-che-do-da-xem-giup-nhan-tin-trong-am-tham-tren-zalo</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769438661/tuylvfvqowxlvgnbauhs.png</image:loc>
+      <image:title>Mẹo tắt trạng thái vừa mới truy cập và chế độ &quot;đã xem&quot; giúp nhắn tin trong âm thầm trên Zalo.</image:title>
     </image:image>
   </url>
   <url>
@@ -873,6 +1343,16 @@
     </image:image>
   </url>
   <url>
+    <loc>https://vietshare.site/zalo-pc/huong-dan-cach-dong-bo-tin-nhan-tu-dien-thoai-sang-zalo-pc-day-du-va-nhanh-nhat</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769430209/udeer4ojpkvkz9pal21j.png</image:loc>
+      <image:title>Hướng dẫn cách đồng bộ tin nhắn từ điện thoại sang Zalo PC đầy đủ và nhanh nhất.</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://vietshare.site/zalo-pc/vi-sao-zalo-pc-chay-cham-sau-thoi-gian-dai</loc>
     <lastmod>2026-01-22</lastmod>
     <changefreq>monthly</changefreq>
@@ -883,6 +1363,16 @@
     </image:image>
   </url>
   <url>
+    <loc>https://vietshare.site/zalo-web/loi-zalo-web-khong-dong-bo-tin-nhan-cu-nguyen-nhan-va-4-cach-khac-phuc-thanh-cong-100</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769432472/rxg5dyhviyfa9xpr1kpr.png</image:loc>
+      <image:title>Lỗi Zalo Web không đồng bộ tin nhắn cũ: Nguyên nhân và 4 cách khắc phục thành công 100%</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://vietshare.site/zalo-web/tai-sao-zalo-web-khong-hien-thi-day-du-lich-su-tin-nhan-cu</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
@@ -890,6 +1380,46 @@
     <image:image>
       <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769247419/sq27qenggizbqq0a4n1e.png</image:loc>
       <image:title>Tại sao Zalo Web không hiển thị đầy đủ lịch sử tin nhắn cũ?</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vietshare.site/zalo-mobile/huong-dan-cach-an-hoan-toan-cuoc-tro-chuyen-va-tim-kiem-lai-bang-ma-pin-bi-mat-tren-zalo-mobile</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769434970/zyoj46i0bwpkplfib1a1.png</image:loc>
+      <image:title>Hướng dẫn cách ẩn hoàn toàn cuộc trò chuyện và tìm kiếm lại bằng mã PIN bí mật trên Zalo Mobile.</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vietshare.site/zalo-mobile/meo-tat-trang-thai-vua-moi-truy-cap-va-da-xem-de-giu-su-rieng-tu-toi-da-khi-nhan-tin-zalo</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769432344/lc4ncymrga0zexhj1jen.png</image:loc>
+      <image:title>Mẹo tắt trạng thái &quot;Vừa mới truy cập&quot; và &quot;Đã xem&quot; để giữ sự riêng tư tối đa khi nhắn tin Zalo.</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vietshare.site/zalo-pc/cach-khac-phuc-loi-zalo-pc-khong-dong-bo-tin-nhan-cu-tu-dien-thoai-sang-may-tinh</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769431019/hqhhalphunim42wjnjh1.png</image:loc>
+      <image:title>Cách khắc phục lỗi Zalo PC không đồng bộ tin nhắn cũ từ điện thoại sang máy tính.</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vietshare.site/zalo-web/cach-tan-dung-tinh-nang-phan-loai-uu-tien-tren-zalo-web-bi-quyet-sap-xep-hoi-thoai-thong-minh-va-toi-uu-khong-gian-lam-viec-chuyen-nghiep</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769433880/g4kxjoebcnglcvrvdcuo.png</image:loc>
+      <image:title>Cách tận dụng tính năng &quot;Phân loại ưu tiên&quot; trên Zalo Web: Bí quyết sắp xếp hội thoại thông minh và tối ưu không gian làm việc chuyên nghiệp.</image:title>
     </image:image>
   </url>
   <url>
@@ -933,6 +1463,16 @@
     </image:image>
   </url>
   <url>
+    <loc>https://vietshare.site/zalo-pc/tai-sao-zalo-pc-khong-dong-bo-day-du-tin-nhan-tu-dien-thoai-du-da-bam-dong-bo-tin-nhan</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769437751/r3gwsmzcizwq4altuo0o.png</image:loc>
+      <image:title>Tại sao Zalo PC không đồng bộ đầy đủ tin nhắn từ điện thoại dù đã bấm &quot;Đồng bộ tin nhắn&quot;?</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://vietshare.site/zalo-web/cach-dang-nhap-zalo-web-khi-bi-quen-mat-khau-hoac-mat-sim-xac-thuc-qua-danh-ba</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
@@ -940,6 +1480,16 @@
     <image:image>
       <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769256699/xuw4zishaxsln1s7u7h0.png</image:loc>
       <image:title>Cách đăng nhập Zalo Web khi bị quên mật khẩu hoặc mất sim (Xác thực qua danh bạ)</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vietshare.site/zalo-web/cach-su-dung-phim-tat-hotkeys-tren-zalo-web-bi-quyet-thao-tac-sieu-toc-va-toi-uu-hoa-hieu-suat-lam-viec-chuyen-nghiep</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769438202/ckrh3chs9546kgowubcz.png</image:loc>
+      <image:title>Cách sử dụng &quot;Phím tắt&quot; (Hotkeys) trên Zalo Web: Bí quyết thao tác siêu tốc và tối ưu hóa hiệu suất làm việc chuyên nghiệp.</image:title>
     </image:image>
   </url>
   <url>
@@ -1013,6 +1563,76 @@
     </image:image>
   </url>
   <url>
+    <loc>https://vietshare.site/zalo-web/cach-su-dung-phan-loai-uu-tien-tren-zalo-web-bi-quyet-loc-sach-tin-nhan-rac-va-tap-trung-toi-da-cho-nhung-hoi-thoai-quan-trong</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769431604/etevzn3h4ve5lbxjj0hj.png</image:loc>
+      <image:title>Cách sử dụng &quot;Phân loại ưu tiên&quot; trên Zalo Web: Bí quyết lọc sạch tin nhắn rác và tập trung tối đa cho những hội thoại quan trọng.</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vietshare.site/zalo-pc/cach-khac-phuc-loi-zalo-pc-khong-dong-bo-tin-nhan-cu-tu-dien-thoai-sang-may-tinh</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769438508/yqxgbi1awxnydx48jl2j.png</image:loc>
+      <image:title>Cách khắc phục lỗi Zalo PC không đồng bộ tin nhắn cũ từ điện thoại sang máy tính.</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vietshare.site/zalo-pc/huong-dan-cach-cai-dat-va-su-dung-tinh-nang-tra-loi-tin-nhan-tu-dong-auto-reply-chuyen-nghiep-tren-zalo-pc</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769429927/jv8dyx61dmtroit4v8fn.png</image:loc>
+      <image:title>Hướng dẫn cách cài đặt và sử dụng tính năng trả lời tin nhắn tự động (Auto-reply) chuyên nghiệp trên Zalo PC.</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vietshare.site/zalo-mobile/cach-khac-phuc-loi-zalo-mobile-khong-the-gui-hoac-tai-hinh-anh-video-chat-luong-cao</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769429336/ygcugfwnptq2n5408adk.png</image:loc>
+      <image:title>Cách khắc phục lỗi Zalo Mobile không thể gửi hoặc tải hình ảnh, video chất lượng cao.</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vietshare.site/zalo-web/cach-bat-thong-bao-zalo-web-tren-trinh-duyet-nhan-tin-nhan-tuc-thi-khong-bo-lo-su-kien-quan-trong</loc>
+    <lastmod>2026-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769486257/bhpcq0iut1hwkmsm8epr.png</image:loc>
+      <image:title>Cách bật thông báo Zalo Web trên trình duyệt (Nhận tin nhắn tức thì không bỏ lỡ sự kiện quan trọng)</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vietshare.site/zalo-mobile/meo-gui-anh-chat-luong-cao-hd-va-tu-dong-luu-anh-vao-album-dien-thoai-tren-zalo</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769436306/viotitint0c0tkuu7ugs.png</image:loc>
+      <image:title>Mẹo gửi ảnh chất lượng cao (HD) và tự động lưu ảnh vào album điện thoại trên Zalo.</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vietshare.site/zalo-pc/cach-khac-phuc-loi-zalo-pc-khong-dong-bo-tin-nhan-cu-tu-dien-thoai-sang-may-tinh</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769435267/ravi0x1omzk7m0eyvfdm.png</image:loc>
+      <image:title>Cách khắc phục lỗi Zalo PC không đồng bộ tin nhắn cũ từ điện thoại sang máy tính.</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://vietshare.site/zalo-web/vi-sao-zalo-web-khong-nhan-duoc-thong-bao</loc>
     <lastmod>2026-01-22</lastmod>
     <changefreq>monthly</changefreq>
@@ -1053,6 +1673,16 @@
     </image:image>
   </url>
   <url>
+    <loc>https://vietshare.site/zalo-mobile/huong-dan-cach-an-tro-chuyen-va-tim-lai-bang-ma-pin-de-bao-ve-tin-nhan-bi-mat-tren-zalo-mobile</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769429775/uahq2vjg05b6nxhd6lhk.png</image:loc>
+      <image:title>Hướng dẫn cách ẩn trò chuyện và tìm lại bằng mã PIN để bảo vệ tin nhắn bí mật trên Zalo Mobile.</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://vietshare.site/zalo-pc/huong-dan-cach-phan-loai-hoi-thoai-va-quan-ly-nhom-lam-viec-hieu-qua-tren-zalo-pc</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
@@ -1060,6 +1690,16 @@
     <image:image>
       <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769250938/dkqjg0lmakpanwhrjcwv.png</image:loc>
       <image:title>Hướng dẫn cách phân loại hội thoại và quản lý nhóm làm việc hiệu quả trên Zalo PC.</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vietshare.site/zalo-mobile/huong-dan-cach-an-tro-chuyen-va-tim-lai-cuoc-hoi-thoai-bi-an-bang-ma-pin-tren-zalo-mobile</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769435396/yf1dugs5bmhkcudkgnja.png</image:loc>
+      <image:title>Hướng dẫn cách ẩn trò chuyện và tìm lại cuộc hội thoại bị ẩn bằng mã PIN trên Zalo Mobile.</image:title>
     </image:image>
   </url>
   <url>
@@ -1073,6 +1713,16 @@
     </image:image>
   </url>
   <url>
+    <loc>https://vietshare.site/zalo-pc/cach-tuy-bien-giao-dien-zalo-pc-meo-su-dung-che-do-toi-dark-mode-va-thay-doi-hinh-nen-doan-chat-de-tang-cam-hung-lam-viec</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769441803/orcjvug6rwczn9ubl2n2.png</image:loc>
+      <image:title>Cách tùy biến giao diện Zalo PC: Mẹo sử dụng Chế độ tối (Dark Mode) và thay đổi hình nền đoạn chat để tăng cảm hứng làm việc.</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://vietshare.site/zalo-web/huong-dan-dang-nhap-zalo-web-bang-ma-qr</loc>
     <lastmod>2026-01-22</lastmod>
     <changefreq>monthly</changefreq>
@@ -1080,6 +1730,26 @@
     <image:image>
       <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769097586/xefuzrmhehijx3f22ane.png</image:loc>
       <image:title>Hướng dẫn đăng nhập Zalo Web bằng mã QR</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vietshare.site/zalo-web/cach-tan-dung-tinh-nang-phan-loai-uu-tien-tren-zalo-web-bi-quyet-loc-hoi-thoai-thong-minh-va-toi-uu-hoa-hieu-suat-lam-viec</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769429621/qupbsjjvubqht1ft6tbq.png</image:loc>
+      <image:title>Cách tận dụng tính năng &quot;Phân loại ưu tiên&quot; trên Zalo Web: Bí quyết lọc hội thoại thông minh và tối ưu hóa hiệu suất làm việc.</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vietshare.site/zalo-web/cach-dang-nhap-zalo-web-bang-trinh-duyet-an-danh-bao-mat-thong-tin-khi-dung-may-tinh-cong-cong</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769433719/xcoksbvnhmtitmydghyr.png</image:loc>
+      <image:title>Cách đăng nhập Zalo Web bằng trình duyệt ẩn danh (Bảo mật thông tin khi dùng máy tính công cộng)</image:title>
     </image:image>
   </url>
   <url>
@@ -1153,6 +1823,16 @@
     </image:image>
   </url>
   <url>
+    <loc>https://vietshare.site/zalo-mobile/meo-su-dung-tinh-nang-tin-nhan-tu-xoa-de-bao-mat-thong-tin-nhay-cam-va-don-dep-hoi-thoai-tu-dong</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769434042/dtb8cnauayqrqbvqiifk.png</image:loc>
+      <image:title>Mẹo sử dụng tính năng &quot;Tin nhắn tự xóa&quot; để bảo mật thông tin nhạy cảm và dọn dẹp hội thoại tự động.</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://vietshare.site/zalo-mobile/meo-gui-file-dung-luong-lon-qua-zalo-mobile</loc>
     <lastmod>2026-01-22</lastmod>
     <changefreq>monthly</changefreq>
@@ -1173,6 +1853,36 @@
     </image:image>
   </url>
   <url>
+    <loc>https://vietshare.site/zalo-pc/cach-khac-phuc-loi-zalo-pc-khong-dong-bo-tin-nhan-cu-tu-dien-thoai-sang-may-tinh</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769438940/lzmgi8bphmmx6i6kchhp.png</image:loc>
+      <image:title>Cách khắc phục lỗi Zalo PC không đồng bộ tin nhắn cũ từ điện thoại sang máy tính.</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vietshare.site/zalo-web/loi-zalo-web-khong-dong-bo-tin-nhan-moi-nhat-5-buoc-khac-phuc-ngay-lap-tuc</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769437171/v69mt1ftt7veq7ymhiht.png</image:loc>
+      <image:title>Lỗi Zalo Web không đồng bộ tin nhắn mới nhất: 5 bước khắc phục ngay lập tức</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vietshare.site/zalo-pc/tai-sao-zalo-pc-khong-the-gui-file-du-dung-luong-tep-van-nam-trong-gioi-han-cho-phep</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769434821/zez9kgekvc9pnhjoztid.png</image:loc>
+      <image:title>Tại sao Zalo PC không thể gửi file dù dung lượng tệp vẫn nằm trong giới hạn cho phép?</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://vietshare.site/zalo-mobile/vi-sao-zalo-mobile-khong-the-thuc-hien-hoac-nhan-cuoc-goi-video</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
@@ -1180,6 +1890,46 @@
     <image:image>
       <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769248819/bqwy6sm55qw9zjo9drxr.png</image:loc>
       <image:title>Vì sao Zalo Mobile không thể thực hiện hoặc nhận cuộc gọi video?</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vietshare.site/zalo-pc/huong-dan-cach-cai-dat-ma-khoa-man-hinh-zalo-screen-lock-de-bao-mat-tin-nhan-rieng-tu-tren-zalo-pc</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769437337/jiqo0zftixxytxdzzcgq.png</image:loc>
+      <image:title>Hướng dẫn cách cài đặt mã khóa màn hình (Zalo Screen Lock) để bảo mật tin nhắn riêng tư trên Zalo PC.</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vietshare.site/zalo-mobile/huong-dan-cach-an-cuoc-tro-chuyen-nhay-cam-va-tim-kiem-lai-bang-ma-pin-tren-zalo-mobile</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769431315/zjmmx1kganlu52idsrtg.png</image:loc>
+      <image:title>Hướng dẫn cách ẩn cuộc trò chuyện nhạy cảm và tìm kiếm lại bằng mã PIN trên Zalo Mobile.</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vietshare.site/zalo-pc/huong-dan-cach-dong-bo-tin-nhan-zalo-tu-dien-thoai-sang-may-tinh-day-du-va-nhanh-nhat</loc>
+    <lastmod>2026-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769485806/ep8wy3ldm2tfcnt83ltn.png</image:loc>
+      <image:title>Hướng dẫn cách đồng bộ tin nhắn Zalo từ điện thoại sang máy tính đầy đủ và nhanh nhất.</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vietshare.site/zalo-pc/cach-khac-phuc-loi-zalo-pc-khong-dong-bo-tin-nhan-cu-tu-dien-thoai-sang-may-tinh</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769433161/zf2d8r8oqbxdralpodyx.png</image:loc>
+      <image:title>Cách khắc phục lỗi Zalo PC không đồng bộ tin nhắn cũ từ điện thoại sang máy tính.</image:title>
     </image:image>
   </url>
   <url>
@@ -1193,6 +1943,16 @@
     </image:image>
   </url>
   <url>
+    <loc>https://vietshare.site/zalo-pc/huong-dan-cach-dong-bo-tin-nhan-tu-dien-thoai-sang-zalo-pc-day-du-va-nhanh-nhat</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769433584/puda92dyotzzanopj5iu.png</image:loc>
+      <image:title>Hướng dẫn cách đồng bộ tin nhắn từ điện thoại sang Zalo PC đầy đủ và nhanh nhất.</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://vietshare.site/zalo-pc/cach-khac-phuc-loi-zalo-pc-bi-treo-giat-lag-hoac-chiem-dung-qua-nhieu-ram</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
@@ -1200,6 +1960,16 @@
     <image:image>
       <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769229391/m2jq6t9gbjaukdcybtwa.png</image:loc>
       <image:title>Cách khắc phục lỗi Zalo PC bị treo, giật lag hoặc chiếm dụng quá nhiều RAM</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vietshare.site/zalo-pc/cach-toi-uu-hoa-hieu-suat-zalo-pc-meo-don-dep-bo-nho-dem-va-quan-ly-ung-dung-chay-ngam-giup-may-muot-ma-hon</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769435710/q468rwo4fkgdgyvaqjfu.png</image:loc>
+      <image:title>Cách tối ưu hóa hiệu suất Zalo PC: Mẹo dọn dẹp bộ nhớ đệm và quản lý ứng dụng chạy ngầm giúp máy mượt mà hơn.</image:title>
     </image:image>
   </url>
   <url>
@@ -1213,6 +1983,36 @@
     </image:image>
   </url>
   <url>
+    <loc>https://vietshare.site/zalo-web/tai-sao-zalo-web-khong-ho-tro-tinh-nang-xem-va-tra-loi-tin-nhan-an-ma-pin</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769439556/vbqrid7btwlcqesv9aet.png</image:loc>
+      <image:title>Tại sao Zalo Web không hỗ trợ tính năng xem và trả lời tin nhắn ẩn (mã PIN)?</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vietshare.site/zalo-mobile/meo-tat-trang-thai-da-xem-va-vua-moi-truy-cap-de-su-dung-zalo-trong-che-do-an-danh</loc>
+    <lastmod>2026-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769486166/rlgzsucy8ygvmicp3jrn.png</image:loc>
+      <image:title>Mẹo tắt trạng thái &quot;Đã xem&quot; và &quot;Vừa mới truy cập&quot; để sử dụng Zalo trong chế độ ẩn danh.</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vietshare.site/zalo-mobile/vi-sao-zalo-mobile-tu-dong-xoa-anh-va-tin-nhan-cu-trong-hoi-thoai</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769433030/gpop264xbfqa9upb6bz4.png</image:loc>
+      <image:title>Vì sao Zalo Mobile tự động xóa ảnh và tin nhắn cũ trong hội thoại?</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://vietshare.site/zalo-web/cach-dong-bo-tin-nhan-tu-dien-thoai-sang-zalo-web-nhanh-chong-khong-lo-mat-du-lieu</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
@@ -1220,6 +2020,26 @@
     <image:image>
       <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769249662/t4qpho98d5udkbi49ud6.png</image:loc>
       <image:title>Cách đồng bộ tin nhắn từ điện thoại sang Zalo Web nhanh chóng, không lo mất dữ liệu.</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vietshare.site/zalo-pc/huong-dan-cach-cai-dat-va-quan-ly-ma-khoa-screen-lock-de-bao-mat-tuyet-doi-tin-nhan-tren-zalo-pc</loc>
+    <lastmod>2026-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769485916/fdmr0trsuayhxbixejvc.png</image:loc>
+      <image:title>Hướng dẫn cách cài đặt và quản lý mã khóa (Screen Lock) để bảo mật tuyệt đối tin nhắn trên Zalo PC.</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vietshare.site/zalo-mobile/meo-tat-trang-thai-da-xem-va-vua-moi-truy-cap-de-su-dung-zalo-trong-che-do-an-danh</loc>
+    <lastmod>2026-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769486084/trdpc6rc4ympa5xyraw7.png</image:loc>
+      <image:title>Mẹo tắt trạng thái &quot;Đã xem&quot; và &quot;Vừa mới truy cập&quot; để sử dụng Zalo trong chế độ ẩn danh.</image:title>
     </image:image>
   </url>
   <url>
@@ -1243,6 +2063,16 @@
     </image:image>
   </url>
   <url>
+    <loc>https://vietshare.site/zalo-mobile/vi-sao-zalo-mobile-khong-the-gui-hoac-tai-hinh-anh-video-chat-luong-cao</loc>
+    <lastmod>2026-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769486451/bsezqysmcshjbql9bh0z.png</image:loc>
+      <image:title>Vì sao Zalo Mobile không thể gửi hoặc tải hình ảnh, video chất lượng cao?</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://vietshare.site/zalo-web/tai-sao-zalo-web-khong-the-gui-file-dung-luong-lon-hoac-thu-muc-truc-tiep</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
@@ -1250,6 +2080,16 @@
     <image:image>
       <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769256125/rujawys5cdqtj6b5qf38.png</image:loc>
       <image:title>Tại sao Zalo Web không thể gửi file dung lượng lớn hoặc thư mục trực tiếp?</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vietshare.site/zalo-mobile/huong-dan-cach-an-tro-chuyen-va-tim-lai-bang-ma-pin-de-bao-mat-tuyet-doi-tren-zalo-mobile</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dzppvmhyt/image/upload/v1769431763/moi1yoopckbmlm9jvbu2.png</image:loc>
+      <image:title>Hướng dẫn cách ẩn trò chuyện và tìm lại bằng mã PIN để bảo mật tuyệt đối trên Zalo Mobile.</image:title>
     </image:image>
   </url>
   <url>
