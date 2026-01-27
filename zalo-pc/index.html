@@ -78,6 +78,13 @@
             <span>Đang tải...</span>
           </div>
         </div>
+        
+        <!-- Load More Button -->
+        <div id="loadMoreContainer" style="text-align: center; margin-top: 2rem; display: none;">
+          <button id="loadMoreBtn" class="btn btn-secondary" style="padding: 0.75rem 2rem;">
+            Xem thêm bài viết
+          </button>
+        </div>
       </div>
     </section>
   </main>
@@ -100,7 +107,7 @@
   
   <!-- Scripts -->
   <script type="module">
-    import { db, collection, getDocs, query, where, orderBy, limit } from '/js/firebase-config.js';
+    import { db, collection, getDocs, query, where, orderBy, limit, startAfter } from '/js/firebase-config.js';
     
     const CATEGORY_LABELS = {
       'loi': 'Lỗi',
@@ -109,30 +116,68 @@
       'huong-dan': 'Hướng dẫn'
     };
     
-    async function loadArticles() {
+    const ARTICLES_PER_PAGE = 12;
+    let lastDoc = null;
+    let allLoaded = false;
+    
+    async function loadArticles(isLoadMore = false) {
       const container = document.getElementById('articlesList');
+      const loadMoreContainer = document.getElementById('loadMoreContainer');
+      const loadMoreBtn = document.getElementById('loadMoreBtn');
+      
+      if (!isLoadMore) {
+        container.innerHTML = '<div class="loading"><div class="spinner"></div><span>Đang tải...</span></div>';
+      } else {
+        loadMoreBtn.disabled = true;
+        loadMoreBtn.textContent = 'Đang tải...';
+      }
       
       try {
         const articlesRef = collection(db, 'articles');
-        const q = query(
-          articlesRef,
-          where('platform', '==', 'zalo-pc'),
-          where('status', '==', 'published'),
-          limit(50)
-        );
+        let q;
+        
+        if (lastDoc && isLoadMore) {
+          q = query(
+            articlesRef,
+            where('platform', '==', 'zalo-pc'),
+            where('status', '==', 'published'),
+            startAfter(lastDoc),
+            limit(ARTICLES_PER_PAGE)
+          );
+        } else {
+          q = query(
+            articlesRef,
+            where('platform', '==', 'zalo-pc'),
+            where('status', '==', 'published'),
+            limit(ARTICLES_PER_PAGE)
+          );
+        }
         
         const snapshot = await getDocs(q);
         const articles = [];
-        snapshot.forEach(doc => articles.push({ id: doc.id, ...doc.data() }));
+        snapshot.forEach(doc => articles.push({ id: doc.id, ...doc.data(), _doc: doc }));
         
-        if (articles.length === 0) {
+        if (articles.length === 0 && !isLoadMore) {
           container.innerHTML = '<p class="text-muted text-center">Chưa có bài viết nào.</p>';
           return;
         }
         
+        // Save last doc for pagination
+        if (articles.length > 0) {
+          lastDoc = articles[articles.length - 1]._doc;
+        }
+        
+        // Check if all articles loaded
+        if (articles.length < ARTICLES_PER_PAGE) {
+          allLoaded = true;
+          loadMoreContainer.style.display = 'none';
+        } else {
+          loadMoreContainer.style.display = 'block';
+        }
+        
         const defaultThumb = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="140" height="95" fill="%23E2E8F0"%3E%3Crect width="140" height="95"/%3E%3Ctext x="50%25" y="50%25" text-anchor="middle" dy=".3em" fill="%2394A3B8" font-size="12"%3ENo Image%3C/text%3E%3C/svg%3E';
         
-        container.innerHTML = articles.map(article => {
+        const html = articles.map(article => {
           const thumbSrc = (article.heroImage && article.heroImage.trim()) ? article.heroImage : defaultThumb;
           const categoryLabel = CATEGORY_LABELS[article.category] || article.category || 'Bài viết';
           const articleUrl = article.slug ? `/zalo-pc/${article.slug}` : `/article.html?id=${article.id}`;
@@ -150,9 +195,20 @@
             </a>
           `;
         }).join('');
+        
+        if (isLoadMore) {
+          container.insertAdjacentHTML('beforeend', html);
+          loadMoreBtn.disabled = false;
+          loadMoreBtn.textContent = 'Xem thêm bài viết';
+        } else {
+          container.innerHTML = html;
+        }
+        
       } catch (error) {
         console.error('Error loading articles:', error);
-        container.innerHTML = '<p class="text-muted text-center">Không thể tải bài viết.</p>';
+        if (!isLoadMore) {
+          container.innerHTML = '<p class="text-muted text-center">Không thể tải bài viết.</p>';
+        }
       }
     }
     
@@ -161,6 +217,13 @@
       div.textContent = text;
       return div.innerHTML;
     }
+    
+    // Load More button
+    document.getElementById('loadMoreBtn').addEventListener('click', () => {
+      if (!allLoaded) {
+        loadArticles(true);
+      }
+    });
     
     // Search
     document.getElementById('searchInput').addEventListener('keypress', (e) => {
